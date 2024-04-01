@@ -12,15 +12,18 @@
 # vs
 .vs/
 
-# compiled 
-BLL/bin/
-BLL/obj/
-DAL/bin/
-DAL/obj/
-DAO/bin/
-DAO/obj/
-Site/bin/
-Site/obj/
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+!/docs/core/build/
+bld/
+[Bb]in/
+[Oo]bj/
 
 # packages
 packages/
