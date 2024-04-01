@@ -70,3 +70,17 @@ C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\DAO.pdb
 C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
 C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.dll
 C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.pdb
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\BLL.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\BLL.pdb
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\DAL.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\DAO.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\Microsoft.Practices.ObjectBuilder2.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\DAL.pdb
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\DAO.pdb
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.csproj.AssemblyReference.cache
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.csproj.CoreCompileInputs.cache
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.csproj.CopyComplete
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.pdb

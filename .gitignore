@@ -1,0 +1,28 @@
+# These are some examples of commonly ignored file patterns.
+# You should customize this list as applicable to your project.
+# Learn more about .gitignore:
+#     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# vs
+.vs/
+
+# compiled 
+BLL/bin/
+BLL/obj/
+DAL/bin/
+DAL/obj/
+DAO/bin/
+DAO/obj/
+Site/bin/
+Site/obj/
+
+# packages
+packages/
+
+
