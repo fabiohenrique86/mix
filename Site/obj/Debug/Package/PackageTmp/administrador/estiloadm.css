@@ -1,0 +1,51 @@
+﻿body
+{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Segoe UI, Verdana, Microsoft Sans Serif;
+    font-size: 11px;
+    background-color: Black;
+    color: Black;
+}
+
+img
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+}
+
+#geraladm
+{
+    width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#topoadm
+{
+    /*padding: 5px 0 5px 0;*/
+    text-align: center;
+}
+#menuadm
+{
+    text-align: center;
+    font-size: 20px;
+}
+
+.conteudoadm
+{
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+#bemvindo
+{
+    font-size: 20px;
+    text-align: center;
+}
+.clear
+{
+    clear: both;
+}

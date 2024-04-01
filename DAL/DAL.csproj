@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7AFB1D95-74F0-45A1-8C0F-0BFE0A146AC0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\Site\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\Site\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\Site\bin\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdministradorDAL.cs" />
+    <Compile Include="PedidoMaeFilhoDAL.cs" />
+    <Compile Include="PedidoMaeTrocaProdutoDAL.cs" />
+    <Compile Include="PedidoMaeTrocaDAL.cs" />
+    <Compile Include="TrocaProdutoDAL.cs" />
+    <Compile Include="TrocaDAL.cs" />
+    <Compile Include="MotivoOcorrenciaDAL.cs" />
+    <Compile Include="OcorrenciaProdutoDAL.cs" />
+    <Compile Include="OcorrenciaDAL.cs" />
+    <Compile Include="FreteDAL.cs" />
+    <Compile Include="BorderoDAL.cs" />
+    <Compile Include="BrindeDAL.cs" />
+    <Compile Include="CancelamentoDAL.cs" />
+    <Compile Include="ClienteDAL.cs" />
+    <Compile Include="FuncionarioDAL.cs" />
+    <Compile Include="LinhaDAL.cs" />
+    <Compile Include="LojaDAL.cs" />
+    <Compile Include="MedidaDAL.cs" />
+    <Compile Include="NotaFiscalDAL.cs" />
+    <Compile Include="OrcamentoDAL.cs" />
+    <Compile Include="PedidoMaeProdutoDAL.cs" />
+    <Compile Include="PedidoMaeDAL.cs" />
+    <Compile Include="ParcelaDAL.cs" />
+    <Compile Include="PedidoDAL.cs" />
+    <Compile Include="ProdutoDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelatorioDAL.cs" />
+    <Compile Include="ReservaDAL.cs" />
+    <Compile Include="SistemaDAL.cs" />
+    <Compile Include="TipoPagamentoDAL.cs" />
+    <Compile Include="TipoUsuarioDAL.cs" />
+    <Compile Include="TransferenciaDAL.cs" />
+    <Compile Include="UsuarioDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{087854D2-86F9-436A-96E6-7DDD1FE64DEA}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

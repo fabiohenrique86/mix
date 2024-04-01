@@ -1,0 +1,161 @@
+﻿body
+{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Segoe UI, Verdana, Microsoft Sans Serif;
+    font-size: 11px;
+    background-color: Black; 
+    /*scrollbar-arrow-color: #003366;     scrollbar-3dlight-color: #003366;     scrollbar-highlight-color: #003366;     scrollbar-face-color: #FFD700;     scrollbar-shadow-color: #003366;     scrollbar-darkshadow-color: #003366;     scrollbar-track-color: #003366;*/
+}
+
+img
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+}
+
+#geral
+{
+    position: relative;
+    width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#topo_cabeca
+{
+    text-align: center;
+    background-color: #800000;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#topo
+{
+    
+}
+
+#rodape
+{
+    color: #FFFFFF;
+    font-size: 9px;
+    text-align: center;
+    background-color: #1C1C1C;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.clear
+{
+    clear: both;
+}
+
+#conteudo
+{
+    padding: 0;
+    margin: 0;
+    background-color: #FFFFFF;
+}
+
+.desabilitado
+{
+    background-color: #BEBEBE;
+    color: Black;
+}
+
+a
+{
+    color: #6495ED;
+}
+
+.topo_grid
+{
+    font-family: Segoe UI, Verdana, Microsoft Sans Serif;
+    font-weight: bold;
+    font-size: 9px;
+    background-color: #FFD700;
+    color: Black;
+    text-align: center;
+}
+
+.negrito
+{
+    font-weight: bold;
+}
+
+#conteudo_detalhe_cancelamento
+{
+    font-family: Segoe UI, Verdana, Microsoft Sans Serif;
+    font-size: 11px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.campo_opcional
+{
+    font-size: 9px;
+    color: Red;
+    vertical-align: middle;
+}
+.mensagem_erro_orcamento
+{
+    font-size: 10px;
+    color: Red;
+    font-weight: bold;
+}
+.background_modal
+{
+    background-color: Gray;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+.window_modal
+{
+    background: #FFFFFF;
+}
+
+#corpo
+{
+    font-size: 10px;
+}
+
+.label_pedido
+{
+    font-weight: normal;
+    font-style: italic;
+}
+
+.label_pedido a
+{
+    color: #003366;
+    font-size: 12px;
+}
+
+#progressBackgroundFilter
+{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+    z-index: 1000;
+    background-color: #FFFFFF;
+}
+
+#processMessage
+{
+    position: fixed;
+    top: 35%;
+    left: 46%;
+    z-index: 1001;
+}

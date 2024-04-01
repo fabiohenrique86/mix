@@ -1,0 +1,72 @@
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\BLL\bin\Release\BLL.dll
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\BLL\bin\Release\BLL.pdb
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\BLL\bin\Release\DAL.dll
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\BLL\bin\Release\DAO.dll
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\BLL\bin\Release\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\BLL\bin\Release\DAL.pdb
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\BLL\bin\Release\DAO.pdb
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\BLL\obj\Release\BLL.dll
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\BLL\obj\Release\BLL.pdb
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\BLL\bin\Release\BLL.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\BLL\bin\Release\BLL.pdb
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\BLL\bin\Release\DAL.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\BLL\bin\Release\DAO.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\BLL\bin\Release\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\BLL\bin\Release\DAL.pdb
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\BLL\bin\Release\DAO.pdb
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\BLL\obj\Release\BLL.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\BLL\obj\Release\BLL.pdb
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox - Cópia\BLL\bin\Release\BLL.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox - Cópia\BLL\bin\Release\BLL.pdb
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox - Cópia\BLL\bin\Release\DAL.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox - Cópia\BLL\bin\Release\DAO.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox - Cópia\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox - Cópia\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox - Cópia\BLL\bin\Release\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox - Cópia\BLL\bin\Release\DAL.pdb
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox - Cópia\BLL\bin\Release\DAO.pdb
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox - Cópia\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox - Cópia\BLL\obj\Release\BLL.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox - Cópia\BLL\obj\Release\BLL.pdb
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\BLL\bin\Release\BLL.dll
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\BLL\bin\Release\BLL.pdb
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\BLL\bin\Release\DAL.dll
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\BLL\bin\Release\DAO.dll
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\BLL\bin\Release\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\BLL\bin\Release\DAL.pdb
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\BLL\bin\Release\DAO.pdb
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\BLL\obj\Release\BLL.dll
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\BLL\obj\Release\BLL.pdb
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\BLL.dll
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\BLL.pdb
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\DAL.dll
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\DAO.dll
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\DAL.pdb
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\DAO.pdb
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.dll
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.pdb
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\BLL.dll
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\BLL.pdb
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\DAL.dll
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\DAO.dll
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\DAL.pdb
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\bin\Release\DAO.pdb
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.dll
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Release\BLL.pdb

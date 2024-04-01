@@ -1,0 +1,50 @@
+C:\Projetos\Site\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Projetos\Site\DAO\bin\Debug\DAO.dll
+C:\Projetos\Site\DAO\bin\Debug\DAO.pdb
+C:\Projetos\Site\DAO\obj\Debug\DAO.dll
+C:\Projetos\Site\DAO\obj\Debug\DAO.pdb
+C:\Projetos\MiX - Publicado - Mais Atual\DAO\bin\Debug\DAO.dll
+C:\Projetos\MiX - Publicado - Mais Atual\DAO\bin\Debug\DAO.pdb
+C:\Projetos\MiX - Publicado - Mais Atual\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Projetos\MiX - Publicado - Mais Atual\DAO\obj\Debug\DAO.dll
+C:\Projetos\MiX - Publicado - Mais Atual\DAO\obj\Debug\DAO.pdb
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\DAO\bin\Debug\DAO.dll
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\DAO\bin\Debug\DAO.pdb
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\DAO\obj\Debug\DAO.dll
+C:\Users\Fabio Costa\Dropbox\MiX - Publicado - Mais Atual\DAO\obj\Debug\DAO.pdb
+C:\Users\Fabio Costa\Dropbox\MiX - Produção\DAO\bin\Debug\DAO.dll
+C:\Users\Fabio Costa\Dropbox\MiX - Produção\DAO\bin\Debug\DAO.pdb
+C:\Users\Fabio Costa\Dropbox\MiX - Produção\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\Fabio Costa\Dropbox\MiX - Produção\DAO\obj\Debug\DAO.dll
+C:\Users\Fabio Costa\Dropbox\MiX - Produção\DAO\obj\Debug\DAO.pdb
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\DAO\bin\Debug\DAO.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\DAO\bin\Debug\DAO.pdb
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\DAO\obj\Debug\DAO.dll
+C:\Users\Fabio Costa\Desktop\MiX - Produção - DropBox\DAO\obj\Debug\DAO.pdb
+C:\Users\Fabio Costa\Desktop\MiX-NF\DAO\bin\Debug\DAO.dll
+C:\Users\Fabio Costa\Desktop\MiX-NF\DAO\bin\Debug\DAO.pdb
+C:\Users\Fabio Costa\Desktop\MiX-NF\DAO\obj\Debug\DAO.dll
+C:\Users\Fabio Costa\Desktop\MiX-NF\DAO\obj\Debug\DAO.pdb
+C:\Users\Fabio Costa\Documents\Visual Studio 2010\Projects\MiX-NF\DAO\bin\Debug\DAO.dll
+C:\Users\Fabio Costa\Documents\Visual Studio 2010\Projects\MiX-NF\DAO\bin\Debug\DAO.pdb
+C:\Users\Fabio Costa\Documents\Visual Studio 2010\Projects\MiX-NF\DAO\obj\Debug\DAO.dll
+C:\Users\Fabio Costa\Documents\Visual Studio 2010\Projects\MiX-NF\DAO\obj\Debug\DAO.pdb
+C:\Users\Fabio Costa\Documents\Visual Studio 2010\Projects\MiX\DAO\bin\Debug\DAO.dll
+C:\Users\Fabio Costa\Documents\Visual Studio 2010\Projects\MiX\DAO\bin\Debug\DAO.pdb
+C:\Users\Fabio Costa\Documents\Visual Studio 2010\Projects\MiX\DAO\obj\Debug\DAO.dll
+C:\Users\Fabio Costa\Documents\Visual Studio 2010\Projects\MiX\DAO\obj\Debug\DAO.pdb
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\DAO\bin\Debug\DAO.dll
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\DAO\bin\Debug\DAO.pdb
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\DAO\obj\Debug\DAO.dll
+C:\Users\Fabio\Documents\Visual Studio 2013\Projects\MiX\DAO\obj\Debug\DAO.pdb
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\DAO\bin\Debug\DAO.dll
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\DAO\bin\Debug\DAO.pdb
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Debug\DAO.dll
+C:\Users\Fabio Henrique\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Debug\DAO.pdb
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\bin\Debug\DAO.dll
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\bin\Debug\DAO.pdb
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Debug\DAO.dll
+C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Debug\DAO.pdb
