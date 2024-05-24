@@ -25,6 +25,14 @@ bld/
 
 # Visual Studo 2015 cache/options directory
 .vs/
+.vs/Site/bin/
+.vs/Site/obj/Debug/
+.vs/BLL/bin/Debug/
+.vs/BLL/obj/Debug/
+.vs/DAL/bin/Debug/
+.vs/DAL/obj/Debug/
+.vs/DAO/bin/Debug/
+.vs/DAO/obj/Debug/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
