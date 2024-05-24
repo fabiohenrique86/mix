@@ -12,7 +12,6 @@
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="imbVisualizar" />
             <asp:PostBackTrigger ControlID="imbGerar" />
-            <%--<asp:AsyncPostBackTrigger ControlID="imbGerar" />--%>
         </Triggers>
         <ContentTemplate>
             <asp:Panel ID="Panel1" runat="server" DefaultButton="imbVisualizar">

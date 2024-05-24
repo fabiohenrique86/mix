@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Site {
-    
-    
-    public partial class Transferencia {
-        
+namespace Site
+{
+
+
+    public partial class Transferencia
+    {
+
         /// <summary>
         /// hdfProdutoValores control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdfProdutoValores;
-        
+
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// hdnScrollProduto control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdnScrollProduto;
-        
+
         /// <summary>
         /// hdnScrollTransferencia control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdnScrollTransferencia;
-        
+
         /// <summary>
         /// lblTransferenciaId control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTransferenciaId;
-        
+
         /// <summary>
         /// txtTransferenciaId control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTransferenciaId;
-        
+
         /// <summary>
         /// txtTransferenciaId_FilteredTextBoxExtender control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender txtTransferenciaId_FilteredTextBoxExtender;
-        
+
         /// <summary>
         /// lblLojaDe control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLojaDe;
-        
+
         /// <summary>
         /// ddlLojaDe control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlLojaDe;
-        
+
         /// <summary>
         /// lblLojaPara control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLojaPara;
-        
+
         /// <summary>
         /// ddlLojaPara control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlLojaPara;
-        
+
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// txtProduto control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtProduto;
-        
+
         /// <summary>
         /// lblDataTransferencia control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDataTransferencia;
-        
+
         /// <summary>
         /// txtDataTransferencia control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDataTransferencia;
-        
+
         /// <summary>
         /// txtDataTransferencia_MaskedEditExtender control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender txtDataTransferencia_MaskedEditExtender;
-        
+
         /// <summary>
         /// trComanda control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTableRow trComanda;
-        
+
         /// <summary>
         /// rblValida control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblValida;
-        
+
         /// <summary>
         /// imbConsultar control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbConsultar;
-        
+
         /// <summary>
         /// imbTransferir control.
         /// </summary>
@@ -191,7 +193,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbTransferir;
-        
+
         /// <summary>
         /// imbGerarComanda control.
         /// </summary>
@@ -200,16 +202,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbGerarComanda;
-        
-        /// <summary>
-        /// imbValidar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imbValidar;
-        
+
         /// <summary>
         /// rptTransferencia control.
         /// </summary>
@@ -218,7 +211,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptTransferencia;
-        
+
         /// <summary>
         /// mpeComanda control.
         /// </summary>
@@ -227,7 +220,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender mpeComanda;
-        
+
         /// <summary>
         /// pnlComanda control.
         /// </summary>
@@ -236,7 +229,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlComanda;
-        
+
         /// <summary>
         /// rpvComandaTransferencia control.
         /// </summary>
@@ -245,7 +238,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Microsoft.Reporting.WebForms.ReportViewer rpvComandaTransferencia;
-        
+
         /// <summary>
         /// imbImprimir control.
         /// </summary>
@@ -254,7 +247,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbImprimir;
-        
+
         /// <summary>
         /// hdfGerar control.
         /// </summary>

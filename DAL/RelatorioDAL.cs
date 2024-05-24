@@ -219,7 +219,7 @@ namespace DAL
             return dt;
         }
 
-        public static DataTable ListarNotaFiscal(DateTime dataPedidoInicial, DateTime dataPedidoFinal, int sistemaId, int? notaFiscalId, int? pedidoMaeId, int? lojaId, int? linhaId, long? produtoId)
+        public static DataTable ListarNotaFiscal(int sistemaId, DateTime dataNotaFiscalInicial, DateTime dataNotaFiscalFinal, int notaFiscalId, string numeroCarga, long produtoId)
         {
             Database db;
             DataTable dt;
@@ -229,34 +229,24 @@ namespace DAL
                 using (DbCommand cmd = db.GetStoredProcCommand("dbo.spListarNotaFiscal"))
                 {
                     cmd.CommandTimeout = 300;
-                    db.AddInParameter(cmd, "@DataNotaFiscalInicial", DbType.Date, dataPedidoInicial);
-                    db.AddInParameter(cmd, "@DataNotaFiscalFinal", DbType.Date, dataPedidoFinal);
+
                     db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
-                    if (notaFiscalId == 0)
-                    {
-                        notaFiscalId = null;
-                    }
-                    if (pedidoMaeId == 0)
-                    {
-                        pedidoMaeId = null;
-                    }
-                    if (lojaId == 0)
-                    {
-                        lojaId = null;
-                    }
-                    if (linhaId == 0)
-                    {
-                        linhaId = null;
-                    }
-                    if (produtoId == 0L)
-                    {
-                        produtoId = null;
-                    }
-                    db.AddInParameter(cmd, "@NotaFiscalID", DbType.Int32, notaFiscalId);
-                    db.AddInParameter(cmd, "@PedidoMaeID", DbType.Int32, pedidoMaeId);
-                    db.AddInParameter(cmd, "@LojaID", DbType.Int32, lojaId);
-                    db.AddInParameter(cmd, "@LinhaID", DbType.Int32, linhaId);
-                    db.AddInParameter(cmd, "@ProdutoID", DbType.Int64, produtoId);
+
+                    if (dataNotaFiscalInicial != DateTime.MinValue)
+                        db.AddInParameter(cmd, "@DataNotaFiscalInicial", DbType.Date, dataNotaFiscalInicial);
+
+                    if (dataNotaFiscalFinal != DateTime.MinValue)
+                        db.AddInParameter(cmd, "@DataNotaFiscalFinal", DbType.Date, dataNotaFiscalFinal);
+
+                    if (notaFiscalId > 0)
+                        db.AddInParameter(cmd, "@NotaFiscalID", DbType.Int32, notaFiscalId);
+
+                    if (!string.IsNullOrEmpty(numeroCarga))
+                        db.AddInParameter(cmd, "@NumeroCarga", DbType.String, numeroCarga);
+
+                    if (produtoId > 0)
+                        db.AddInParameter(cmd, "@ProdutoID", DbType.Int64, produtoId);
+
                     dt = db.ExecuteDataSet(cmd).Tables[0];
                 }
             }
@@ -574,6 +564,33 @@ namespace DAL
                     db.AddInParameter(cmd, "@NomeCliente", DbType.String, nomeCliente);
                     db.AddInParameter(cmd, "@Bairro", DbType.String, bairro);
                     db.AddInParameter(cmd, "@StatusID", DbType.Int32, statusId);
+                    db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
+
+                    dt = db.ExecuteDataSet(cmd).Tables[0];
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ApplicationException("Erro ao listar registro", ex);
+            }
+            finally
+            {
+                db = null;
+            }
+            return dt;
+        }
+
+        public static DataTable ListarRelatorioEstoque(int sistemaId)
+        {
+            Database db;
+            DataTable dt;
+            try
+            {
+                db = DatabaseFactory.CreateDatabase("Mix");
+                using (DbCommand cmd = db.GetStoredProcCommand("dbo.spListarRelatorioEstoque"))
+                {
+                    cmd.CommandTimeout = 300;
+                   
                     db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
 
                     dt = db.ExecuteDataSet(cmd).Tables[0];

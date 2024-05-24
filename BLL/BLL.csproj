@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AplicacaoBLL.cs" />
+    <Compile Include="CargaBLL.cs" />
     <Compile Include="CancelamentoBLL.cs" />
     <Compile Include="ClienteBLL.cs" />
     <Compile Include="EmailBLL.cs" />

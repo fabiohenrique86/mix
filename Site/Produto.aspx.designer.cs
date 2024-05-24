@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Site {
-    
-    
-    public partial class Produto {
-        
+namespace Site
+{
+
+
+    public partial class Produto
+    {
+
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// lblTopo control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTopo;
-        
+
         /// <summary>
         /// lblProdutoID control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblProdutoID;
-        
+
         /// <summary>
         /// txtProdutoID control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtProdutoID;
-        
+
         /// <summary>
         /// txtProdutoID_MaskedEditExtender control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender txtProdutoID_MaskedEditExtender;
-        
+
         /// <summary>
         /// ckbProdutoID control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox ckbProdutoID;
-        
+
         /// <summary>
         /// gdvLoja control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gdvLoja;
-        
+
         /// <summary>
         /// lblLinha control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLinha;
-        
+
         /// <summary>
         /// ddlLinha control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlLinha;
-        
+
         /// <summary>
         /// lblComissaoFuncionario control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblComissaoFuncionario;
-        
+
         /// <summary>
         /// txtComissaoFuncionario control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtComissaoFuncionario;
-        
+
         /// <summary>
         /// txtComissaoFuncionario_FilteredTextBoxExtender control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender txtComissaoFuncionario_FilteredTextBoxExtender;
-        
+
         /// <summary>
         /// lblComissaoFranqueado control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblComissaoFranqueado;
-        
+
         /// <summary>
         /// txtComissaoFranqueado control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtComissaoFranqueado;
-        
+
         /// <summary>
         /// txtComissaoFranqueado_FilteredTextBoxExtender control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender txtComissaoFranqueado_FilteredTextBoxExtender;
-        
+
         /// <summary>
         /// lblDescricao control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescricao;
-        
+
         /// <summary>
         /// txtDescricao control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescricao;
-        
+
         /// <summary>
         /// lblMedida control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMedida;
-        
+
         /// <summary>
         /// ddlMedida control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlMedida;
-        
+
         /// <summary>
         /// FileUpload1 control.
         /// </summary>
@@ -191,7 +193,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-        
+
         /// <summary>
         /// imbImportarColeta control.
         /// </summary>
@@ -200,7 +202,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbImportarColeta;
-        
+
         /// <summary>
         /// FileUpload2 control.
         /// </summary>
@@ -209,7 +211,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload2;
-        
+
         /// <summary>
         /// imbImportarBancoDados control.
         /// </summary>
@@ -218,7 +220,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbImportarBancoDados;
-        
+
         /// <summary>
         /// fupImportarEstoque control.
         /// </summary>
@@ -227,7 +229,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fupImportarEstoque;
-        
+
         /// <summary>
         /// imbImportarEstoque control.
         /// </summary>
@@ -236,16 +238,16 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbImportarEstoque;
-        
+
         /// <summary>
-        /// ckbFlgNaoExibirForaDeLinha control.
+        /// ckbFlgExibirForaDeLinha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckbFlgNaoExibirForaDeLinha;
-        
+        protected global::System.Web.UI.WebControls.CheckBox ckbFlgExibirForaDeLinha;
+
         /// <summary>
         /// imbConsultar control.
         /// </summary>
@@ -254,7 +256,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbConsultar;
-        
+
         /// <summary>
         /// imbCadastrar control.
         /// </summary>
@@ -263,7 +265,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbCadastrar;
-        
+
         /// <summary>
         /// imbAtualizar control.
         /// </summary>
@@ -272,7 +274,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbAtualizar;
-        
+
         /// <summary>
         /// imbExcluir control.
         /// </summary>
@@ -281,7 +283,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbExcluir;
-        
+
         /// <summary>
         /// imbZerar control.
         /// </summary>
@@ -290,7 +292,25 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbZerar;
-        
+
+        /// <summary>
+        /// btnAtualizarEstoque control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAtualizarEstoque;
+
+        /// <summary>
+        /// btnRelatorioEstoque control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRelatorioEstoque;
+
         /// <summary>
         /// acdProduto control.
         /// </summary>
@@ -299,5 +319,95 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.Accordion acdProduto;
+
+        /// <summary>
+        /// upAtualizarEstoque control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upAtualizarEstoque;
+
+        /// <summary>
+        /// mpeAtualizarEstoque control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeAtualizarEstoque;
+
+        /// <summary>
+        /// pnlAtualizarEstoque control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlAtualizarEstoque;
+
+        /// <summary>
+        /// txtNumeroCarga control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroCarga;
+
+        /// <summary>
+        /// fupImportarArquivoEstoque control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fupImportarArquivoEstoque;
+
+        /// <summary>
+        /// btnVerificarCarga control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVerificarCarga;
+
+        /// <summary>
+        /// btnImportarCarga control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnImportarCarga;
+
+        /// <summary>
+        /// lblMensagemCarga control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensagemCarga;
+
+        /// <summary>
+        /// imbFechar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imbFechar;
+
+        /// <summary>
+        /// hdfGerar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdfGerar;
     }
 }

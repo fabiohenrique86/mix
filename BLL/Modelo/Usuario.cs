@@ -38,20 +38,7 @@ namespace BLL.Modelo
         public Usuario(object sessao)
         {
             if (sessao == null)
-            {
-                //Utilitario.Sair();
-                
-                //if (System.Web.HttpContext.Current.Request.Url.Segments.Length == 3)
-                //{
-                //    System.Web.HttpContext.Current.Response.Redirect("../Default.aspx", false);
-                //}
-                //else
-                //{
-                //    System.Web.HttpContext.Current.Response.Redirect("Default.aspx", false);
-                //}
-                
                 return;
-            }
 
             if (((Usuario)sessao).LojaID > 0)
             {

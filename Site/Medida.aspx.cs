@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using BLL;
+using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BLL;
-using DAO;
-using DAL;
 
 namespace Site
 {
-    public partial class Medida : System.Web.UI.Page
+    public partial class Medida : Page
     {
         private void CarregarDados()
         {
@@ -79,6 +74,7 @@ namespace Site
         protected void gdvMedida_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+
             if (e.Row.RowType == DataControlRowType.Header)
             {
                 if (usuarioSessao.TipoUsuarioID != Convert.ToInt32(UtilitarioBLL.TipoUsuario.Administrador))
@@ -144,27 +140,24 @@ namespace Site
                     BLL.AplicacaoBLL.Empresa = null;
 
                     if (base.Request.Url.Segments.Length == 3)
-                    {
                         base.Response.Redirect("../Default.aspx", true);
-                    }
                     else
-                    {
                         base.Response.Redirect("Default.aspx", true);
-                    }
                 }
                 else
                 {
                     BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+                    
                     if (string.IsNullOrEmpty(this.txtMedida.Text.Trim().ToUpper()))
-                    {
                         throw new ApplicationException("É necessário informar todos os campos obrigatórios para cadastrar.");
-                    }
+
                     if (DAL.MedidaDAL.ListarDescricao(this.txtMedida.Text.Trim().ToUpper(), usuarioSessao.SistemaID))
-                    {
                         throw new ApplicationException("Medida cadastrada.");
-                    }
+
                     DAL.MedidaDAL.Inserir(this.txtMedida.Text.Trim().ToUpper(), usuarioSessao.SistemaID);
+                    
                     this.LimparFormulario(this.txtMedidaID, this.txtMedida);
+
                     this.CarregarDados();
                 }
             }
