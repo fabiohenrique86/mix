@@ -22,3 +22,8 @@ C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\bin\Release\DAO.dll
 C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\bin\Release\DAO.pdb
 C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Release\DAO.dll
 C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Release\DAO.pdb
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\bin\Release\DAO.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\bin\Release\DAO.pdb
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Release\DAO.csproj.CoreCompileInputs.cache
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Release\DAO.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Release\DAO.pdb

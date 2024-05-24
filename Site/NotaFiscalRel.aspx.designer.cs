@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Site {
-    
-    
-    public partial class NotaFiscalRel {
-        
+namespace Site
+{
+
+
+    public partial class NotaFiscalRel
+    {
+
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// Panel1 control.
         /// </summary>
@@ -29,16 +31,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-        
-        /// <summary>
-        /// DiaMesAno1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Site.DiaMesAno DiaMesAno1;
-        
+
         /// <summary>
         /// lblNotaFiscalID control.
         /// </summary>
@@ -47,7 +40,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNotaFiscalID;
-        
+
         /// <summary>
         /// txtNotaFiscalID control.
         /// </summary>
@@ -56,7 +49,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNotaFiscalID;
-        
+
         /// <summary>
         /// txtNotaFiscalID_FilteredTextBoxExtender control.
         /// </summary>
@@ -65,61 +58,70 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender txtNotaFiscalID_FilteredTextBoxExtender;
-        
+
         /// <summary>
-        /// lblPedidoMae control.
+        /// lblDataNotaFiscal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPedidoMae;
-        
+        protected global::System.Web.UI.WebControls.Label lblDataNotaFiscal;
+
         /// <summary>
-        /// txtPedidoMaeID control.
+        /// txtDataNotaFiscalDe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPedidoMaeID;
-        
+        protected global::System.Web.UI.WebControls.TextBox txtDataNotaFiscalDe;
+
         /// <summary>
-        /// lblLoja control.
+        /// txtDataNotaFiscalDe_MaskedEditExtender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLoja;
-        
+        protected global::AjaxControlToolkit.MaskedEditExtender txtDataNotaFiscalDe_MaskedEditExtender;
+
         /// <summary>
-        /// ddlLoja control.
+        /// txtDataNotaFiscalAte control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlLoja;
-        
+        protected global::System.Web.UI.WebControls.TextBox txtDataNotaFiscalAte;
+
         /// <summary>
-        /// lblLinha control.
+        /// txtDataNotaFiscalAte_MaskedEditExtender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLinha;
-        
+        protected global::AjaxControlToolkit.MaskedEditExtender txtDataNotaFiscalAte_MaskedEditExtender;
+
         /// <summary>
-        /// ddlLinha control.
+        /// lblNumeroCarga control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlLinha;
-        
+        protected global::System.Web.UI.WebControls.Label lblNumeroCarga;
+
+        /// <summary>
+        /// txtNumeroCarga control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroCarga;
+
         /// <summary>
         /// lblProduto control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblProduto;
-        
+
         /// <summary>
         /// ddlProduto control.
         /// </summary>
@@ -137,59 +139,14 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlProduto;
-        
+
         /// <summary>
-        /// imbVisualizar control.
+        /// imbGerar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imbVisualizar;
-        
-        /// <summary>
-        /// mpeNotaFiscal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender mpeNotaFiscal;
-        
-        /// <summary>
-        /// pnlRelatorio control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlRelatorio;
-        
-        /// <summary>
-        /// rpvNotaFiscal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer rpvNotaFiscal;
-        
-        /// <summary>
-        /// imbFechar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imbFechar;
-        
-        /// <summary>
-        /// hdfGerar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdfGerar;
+        protected global::System.Web.UI.WebControls.ImageButton imbGerar;
     }
 }

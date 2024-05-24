@@ -46,6 +46,7 @@
     <Compile Include="ClientePJDAO.cs" />
     <Compile Include="FreteDAO.cs" />
     <Compile Include="MotivoOcorrenciaDAO.cs" />
+    <Compile Include="CargaDAO.cs" />
     <Compile Include="OcorrenciaDAO.cs" />
     <Compile Include="OrcamentoDAO.cs" />
     <Compile Include="FuncionarioDAO.cs" />

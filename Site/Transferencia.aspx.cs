@@ -7,6 +7,8 @@ using System.Web.UI.HtmlControls;
 using DAO;
 using BLL;
 using Newtonsoft.Json;
+using DAL;
+using System.Data;
 
 namespace Site
 {
@@ -80,9 +82,9 @@ namespace Site
                 Session["bdLoja"] = null;
             }
 
-            ddlLojaDe.DataSource = Session["dsDropDownListLoja"];            
+            ddlLojaDe.DataSource = Session["dsDropDownListLoja"];
             ddlLojaDe.DataBind();
-            
+
             ddlLojaPara.DataSource = new DAL.LojaDAL().ListarDropDownList(0, usuarioSessao.SistemaID);
             ddlLojaPara.DataBind();
         }
@@ -196,8 +198,9 @@ namespace Site
         {
             try
             {
-                var transferenciaDAO = Transferir(false);
-                ScriptManager.RegisterStartupScript((Page)this, base.GetType(), "LimparGrid", "ImprimirComandaTransferencia(" + JsonConvert.SerializeObject(transferenciaDAO) + ");", true);
+                var transferenciaDAO = Transferir(true);
+                CarregarRepeaterTransferencia(true);
+                ScriptManager.RegisterStartupScript(this, base.GetType(), "ImprimirComandaTransferencia", "ImprimirComandaTransferencia(" + JsonConvert.SerializeObject(transferenciaDAO) + ", false);", true);
             }
             catch (FormatException)
             {
@@ -215,8 +218,8 @@ namespace Site
 
         private TransferenciaDAO Transferir(bool transferenciaValida)
         {
-            TransferenciaDAO transferenciaDAO = new TransferenciaDAO();
-            
+            var transferenciaDAO = new TransferenciaDAO();
+
             if (Session["Usuario"] == null)
             {
                 BLL.AplicacaoBLL.Empresa = null;
@@ -234,9 +237,10 @@ namespace Site
             }
             else
             {
-                BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-                DAL.ProdutoDAL produtoDAL = new DAL.ProdutoDAL();
-                TransferenciaBLL transferenciaBLL = new TransferenciaBLL();
+                var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+                var produtoDAL = new DAL.ProdutoDAL();
+                var transferenciaBLL = new TransferenciaBLL();
+
                 transferenciaDAO.ListaProduto = new List<ProdutoDAO>();
 
                 if (((ddlLojaDe.SelectedIndex <= 0) || (ddlLojaPara.SelectedIndex <= 0)) || (string.IsNullOrEmpty(txtDataTransferencia.Text) || !(txtDataTransferencia.Text != "__/__/____")))
@@ -320,7 +324,7 @@ namespace Site
                         {
                             produtoDAO.Descricao = produto.Rows[0]["Descricao"].ToString();
                             produtoDAO.Medida = produto.Rows[0]["Medida"].ToString();
-                        }                        
+                        }
 
                         transferenciaDAO.ListaProduto.Add(produtoDAO);
                     }
@@ -434,42 +438,42 @@ namespace Site
                 imbTransferir.Visible = false;
             }
 
-            if (usuarioSessao.TipoUsuarioID == UtilitarioBLL.TipoUsuario.Vendedor.GetHashCode())
-            {
-                imbValidar.Visible = false;
-            }
+            //if (usuarioSessao.TipoUsuarioID == UtilitarioBLL.TipoUsuario.Vendedor.GetHashCode())
+            //{
+            //    imbValidar.Visible = false;
+            //}
         }
 
-        protected void imbValidar_Click(object sender, ImageClickEventArgs e)
-        {
-            try
-            {
-                BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-                TransferenciaDAO transferenciaDAO = new TransferenciaDAO();
-                TransferenciaBLL transferenciaBLL = new TransferenciaBLL();
+        //protected void imbValidar_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    try
+        //    {
+        //        BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+        //        TransferenciaDAO transferenciaDAO = new TransferenciaDAO();
+        //        TransferenciaBLL transferenciaBLL = new TransferenciaBLL();
 
-                if (!string.IsNullOrEmpty(txtTransferenciaId.Text))
-                {
-                    transferenciaDAO.TransferenciaID = Convert.ToInt32(txtTransferenciaId.Text);
-                }
+        //        if (!string.IsNullOrEmpty(txtTransferenciaId.Text))
+        //        {
+        //            transferenciaDAO.TransferenciaID = Convert.ToInt32(txtTransferenciaId.Text);
+        //        }
 
-                transferenciaDAO.SistemaID = usuarioSessao.SistemaID;
+        //        transferenciaDAO.SistemaID = usuarioSessao.SistemaID;
 
-                transferenciaBLL.ValidarComandaTransferencia(transferenciaDAO);
+        //        transferenciaBLL.ValidarComandaTransferencia(transferenciaDAO);
 
-                txtTransferenciaId.Text = string.Empty;
+        //        txtTransferenciaId.Text = string.Empty;
 
-                CarregarRepeaterTransferencia(true);
-            }
-            catch (ApplicationException ex)
-            {
-                UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message);
-            }
-            catch (Exception ex)
-            {
-                UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message, ex);
-            }
-        }
+        //        CarregarRepeaterTransferencia(true);
+        //    }
+        //    catch (ApplicationException ex)
+        //    {
+        //        UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message, ex);
+        //    }
+        //}
 
         protected void imbExcluir_Click(object sender, ImageClickEventArgs e)
         {
@@ -505,8 +509,8 @@ namespace Site
             try
             {
                 BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-                TransferenciaDAO transferenciaDAO = new TransferenciaDAO();
-                TransferenciaBLL transferenciaBLL = new TransferenciaBLL();
+                var transferenciaDAO = new TransferenciaDAO();
+                var transferenciaBLL = new TransferenciaBLL();
 
                 int transferenciaId = 0;
                 int.TryParse(txtTransferenciaId.Text, out transferenciaId);
@@ -519,6 +523,63 @@ namespace Site
                 txtTransferenciaId.Text = string.Empty;
 
                 CarregarRepeaterTransferencia(true);
+            }
+            catch (ApplicationException ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message, ex);
+            }
+        }
+
+        protected void lkbImprimirComanda_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Session["Usuario"] == null)
+                {
+                    BLL.AplicacaoBLL.Empresa = null;
+
+                    if (base.Request.Url.Segments.Length == 3)
+                    {
+                        base.Response.Redirect("../Default.aspx", true);
+                    }
+                    else
+                    {
+                        base.Response.Redirect("Default.aspx", true);
+                    }
+                }
+                else
+                {
+                    var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+                    int transferenciaId;
+                    int.TryParse(((LinkButton)sender).CommandArgument, out transferenciaId);
+                    var transferenciaDAO = new TransferenciaDAO() { ListaProduto = new List<ProdutoDAO>() };
+                    var transferenciaDAL = new TransferenciaDAL();
+
+                    var transferencia = transferenciaDAL.Listar(usuarioSessao.SistemaID, null, transferenciaId).Tables[0].Rows[0];
+
+                    transferenciaDAO.TransferenciaID = Convert.ToInt32(transferencia["TransferenciaId"]);
+                    transferenciaDAO.DataTransferencia = Convert.ToDateTime(transferencia["DataTransferencia"]);
+                    transferenciaDAO.DataTransferenciaString = Convert.ToDateTime(transferencia["DataTransferencia"]).ToString("dd/MM/yyyy");
+                    transferenciaDAO.LojaDeNome = transferencia["De"].ToString();
+                    transferenciaDAO.LojaParaNome = transferencia["Para"].ToString();
+
+                    var produtos = transferenciaDAL.ListarProduto(transferenciaId, usuarioSessao.SistemaID, null).Tables[0].Rows;
+
+                    foreach (DataRow item in produtos)
+                    {
+                        transferenciaDAO.ListaProduto.Add(new ProdutoDAO()
+                        {
+                            Descricao = item[0].ToString(),
+                            Quantidade = Convert.ToInt16(item[1])
+                        });
+                    }
+
+                    ScriptManager.RegisterStartupScript(this, base.GetType(), "ImprimirComandaTransferencia", "ImprimirComandaTransferencia(" + JsonConvert.SerializeObject(transferenciaDAO) + ", true);", true);
+                }
             }
             catch (ApplicationException ex)
             {

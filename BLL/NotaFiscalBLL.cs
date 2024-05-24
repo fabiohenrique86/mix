@@ -178,7 +178,7 @@ namespace BLL
         public List<string> Importar(NotaFiscalDAO notaFiscalDAO, bool validarPedidoMae, bool importarParaDeposito)
         {
             var retorno = new List<string>();
-            var pedidoMaeBLL = new PedidoMaeBLL();
+            //var pedidoMaeBLL = new PedidoMaeBLL();
             var lojaBLL = new LojaBLL();
 
             ValidarImportar(notaFiscalDAO);
@@ -374,6 +374,43 @@ namespace BLL
             //}
 
             notaFiscalDAL.Inserir(notaFiscalDAO);
+        }
+
+        public List<string> ImportarArquivoCarga(List<NotaFiscalDAO> notasFiscaisDao)
+        {
+            var listaRetorno = new List<string>();
+
+            ValidarImportarArquivoCarga(notasFiscaisDao);
+
+            foreach (var item in notasFiscaisDao)
+            {
+                try
+                {
+                    notaFiscalDAL.Inserir(item);
+                    listaRetorno.Add("Produto " + item.Produto.ProdutoID + " da nota fiscal " + item.NotaFiscalID  + " atualizado com sucesso");
+                }
+                catch (Exception ex)
+                {
+                    listaRetorno.Add("Produto " + item.Produto.ProdutoID + " da nota fiscal " + item.NotaFiscalID + " não foi atualizado");
+                }
+            }
+
+            return listaRetorno;
+        }
+
+        private void ValidarImportarArquivoCarga(List<NotaFiscalDAO> notasFiscaisDao)
+        {
+            if (notasFiscaisDao.Any(x => x.DataNotaFiscal == DateTime.MinValue))
+                throw new ApplicationException("Data da Nota Fiscal não encontrada no arquivo de carga.");
+
+            if (notasFiscaisDao.Any(x => x.Produto.ProdutoID <= 0))
+                throw new ApplicationException("Produto não encontrado no arquivo de carga.");
+
+            if (notasFiscaisDao.Any(x => x.Produto.Quantidade < 0))
+                throw new ApplicationException("Quantidade Recebida do Produto não pode ser negativa no arquivo de carga.");
+
+            if (notasFiscaisDao.Any(x => x.NotaFiscalID <= 0))
+                throw new ApplicationException("Nota Fiscal não encontrada no arquivo de carga.");            
         }
     }
 }

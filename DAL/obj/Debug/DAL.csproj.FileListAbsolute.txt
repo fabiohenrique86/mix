@@ -108,3 +108,15 @@ C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\bin\Debug\DAO.pdb
 C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\obj\Debug\DAL.dll
 C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\obj\Debug\DAL.pdb
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\bin\Debug\DAL.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\bin\Debug\DAL.pdb
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\bin\Debug\DAO.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\bin\Debug\DAO.pdb
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\obj\Debug\DAL.dll
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAL\obj\Debug\DAL.pdb

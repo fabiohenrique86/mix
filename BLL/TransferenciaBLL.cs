@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using DAO;
+using System;
 using System.Transactions;
-using DAO;
 
 namespace BLL
 {
@@ -20,11 +17,7 @@ namespace BLL
         {
             int transferenciaId;
 
-            TransactionOptions transactionOptions = new TransactionOptions();
-
-            transactionOptions.Timeout = TimeSpan.FromMinutes(5);
-
-            using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required, transactionOptions))
+            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions() { Timeout = TimeSpan.FromMinutes(5) }))
             {
                 transferenciaId = InserirTransferencia(transferenciaDAO);
 
@@ -48,7 +41,7 @@ namespace BLL
             return transferenciaId;
         }
 
-        private void validarValidarComandaTransferencia(TransferenciaDAO transferenciaDAO)
+        private void ValidarValidarComandaTransferencia(TransferenciaDAO transferenciaDAO)
         {
             if (transferenciaDAO == null)
             {
@@ -68,11 +61,7 @@ namespace BLL
 
         public void ValidarComandaTransferencia(TransferenciaDAO transferenciaDAO)
         {
-            TransactionOptions transactionOptions = new TransactionOptions();
-
-            transactionOptions.Timeout = TimeSpan.FromMinutes(5);
-
-            validarValidarComandaTransferencia(transferenciaDAO);
+            ValidarValidarComandaTransferencia(transferenciaDAO);
 
             // Validar para ver se existe o transferenciaId
             var existeTransferencia = _transferenciaDAL.Listar(transferenciaDAO.SistemaID, false, transferenciaDAO.TransferenciaID).Tables[0].Rows.Count > 0 ? true : false;
@@ -82,7 +71,7 @@ namespace BLL
                 throw new ApplicationException("Comanda de transferência não cadastrada");
             }
 
-            using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required, transactionOptions))
+            using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions() { Timeout = TimeSpan.FromMinutes(5) }))
             {
                 _transferenciaDAL.AtualizarQuantidadeEstoque(transferenciaDAO, "V");
 

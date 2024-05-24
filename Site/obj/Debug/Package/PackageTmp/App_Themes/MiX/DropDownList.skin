@@ -1,5 +1,0 @@
-﻿<asp:DropDownList SkinID="DropDownList" runat="server" Font-Names="Segoe UI" Font-Size="10px" ForeColor="Black" Width="450px">
-</asp:DropDownList>
-
-<asp:DropDownList SkinID="DropDownListRelatorio" runat="server" Font-Names="Segoe UI" Font-Size="10px" ForeColor="Black" Width="100px">
-</asp:DropDownList>

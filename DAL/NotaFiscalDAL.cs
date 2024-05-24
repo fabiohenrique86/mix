@@ -11,7 +11,6 @@ namespace DAL
 {
     public class NotaFiscalDAL
     {
-        // Methods
         public void Excluir(int notaFiscalId, int sistemaId)
         {
             Database db;
@@ -43,9 +42,7 @@ namespace DAL
 
             try
             {
-                TransactionOptions transactionOptions = new TransactionOptions();
-                transactionOptions.Timeout = TimeSpan.FromMinutes(10);
-                using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required, transactionOptions))
+                using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions() { Timeout = TimeSpan.FromMinutes(10) }))
                 {
                     db = DatabaseFactory.CreateDatabase("Mix");
                     using (DbCommand cmd = db.GetStoredProcCommand("dbo.spInserirNotaFiscal"))
@@ -70,6 +67,7 @@ namespace DAL
                         db.AddInParameter(cmd, "@DataNotaFiscal", DbType.DateTime, notaFiscalDAO.DataNotaFiscal);
                         db.AddInParameter(cmd, "@SistemaID", DbType.Int32, notaFiscalDAO.SistemaID);
                         db.AddInParameter(cmd, "@Estoque", DbType.Int32, notaFiscalDAO.Estoque);
+                        db.AddInParameter(cmd, "@CargaID", DbType.Int32, notaFiscalDAO.CargaID);
 
                         db.ExecuteNonQuery(cmd);
                     }

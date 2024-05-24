@@ -38,6 +38,7 @@
             <asp:PostBackTrigger ControlID="imbImportarColeta" />
             <asp:PostBackTrigger ControlID="imbImportarBancoDados" />
             <asp:PostBackTrigger ControlID="imbImportarEstoque" />
+            <asp:PostBackTrigger ControlID="btnRelatorioEstoque" />
         </Triggers>
         <ContentTemplate>
             <div id="conteudo">
@@ -166,10 +167,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style2">                                   
-                            </td>
+                            <td class="style2"></td>
                             <td>
-                                <asp:CheckBox ID="ckbFlgNaoExibirForaDeLinha" runat="server" Text="Não exibir FORA DE LINHA" />
+                                <asp:CheckBox ID="ckbFlgExibirForaDeLinha" runat="server" Text="Exibir FORA DE LINHA" />
                             </td>
                         </tr>
                         <tr>
@@ -184,7 +184,8 @@
                                     OnClick="imbExcluir_Click" />
                                 <asp:ImageButton ID="imbZerar" runat="server" ImageUrl="~/img/zerar_estoque.png" Visible="false"
                                     OnClick="imbZerar_Click" />
-
+                                <asp:Button ID="btnAtualizarEstoque" runat="server" Visible="false" OnClick="btnAtualizarEstoque_Click" Text="Atualização de Estoque Por Carga" />
+                                <asp:Button ID="btnRelatorioEstoque" runat="server" Visible="false" OnClick="btnRelatorioEstoque_Click" Text="Relatório Estoque" />
                             </td>
                         </tr>
                     </table>
@@ -228,6 +229,75 @@
                     </cc1:Accordion>
                 </div>
             </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    <asp:UpdatePanel ID="upAtualizarEstoque" runat="server" UpdateMode="Conditional">
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="btnVerificarCarga" />
+            <asp:AsyncPostBackTrigger ControlID="btnAtualizarEstoque" />
+            <asp:PostBackTrigger ControlID="btnImportarCarga" />
+        </Triggers>
+        <ContentTemplate>
+            <cc1:ModalPopupExtender ID="mpeAtualizarEstoque" runat="server" CancelControlID="imbFechar" TargetControlID="hdfGerar" PopupControlID="pnlAtualizarEstoque" BackgroundCssClass="background_modal" DropShadow="false">
+            </cc1:ModalPopupExtender>
+            <asp:Panel ID="pnlAtualizarEstoque" runat="server" CssClass="window_modal" Width="735px" Height="430px" Style="display: none; overflow-x: hidden; overflow-y: scroll;">
+                <div style="text-align: center">
+                    <table style="width: 100%">
+                         <tr>
+                            <td colspan="2">
+                                <h3>Atualização de Estoque Por Carga</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Número de Carga</td>
+                            <td>
+                                <asp:TextBox ID="txtNumeroCarga" runat="server" SkinID="TextBox" Width="300px"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td>Arquivo XLSX</td>
+                            <td>
+                                <asp:FileUpload ID="fupImportarArquivoEstoque" runat="server" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <asp:Button ID="btnVerificarCarga" runat="server" Text="Verificar Carga" OnClick="btnVerificarCarga_Click" />&nbsp;&nbsp;
+                                <asp:Button ID="btnImportarCarga" runat="server" Text="Importar Carga" OnClick="btnImportarCarga_Click" />                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <asp:Label id="lblMensagemCarga" runat="server"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <asp:ImageButton ID="imbFechar" runat="server" ImageUrl="~/img/fechar.png" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </asp:Panel>
+            <asp:HiddenField ID="hdfGerar" runat="server" />
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>
