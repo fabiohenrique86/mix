@@ -141,16 +141,15 @@ namespace DAL
             }
         }
 
-        public List<string> Atualizar(List<ProdutoDAO> Produtos)
+        public List<string> Atualizar(List<ProdutoDAO> produtosDAO)
         {
             var listaRetorno = new List<string>();
 
             try
             {
-                var transactionOptions = new TransactionOptions() { Timeout = TimeSpan.FromMinutes(5) };
-                using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required, transactionOptions))
+                using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions() { Timeout = TimeSpan.FromMinutes(5) }))
                 {
-                    foreach (ProdutoDAO produtoDAO in Produtos)
+                    foreach (var produtoDAO in produtosDAO)
                     {
                         var linhasAfetadas = Atualizar(produtoDAO);
 
@@ -389,7 +388,7 @@ namespace DAL
             return produto;
         }
 
-        public DataSet Listar(string lojaId, string linhaId, string comissaoFuncionario, string comissaoFranqueado, string descricao, string medidaId, int sistemaId, long produtoId = 0, bool flgNaoExibirForaDeLinha = false)
+        public DataSet Listar(string lojaId, string linhaId, string comissaoFuncionario, string comissaoFranqueado, string descricao, string medidaId, int sistemaId, long produtoId = 0, bool flgExibirForaDeLinha = false)
         {
             Database db;
             DataSet ds;
@@ -426,8 +425,8 @@ namespace DAL
                     if (produtoId > 0)
                         db.AddInParameter(cmd, "@ProdutoID", DbType.Int64, produtoId);
 
-                    if (flgNaoExibirForaDeLinha)
-                        db.AddInParameter(cmd, "@FlgNaoExibirForaDeLinha", DbType.Boolean, flgNaoExibirForaDeLinha);
+                    if (flgExibirForaDeLinha)
+                        db.AddInParameter(cmd, "@FlgExibirForaDeLinha", DbType.Boolean, flgExibirForaDeLinha);
 
                     ds = db.ExecuteDataSet(cmd);
                 }

@@ -515,6 +515,7 @@
                         dataType: "json",
                         type: "POST",
                         contentType: "application/json; charset=utf-8",
+                        minLength: 5,
                         success: function (data) {
                             if (data.d.length == 0) {
                                 var noData = ["Produto não cadastrado na loja"];

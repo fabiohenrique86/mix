@@ -25,7 +25,8 @@ namespace DAO
         public ProdutoDAO Produto { get; set; }
         public string NomeLoja { get; set; }
         public int Estoque { get; set; }
-        
+        public int? CargaID { get; set; }
+
         public NotaFiscalDAO()
         {
 
@@ -41,7 +42,7 @@ namespace DAO
             DataNotaFiscal = dataNotaFiscal;
             SistemaID = sistemaId;
         }
-        
+
         public DateTime DataNotaFiscal
         {
             get

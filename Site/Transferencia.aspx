@@ -12,13 +12,12 @@
     </style>
     <script type="text/javascript" language="javascript">
 
-        function ImprimirComandaTransferencia(transferenciaDao) {
+        function ImprimirComandaTransferencia(transferenciaDao, reimpressao) {
             
-            var gdvProduto = document.getElementById("tblProduto");
-            var produtoSelecionado = false;
             var tabelaComanda = "";
             var ddlLojaOrigem = document.getElementById('ctl00_ContentPlaceHolder1_ddlLojaDe');
             var ddlLojaSaida = document.getElementById('ctl00_ContentPlaceHolder1_ddlLojaPara');
+            var dataTransferencia = document.getElementById("ctl00_ContentPlaceHolder1_txtDataTransferencia");
 
             tabelaComanda += "<table style='width: 900px; font-family: segoe UI, sans-serif;' cellpadding='0'; cellspacing='0'>";
             tabelaComanda += "<tr>";
@@ -36,17 +35,30 @@
 
             tabelaComanda += "<tr style='font-size: 15px; height: 30px;'>";
             tabelaComanda += "<td style='width: 180px; border: solid 1px #000; text-align: center; font-weight: bold;'>LOJA ORIGEM</td>";
-            tabelaComanda += "<td style='width: 720px; border: solid 1px #000; text-align: left; padding-left: 5px;'>" + ddlLojaOrigem.options[ddlLojaOrigem.selectedIndex].text + "</td>";
+
+            if (reimpressao)
+                tabelaComanda += "<td style='width: 720px; border: solid 1px #000; text-align: left; padding-left: 5px;'>" + transferenciaDao.LojaDeNome + "</td>";
+            else
+                tabelaComanda += "<td style='width: 720px; border: solid 1px #000; text-align: left; padding-left: 5px;'>" + ddlLojaOrigem.options[ddlLojaOrigem.selectedIndex].text + "</td>";
+
             tabelaComanda += "</tr>";
 
             tabelaComanda += "<tr style='font-size: 15px; height: 30px;'>";
             tabelaComanda += "<td style='width: 180px; border: solid 1px #000; text-align: center; font-weight: bold;'>LOJA SAÍDA</td>";
-            tabelaComanda += "<td style='width: 720px; border: solid 1px #000; text-align: left; padding-left: 5px;'>" + ddlLojaSaida.options[ddlLojaSaida.selectedIndex].text + "</td>";
+            if (reimpressao)
+                tabelaComanda += "<td style='width: 720px; border: solid 1px #000; text-align: left; padding-left: 5px;'>" + transferenciaDao.LojaParaNome + "</td>";
+            else
+                tabelaComanda += "<td style='width: 720px; border: solid 1px #000; text-align: left; padding-left: 5px;'>" + ddlLojaSaida.options[ddlLojaSaida.selectedIndex].text + "</td>";
+
             tabelaComanda += "</tr>";
 
             tabelaComanda += "<tr style='font-size: 15px; height: 30px;'>";
             tabelaComanda += "<td style='width: 180px; border: solid 1px #000; text-align: center; font-weight: bold;'>DATA TRANSFERÊNCIA</td>";
-            tabelaComanda += "<td style='width: 720px; border: solid 1px #000; text-align: left; padding-left: 5px;'>" + document.getElementById("ctl00_ContentPlaceHolder1_txtDataTransferencia").value + "</td>";
+            if (reimpressao)
+                tabelaComanda += "<td style='width: 720px; border: solid 1px #000; text-align: left; padding-left: 5px;'>" + transferenciaDao.DataTransferenciaString + "</td>";
+            else
+                tabelaComanda += "<td style='width: 720px; border: solid 1px #000; text-align: left; padding-left: 5px;'>" + dataTransferencia.value + "</td>";
+
             tabelaComanda += "</tr>";
 
             tabelaComanda += "</table>";
@@ -57,25 +69,13 @@
             tabelaComanda += "<td style='width: 800px; text-align: center; font-weight: bold; border: solid 1px #000;'>PRODUTO</td>";
             tabelaComanda += "<td style='width: 100px; text-align: center; font-weight: bold; border: solid 1px #000;'>QUANTIDADE</td>";
             tabelaComanda += "</tr>";
-            
-            //var valoresProduto = document.getElementById("ctl00_ContentPlaceHolder1_hdfProdutoValores").value;
-            //if (valoresProduto != null && valoresProduto != "")
-            //{
-            //    produtoSelecionado = true;
-
-            //    var linha = valoresProduto.split('~~');
-            //    for (var i = 0; i < linha.length; i++) {
-            //        var cell = linha[i].split(';');
-            //        tabelaComanda += "<tr style='font-size: 15px; height: 30px;'>";
-            //        tabelaComanda += "<td style='width: 800px; text-align: center; border: solid 1px #000;'>" + cell[2] + "</td>";
-            //        tabelaComanda += "<td style='width: 100px; text-align: center; border: solid 1px #000;'>" + cell[3] + "</td>";
-            //        tabelaComanda += "</tr>";
-            //    }
-            //}
-                        
+                                    
             $.each(transferenciaDao.ListaProduto, function (i, e) {
                 tabelaComanda += "<tr style='font-size: 15px; height: 30px;'>";
-                tabelaComanda += "<td style='width: 800px; text-align: center; border: solid 1px #000;'>" + e.ProdutoID + " - " + e.Descricao + " - " + e.Medida + "</td>";
+                if (reimpressao)
+                    tabelaComanda += "<td style='width: 800px; text-align: center; border: solid 1px #000;'>" + e.Descricao + "</td>";
+                else
+                    tabelaComanda += "<td style='width: 800px; text-align: center; border: solid 1px #000;'>" + e.ProdutoID + " - " + e.Descricao + " - " + e.Medida + "</td>";
                 tabelaComanda += "<td style='width: 100px; text-align: center; border: solid 1px #000;'>" + e.Quantidade + "</td>";
                 tabelaComanda += "</tr>";
             });
@@ -93,9 +93,9 @@
             }
 
             document.getElementById('ctl00_ContentPlaceHolder1_txtTransferenciaId').value = '';
-            document.getElementById('ctl00_ContentPlaceHolder1_ddlLojaDe').value = 0;
-            document.getElementById('ctl00_ContentPlaceHolder1_ddlLojaPara').value = 0;
-            document.getElementById('ctl00_ContentPlaceHolder1_txtDataTransferencia').value = '';
+            ddlLojaOrigem.value = 0;
+            ddlLojaSaida.value = 0;
+            dataTransferencia.value = '';
             document.getElementById('ctl00_ContentPlaceHolder1_hdfProdutoValores').value = '';
 
             clearGrid();
@@ -386,7 +386,7 @@
                     <asp:ImageButton ID="imbTransferir" runat="server" ImageUrl="~/img/transferir.png"
                         OnClick="imbTransferir_Click" OnClientClick="return ListarProduto();" />
                     <asp:ImageButton ID="imbGerarComanda" runat="server" ImageUrl="~/img/gerar_comanda.png" OnClick="imbGerarComanda_Click" />
-                    <asp:ImageButton ID="imbValidar" runat="server" ImageUrl="~/img/validar.png" OnClick="imbValidar_Click" />
+                    <%--<asp:ImageButton ID="imbValidar" runat="server" ImageUrl="~/img/validar.png" OnClick="imbValidar_Click" />--%>
                     <%--<asp:ImageButton ID="imbExcluir" runat="server" ImageUrl="~/img/excluir.png" OnClick="imbExcluir_Click" />
                     <asp:ImageButton ID="imbReabrir" runat="server" ImageUrl="~/img/reabrir.png" OnClick="imbReabrir_Click" />--%>
                 </div>
@@ -426,6 +426,7 @@
                                             <td class="label_pedido">
                                                 <asp:Label ID="lblDataValida" runat="server" Text='<%# Bind("DataValida","{0:dd/MM/yyyy HH:mm}") %>'></asp:Label>
                                             </td>
+                                            <td><asp:LinkButton ID="lkbImprimirComanda" runat="server" CommandArgument='<%# Bind("TransferenciaID") %>' OnClick="lkbImprimirComanda_Click" ForeColor="#003366">Imprimir Comanda</asp:LinkButton></td>
                                         </tr>
                                     </table>
                                 </div>

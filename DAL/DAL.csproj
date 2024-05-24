@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdministradorDAL.cs" />
+    <Compile Include="CargaDAL.cs" />
     <Compile Include="PedidoMaeFilhoDAL.cs" />
     <Compile Include="PedidoMaeTrocaProdutoDAL.cs" />
     <Compile Include="PedidoMaeTrocaDAL.cs" />

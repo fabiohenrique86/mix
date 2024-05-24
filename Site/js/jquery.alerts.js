@@ -73,7 +73,7 @@
 			$("BODY").append(
 			  '<div id="popup_container">' +
 			    '<h1 id="popup_title"></h1>' +
-			    '<div id="popup_content">' +
+			    '<div id="popup_content" style="overflow-x: hidden; overflow-y: scroll; height: 250px">' +
 			      '<div id="popup_message"></div>' +
 				'</div>' +
 			  '</div>');

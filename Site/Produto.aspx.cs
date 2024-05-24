@@ -64,7 +64,6 @@ namespace Site
                         CarregarDropDownListLinha();
                         CarregarDropDownListMedida();
                         CarregarGridLoja();
-                        //CarregarRepeaterLoja();
                     }
                 }
             }
@@ -498,10 +497,11 @@ namespace Site
                         }
                     }
 
-                    if (!temLojaSelecionada && this.ddlLinha.SelectedIndex <= 0 && string.IsNullOrEmpty(this.txtComissaoFuncionario.Text) && string.IsNullOrEmpty(this.txtComissaoFranqueado.Text) && string.IsNullOrEmpty(this.txtDescricao.Text) && this.ddlMedida.SelectedIndex <= 0 && !ckbFlgNaoExibirForaDeLinha.Checked)
+                    if (!temLojaSelecionada && this.ddlLinha.SelectedIndex <= 0 && string.IsNullOrEmpty(this.txtComissaoFuncionario.Text) && string.IsNullOrEmpty(this.txtComissaoFranqueado.Text) && string.IsNullOrEmpty(this.txtDescricao.Text) && this.ddlMedida.SelectedIndex <= 0 && !ckbFlgExibirForaDeLinha.Checked)
                     {
                         throw new ApplicationException("É necessário informar um ou mais campos para consultar.");
                     }
+
                     this.CarregarDados(true);
                 }
             }
@@ -609,7 +609,7 @@ namespace Site
 
                     if (Convert.ToBoolean(ViewState["filtro"]))
                     {
-                        gdvProduto.DataSource = produtoDAL.Listar(lojaId, this.ddlLinha.SelectedValue, this.txtComissaoFuncionario.Text, this.txtComissaoFranqueado.Text, this.txtDescricao.Text, this.ddlMedida.SelectedValue, usuarioSessao.SistemaID, 0, ckbFlgNaoExibirForaDeLinha.Checked);
+                        gdvProduto.DataSource = produtoDAL.Listar(lojaId, this.ddlLinha.SelectedValue, this.txtComissaoFuncionario.Text, this.txtComissaoFranqueado.Text, this.txtDescricao.Text, this.ddlMedida.SelectedValue, usuarioSessao.SistemaID, 0, ckbFlgExibirForaDeLinha.Checked);
                         gdvProduto.DataBind();
                     }
                     else
@@ -655,34 +655,11 @@ namespace Site
                 }
 
                 if (file == null || file.ContentLength <= 0)
-                {
                     throw new ApplicationException("Informe o arquivo de coleta");
-                }
 
                 if (!file.FileName.ToLower().Contains(".txt"))
-                {
                     throw new ApplicationException("Arquivo de coleta informado não está no formato TXT");
-                }
 
-                //if (file == null || file.Count <= 0)
-                //{
-                //    throw new ApplicationException("Informe o arquivo de coleta");
-                //}
-
-                //for (int i = 0; i < files.Count; i++)
-                //{
-                //    var file = files[0];
-
-                //    if (file.ContentLength <= 0)
-                //    {
-                //        throw new ApplicationException("Informe o arquivo de coleta");
-                //    }
-
-                //    if (!file.FileName.ToLower().Contains(".txt"))
-                //    {
-                //        throw new ApplicationException("Arquivo de coleta informado não está no formato TXT");
-                //    }
-                //}
 
                 using (StreamReader sr = new StreamReader(file.InputStream))
                 {
@@ -1013,6 +990,8 @@ namespace Site
                 imbExcluir.Visible = false;
                 imbZerar.Visible = true;
                 ckbProdutoID.Text = "Atualizar/Excluir/Cadastrar";
+                btnAtualizarEstoque.Visible = true;
+                btnRelatorioEstoque.Visible = true;
             }
             else if (usuarioSessao.TipoUsuarioID == UtilitarioBLL.TipoUsuario.Conferentista.GetHashCode())
             {
@@ -1028,6 +1007,8 @@ namespace Site
                 txtComissaoFuncionario.Visible = false;
                 lblComissaoFranqueado.Visible = false;
                 txtComissaoFranqueado.Visible = false;
+                btnAtualizarEstoque.Visible = false;
+                btnRelatorioEstoque.Visible = false;
             }
             else if (usuarioSessao.TipoUsuarioID == UtilitarioBLL.TipoUsuario.Gerente.GetHashCode())
             {
@@ -1039,6 +1020,8 @@ namespace Site
                 imbExcluir.Visible = false;
                 imbZerar.Visible = false;
                 ckbProdutoID.Text = "Cadastrar";
+                btnAtualizarEstoque.Visible = false;
+                btnRelatorioEstoque.Visible = false;
             }
             else
             {
@@ -1053,6 +1036,253 @@ namespace Site
                 txtComissaoFuncionario.Visible = false;
                 lblComissaoFranqueado.Visible = false;
                 txtComissaoFranqueado.Visible = false;
+                btnAtualizarEstoque.Visible = false;
+                btnRelatorioEstoque.Visible = false;
+            }
+        }
+
+        protected void btnAtualizarEstoque_Click(object sender, EventArgs e)
+        {
+            this.LimparMensagemVerificarCarga();
+            this.mpeAtualizarEstoque.Show();
+        }
+
+        private void LimparMensagemVerificarCarga()
+        {
+            txtNumeroCarga.Text = string.Empty;
+            lblMensagemCarga.Text = string.Empty;
+            lblMensagemCarga.Visible = false;
+        }
+
+        protected void btnImportarCarga_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblMensagemCarga.Visible = true;
+                lblMensagemCarga.Text = string.Empty;
+                lblMensagemCarga.ForeColor = Color.Red;
+                this.mpeAtualizarEstoque.Show();
+
+                HttpPostedFile file = null;
+
+                try
+                {
+                    file = Request.Files["ctl00$ContentPlaceHolder1$fupImportarArquivoEstoque"];
+                }
+                catch (Exception ex)
+                {
+                    lblMensagemCarga.Text = "Informe o arquivo de estoque";
+                    return;
+                }
+
+                if (file == null || file.ContentLength <= 0)
+                {
+                    lblMensagemCarga.Text = "Informe o arquivo de estoque";
+                    return;
+                }
+
+                if (!file.FileName.ToLower().Contains(".xlsx"))
+                {
+                    lblMensagemCarga.Text = "Arquivo de estoque informado não está no formato XLSX";
+                    return;
+                }
+
+                var workbook = new XLWorkbook(file.InputStream);
+                var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+                var numeroCarga = txtNumeroCarga.Text.Trim();
+
+                if (string.IsNullOrEmpty(numeroCarga))
+                {
+                    lblMensagemCarga.Text = "Número de carga é obrigatório";
+                    return;
+                }
+
+                var cargaBLL = new CargaBLL();
+
+                var carga = cargaBLL.Obter(new CargaDAO() { NumeroCarga = numeroCarga, SistemaID = usuarioSessao.SistemaID });
+
+                if (carga != null && carga.CargaID > 0)
+                {
+                    lblMensagemCarga.Text = $"Carga {numeroCarga} já existe.";
+                    return;
+                }
+
+                var cargaDao = new CargaDAO() { NumeroCarga = numeroCarga, DataCadastro = DateTime.Now, SistemaID = usuarioSessao.SistemaID };
+
+                var lojaDao = ((DataSet)Session["dsLoja"]).Tables[0].AsEnumerable().Select(dataRow => new LojaDAO
+                {
+                    LojaID = dataRow.Field<int>("LojaID"),
+                    CNPJ = dataRow.Field<string>("Cnpj"),
+                    RazaoSocial = dataRow.Field<string>("RazaoSocial"),
+                    NomeFantasia = dataRow.Field<string>("NomeFantasia"),
+                    Telefone = dataRow.Field<string>("Telefone"),
+                    Cota = dataRow.Field<double>("Cota"),
+                    SistemaID = usuarioSessao.SistemaID
+                }).FirstOrDefault(x => x.NomeFantasia.ToUpper() == "DEPÓSITO");
+
+                foreach (var row in workbook.Worksheets.FirstOrDefault().Rows().Skip(1))
+                {
+                    var produtoDao = new ProdutoDAO();
+                    var notaFiscalDAO = new NotaFiscalDAO() { LojaID = lojaDao.LojaID, SistemaID = usuarioSessao.SistemaID, Estoque = 1, PedidoMaeID = "" };
+
+                    DateTime dataNF;
+                    row.Cell("A").TryGetValue(out dataNF);
+                    if (dataNF == DateTime.MinValue)
+                        continue;
+                    notaFiscalDAO.DataNotaFiscal = dataNF;
+
+                    long produtoId;
+                    row.Cell("C").TryGetValue(out produtoId);
+                    if (produtoId <= 0)
+                        continue;
+                    produtoDao.ProdutoID = produtoId;
+
+                    short quantidade;
+                    row.Cell("E").TryGetValue(out quantidade);
+                    if (quantidade > 0)
+                        produtoDao.Quantidade = quantidade;
+
+                    string numeroNotaFiscal;
+                    row.Cell("J").TryGetValue(out numeroNotaFiscal);
+
+                    if (numeroNotaFiscal.Contains(",")) // múltiplas nfs
+                    {
+                        var nfs = numeroNotaFiscal.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+
+                        foreach (var nf in nfs)
+                        {
+                            var notaFiscalAux = new NotaFiscalDAO() { LojaID = lojaDao.LojaID, SistemaID = usuarioSessao.SistemaID, Estoque = 1, PedidoMaeID = "", DataNotaFiscal = notaFiscalDAO.DataNotaFiscal };
+                            var produtoAux = new ProdutoDAO() { ProdutoID = produtoDao.ProdutoID, Quantidade = produtoDao.Quantidade };
+
+                            int numeroNF;
+                            int.TryParse(nf, out numeroNF);
+                            if (numeroNF <= 0)
+                                continue;
+                            notaFiscalAux.NotaFiscalID = numeroNF;
+
+                            if (nfs.ToList().IndexOf(nf) > 0) // se não for a 1ª nf
+                                produtoAux.Quantidade = 0;
+
+                            notaFiscalAux.Produto = produtoAux;
+
+                            cargaDao.NotaFiscalDao.Add(notaFiscalAux);
+                        }
+                    }
+                    else // única nf
+                    {
+                        int numeroNF;
+                        row.Cell("J").TryGetValue(out numeroNF);
+                        if (numeroNF <= 0)
+                            continue;
+                        notaFiscalDAO.NotaFiscalID = numeroNF;
+
+                        notaFiscalDAO.Produto = produtoDao;
+
+                        cargaDao.NotaFiscalDao.Add(notaFiscalDAO);
+                    }
+                }
+
+                var listaRetorno = cargaBLL.Incluir(cargaDao);
+
+                CarregarRepeaterLoja();
+
+                var mensagem = string.Empty;
+
+                mensagem += "Produtos atualizados:\r\n\r\n" + string.Join("\r\n", listaRetorno.Where(x => x.Contains("atualizado com sucesso"))) + "\r\n\r\n";
+                mensagem += "Produtos não atualizados:\r\n\r\n" + string.Join("\r\n", listaRetorno.Where(x => x.Contains("não foi atualizado"))) + "\r\n";
+                mensagem += "\r\nTotal de produtos importados: " + listaRetorno.Where(x => x.Contains("atualizado com sucesso")).Count().ToString();
+                mensagem += "\r\nTotal de produtos não importados: " + listaRetorno.Where(x => x.Contains("não foi atualizado")).Count().ToString();
+
+                this.LimparMensagemVerificarCarga();
+
+                this.mpeAtualizarEstoque.Hide();
+
+                UtilitarioBLL.ExibirMensagemAjax(Page, mensagem);
+            }
+            catch (ApplicationException ex)
+            {
+                lblMensagemCarga.Text = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                lblMensagemCarga.Text = ex.Message;
+            }
+        }
+
+        protected void btnVerificarCarga_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.mpeAtualizarEstoque.Show();
+                lblMensagemCarga.Visible = true;
+                lblMensagemCarga.Text = string.Empty;
+
+                var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+                var cargaBLL = new CargaBLL();
+
+                var numeroCarga = txtNumeroCarga.Text.Trim();
+
+                if (string.IsNullOrEmpty(numeroCarga))
+                {
+                    lblMensagemCarga.Text = "Número de Carga é obrigatório";
+                    lblMensagemCarga.ForeColor = Color.Orange;
+                    return;
+                }
+
+                var cargaDAO = cargaBLL.Obter(new CargaDAO() { NumeroCarga = numeroCarga, SistemaID = usuarioSessao.SistemaID });
+
+                var mensagem = string.Empty;
+
+                if (cargaDAO != null && cargaDAO.CargaID > 0)
+                {
+                    mensagem = $"Carga {numeroCarga} já existe.";
+                    lblMensagemCarga.ForeColor = Color.Red;
+                }
+                else
+                {
+                    mensagem = $"Carga {numeroCarga} não existe.";
+                    lblMensagemCarga.ForeColor = Color.Green;
+                }
+
+                lblMensagemCarga.Text = mensagem;
+            }
+            catch (Exception ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message);
+            }
+        }
+
+        protected void btnRelatorioEstoque_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+
+                var dataTable = RelatorioDAL.ListarRelatorioEstoque(usuarioSessao.SistemaID);
+
+                using (var wb = new XLWorkbook())
+                {
+                    wb.Worksheets.Add(dataTable);
+
+                    Response.Clear();
+                    Response.Buffer = true;
+                    Response.Charset = "";
+                    Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                    Response.AddHeader("Content-Disposition", "attachment;filename=relatorio-estoque-deposito-" + DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss") + ".xlsx");
+
+                    using (var stream = new MemoryStream())
+                    {
+                        wb.Worksheet(1).Column(1).CellsUsed().SetDataType(XLCellValues.Text);
+                        wb.SaveAs(stream);
+                        stream.WriteTo(Response.OutputStream);
+                        Response.Flush();
+                        Response.End();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message);
             }
         }
     }
