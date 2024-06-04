@@ -141,22 +141,40 @@ namespace Site
         protected global::System.Web.UI.WebControls.Label lblDataTransferencia;
 
         /// <summary>
-        /// txtDataTransferencia control.
+        /// txtDataTransferenciaDe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDataTransferencia;
+        protected global::System.Web.UI.WebControls.TextBox txtDataTransferenciaDe;
 
         /// <summary>
-        /// txtDataTransferencia_MaskedEditExtender control.
+        /// txtDataTransferenciaDe_MaskedEditExtender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.MaskedEditExtender txtDataTransferencia_MaskedEditExtender;
+        protected global::AjaxControlToolkit.MaskedEditExtender txtDataTransferenciaDe_MaskedEditExtender;
+
+        /// <summary>
+        /// txtDataTransferenciaAte control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDataTransferenciaAte;
+
+        /// <summary>
+        /// txtDataTransferenciaAte_MaskedEditExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender txtDataTransferenciaAte_MaskedEditExtender;
 
         /// <summary>
         /// trComanda control.

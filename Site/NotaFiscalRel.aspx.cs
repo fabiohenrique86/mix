@@ -2,7 +2,10 @@
 using ClosedXML.Excel;
 using DAL;
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.IO;
+using System.Linq;
 using System.Web.UI;
 
 namespace Site
@@ -28,8 +31,6 @@ namespace Site
                         }
                     }
 
-                    CarregarDropDownListProduto();
-
                     Session["DiaMesAnoInicial"] = null;
                     Session["DiaMesAnoFinal"] = null;
                 }
@@ -42,13 +43,6 @@ namespace Site
             {
                 UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
             }
-        }
-
-        private void CarregarDropDownListProduto()
-        {
-            BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-            this.ddlProduto.DataSource = new DAL.ProdutoDAL().ListarDropDownList(string.Empty, usuarioSessao.SistemaID);
-            this.ddlProduto.DataBind();
         }
 
         protected void imbGerar_Click(object sender, ImageClickEventArgs e)
@@ -70,21 +64,7 @@ namespace Site
                 }
                 else
                 {
-                    var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-
-                    DateTime dtNfInicial;
-                    DateTime.TryParse(txtDataNotaFiscalDe.Text, out dtNfInicial);
-
-                    DateTime dtNfFinal;
-                    DateTime.TryParse(txtDataNotaFiscalAte.Text, out dtNfFinal);
-
-                    int nfId;
-                    int.TryParse(txtNotaFiscalID.Text, out nfId);
-
-                    long produtoId;
-                    long.TryParse(ddlProduto.SelectedValue, out produtoId);
-
-                    var dataTable = RelatorioDAL.ListarNotaFiscal(usuarioSessao.SistemaID, dtNfInicial, dtNfFinal, nfId, txtNumeroCarga.Text.Trim(), produtoId);
+                    var dataTable = this.ListarRelatorio();
 
                     using (var wb = new XLWorkbook())
                     {
@@ -120,6 +100,78 @@ namespace Site
             {
                 UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
             }
-        }        
+        }
+
+        protected void imbConsultar_Click(object sender, ImageClickEventArgs e)
+        {
+            try
+            {
+                if (Session["Usuario"] == null)
+                {
+                    BLL.AplicacaoBLL.Empresa = null;
+
+                    if (base.Request.Url.Segments.Length == 3)
+                    {
+                        base.Response.Redirect("../Default.aspx", true);
+                    }
+                    else
+                    {
+                        base.Response.Redirect("Default.aspx", true);
+                    }
+                }
+                else
+                {
+                    var dataTable = this.ListarRelatorio();
+
+                    gdvNotaFiscal.DataSource = dataTable;
+                    gdvNotaFiscal.DataBind();
+                }
+            }
+            catch (FormatException)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(this.Page, "Data inválida");
+            }
+            catch (ApplicationException ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
+            }
+        }
+
+        private DataTable ListarRelatorio()
+        {
+            var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+
+            DateTime dtNfInicial;
+            DateTime.TryParse(txtDataNotaFiscalDe.Text, out dtNfInicial);
+
+            DateTime dtNfFinal;
+            DateTime.TryParse(txtDataNotaFiscalAte.Text, out dtNfFinal);
+
+            int nfId;
+            int.TryParse(txtNotaFiscalID.Text, out nfId);
+
+            var produtos = new List<string>();
+
+            for (int i = 0; i < Request.Form.AllKeys.Count(); i++)
+            {
+                if (Request.Form["txtProdutoID_" + i] != null)
+                {
+                    string produtoId = Request.Form.GetValues("txtProdutoID_" + i).FirstOrDefault();
+
+                    if (string.IsNullOrEmpty(produtoId))
+                        throw new ApplicationException(string.Format("Informe o produto {0}.", produtoId));
+
+                    produtos.Add(produtoId);
+                }
+            }
+
+            var dataTable = RelatorioDAL.ListarNotaFiscal(usuarioSessao.SistemaID, dtNfInicial, dtNfFinal, nfId, txtNumeroCarga.Text.Trim(), string.Join(",", produtos));
+
+            return dataTable;
+        }
     }
 }

@@ -576,12 +576,6 @@
     <Content Include="App_Themes\MiX\Label.skin" />
     <Content Include="App_Themes\MiX\TextBox.skin" />
     <Content Include="bin\AjaxControlToolkit.dll" />
-    <Content Include="bin\BLL.dll" />
-    <Content Include="bin\BLL.pdb" />
-    <Content Include="bin\DAL.dll" />
-    <Content Include="bin\DAL.pdb" />
-    <Content Include="bin\DAO.dll" />
-    <Content Include="bin\DAO.pdb" />
     <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
     <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
     <Content Include="bin\Microsoft.Practices.ObjectBuilder2.dll" />

@@ -362,11 +362,16 @@
                                 <asp:Label ID="lblDataTransferencia" runat="server" Text="Data Transferência" SkinID="Label"></asp:Label>
                             </td>
                             <td style="text-align: left;">
-                                <asp:TextBox ID="txtDataTransferencia" runat="server" Width="65px" SkinID="TextBox"
+                                <asp:TextBox ID="txtDataTransferenciaDe" runat="server" Width="65px" SkinID="TextBox"
                                     CssClass="datepicker"></asp:TextBox>
-                                <cc1:MaskedEditExtender ID="txtDataTransferencia_MaskedEditExtender" runat="server"
-                                    TargetControlID="txtDataTransferencia" MaskType="Date" Mask="99/99/9999" ClearMaskOnLostFocus="false">
+                                <cc1:MaskedEditExtender ID="txtDataTransferenciaDe_MaskedEditExtender" runat="server"
+                                    TargetControlID="txtDataTransferenciaDe" MaskType="Date" Mask="99/99/9999" ClearMaskOnLostFocus="false">
                                 </cc1:MaskedEditExtender>
+                                &nbsp;&nbsp;a&nbsp;&nbsp;
+                                    <asp:TextBox ID="txtDataTransferenciaAte" runat="server" Width="65px" Height="15px" SkinID="TextBox" CssClass="datepicker"></asp:TextBox>
+                                    <cc1:MaskedEditExtender ID="txtDataTransferenciaAte_MaskedEditExtender" runat="server" TargetControlID="txtDataTransferenciaAte"
+                                        MaskType="Date" Mask="99/99/9999" ClearMaskOnLostFocus="false">
+                                    </cc1:MaskedEditExtender>
                             </td>
                         </tr>
                         <tr runat="server" id="trComanda">

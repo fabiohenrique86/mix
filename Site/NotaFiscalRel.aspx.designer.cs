@@ -15,6 +15,15 @@ namespace Site
     {
 
         /// <summary>
+        /// hdfProdutoValores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdfProdutoValores;
+
+        /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
@@ -132,13 +141,22 @@ namespace Site
         protected global::System.Web.UI.WebControls.Label lblProduto;
 
         /// <summary>
-        /// ddlProduto control.
+        /// txtProduto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProduto;
+        protected global::System.Web.UI.WebControls.TextBox txtProduto;
+
+        /// <summary>
+        /// imbConsultar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imbConsultar;
 
         /// <summary>
         /// imbGerar control.
@@ -148,5 +166,14 @@ namespace Site
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbGerar;
+
+        /// <summary>
+        /// gdvNotaFiscal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gdvNotaFiscal;
     }
 }

@@ -219,7 +219,7 @@ namespace DAL
             return dt;
         }
 
-        public static DataTable ListarNotaFiscal(int sistemaId, DateTime dataNotaFiscalInicial, DateTime dataNotaFiscalFinal, int notaFiscalId, string numeroCarga, long produtoId)
+        public static DataTable ListarNotaFiscal(int sistemaId, DateTime dataNotaFiscalInicial, DateTime dataNotaFiscalFinal, int notaFiscalId, string numeroCarga, string produtos)
         {
             Database db;
             DataTable dt;
@@ -244,8 +244,8 @@ namespace DAL
                     if (!string.IsNullOrEmpty(numeroCarga))
                         db.AddInParameter(cmd, "@NumeroCarga", DbType.String, numeroCarga);
 
-                    if (produtoId > 0)
-                        db.AddInParameter(cmd, "@ProdutoID", DbType.Int64, produtoId);
+                    if (!string.IsNullOrEmpty(produtos))
+                        db.AddInParameter(cmd, "@ProdutoID", DbType.String, produtos);
 
                     dt = db.ExecuteDataSet(cmd).Tables[0];
                 }

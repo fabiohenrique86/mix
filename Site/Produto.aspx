@@ -25,6 +25,11 @@
         .acd-content {
             background-color: white;
         }
+
+        .produto-id {
+            cursor: pointer;
+            color: #6495ed;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -211,7 +216,7 @@
                                             <HeaderStyle HorizontalAlign="Center" />
                                             <ItemStyle Width="1%" />
                                         </asp:TemplateField>
-                                        <asp:BoundField DataField="ProdutoID" HeaderText="ProdutoID" ItemStyle-Width="9%" />
+                                        <asp:BoundField DataField="ProdutoID" HeaderText="ProdutoID" ItemStyle-Width="9%" ItemStyle-CssClass="produto-id" />
                                         <asp:BoundField DataField="Linha" HeaderText="Linha" ItemStyle-Width="9%" />
                                         <asp:BoundField DataField="Descricao" HeaderText="Descrição" ItemStyle-Width="20%" />
                                         <asp:BoundField DataField="Medida" HeaderText="Medida" ItemStyle-Width="8%" />

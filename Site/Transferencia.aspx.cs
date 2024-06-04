@@ -62,11 +62,11 @@ namespace Site
             }
         }
 
-        private bool CarregarDados(int transferenciaId, int lojaDe, int lojaPara, DateTime dataTransferencia, int valida)
+        private bool CarregarDados(int transferenciaId, int lojaDe, int lojaPara, DateTime dataTransferenciaDe, int valida, DateTime dataTransferenciaAte)
         {
             BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
 
-            rptTransferencia.DataSource = new DAL.TransferenciaDAL().Listar(transferenciaId, lojaDe, lojaPara, dataTransferencia, usuarioSessao.SistemaID, valida);
+            rptTransferencia.DataSource = new DAL.TransferenciaDAL().Listar(transferenciaId, lojaDe, lojaPara, dataTransferenciaDe, usuarioSessao.SistemaID, valida, dataTransferenciaAte);
             rptTransferencia.DataBind();
 
             return (rptTransferencia.Items.Count > 0);
@@ -119,39 +119,33 @@ namespace Site
                     int transferenciaId = 0;
                     int lojaDeId = 0;
                     int lojaParaId = 0;
-                    DateTime dataTransferencia = DateTime.MinValue;
+                    DateTime dataTransferenciaDe = DateTime.MinValue;
+                    DateTime dataTransferenciaAte = DateTime.MinValue;
                     int valida = -1;
 
                     if (!string.IsNullOrEmpty(txtTransferenciaId.Text))
-                    {
                         transferenciaId = Convert.ToInt32(txtTransferenciaId.Text);
-                    }
 
                     if (ddlLojaDe.SelectedIndex > 0)
-                    {
                         lojaDeId = Convert.ToInt32(ddlLojaDe.SelectedIndex);
-                    }
 
                     if (ddlLojaPara.SelectedIndex > 0)
-                    {
                         lojaParaId = Convert.ToInt32(ddlLojaPara.SelectedIndex);
-                    }
 
-                    if (!string.IsNullOrEmpty(txtDataTransferencia.Text) && txtDataTransferencia.Text != "__/__/____")
-                    {
-                        dataTransferencia = Convert.ToDateTime(txtDataTransferencia.Text);
-                    }
+                    if (!string.IsNullOrEmpty(txtDataTransferenciaDe.Text) && txtDataTransferenciaDe.Text != "__/__/____")
+                        dataTransferenciaDe = Convert.ToDateTime(txtDataTransferenciaDe.Text);
+
+                    if (!string.IsNullOrEmpty(txtDataTransferenciaAte.Text) && txtDataTransferenciaAte.Text != "__/__/____")
+                        dataTransferenciaAte = Convert.ToDateTime(txtDataTransferenciaAte.Text);
 
                     valida = Convert.ToInt32(rblValida.SelectedValue);
 
-                    if (transferenciaId == 0 && lojaDeId == 0 && lojaParaId == 0 && dataTransferencia == DateTime.MinValue && valida < 0)
-                    {
+                    if (transferenciaId == 0 && lojaDeId == 0 && lojaParaId == 0 && dataTransferenciaDe == DateTime.MinValue && valida < 0)
                         throw new ApplicationException("É necessário informar um ou mais campos para consultar.");
-                    }
 
                     Session["Filtro_Transferencia"] = true;
 
-                    if (!CarregarDados(transferenciaId, lojaDeId, lojaParaId, dataTransferencia, valida))
+                    if (!CarregarDados(transferenciaId, lojaDeId, lojaParaId, dataTransferenciaDe, valida, dataTransferenciaAte))
                     {
                         throw new ApplicationException("Transferência inexistente.");
                     }
@@ -243,7 +237,7 @@ namespace Site
 
                 transferenciaDAO.ListaProduto = new List<ProdutoDAO>();
 
-                if (((ddlLojaDe.SelectedIndex <= 0) || (ddlLojaPara.SelectedIndex <= 0)) || (string.IsNullOrEmpty(txtDataTransferencia.Text) || !(txtDataTransferencia.Text != "__/__/____")))
+                if (((ddlLojaDe.SelectedIndex <= 0) || (ddlLojaPara.SelectedIndex <= 0)) || (string.IsNullOrEmpty(txtDataTransferenciaDe.Text) || !(txtDataTransferenciaDe.Text != "__/__/____")) || (string.IsNullOrEmpty(txtDataTransferenciaAte.Text) || !(txtDataTransferenciaAte.Text != "__/__/____")))
                 {
                     if (transferenciaValida)
                     {
@@ -267,7 +261,7 @@ namespace Site
                     }
                 }
 
-                if (!(Convert.ToDateTime(txtDataTransferencia.Text) == DateTime.Today))
+                if (!(Convert.ToDateTime(txtDataTransferenciaDe.Text) == DateTime.Today))
                 {
                     throw new ApplicationException("A data da transferência deve ser a data de hoje.");
                 }
@@ -358,7 +352,8 @@ namespace Site
         {
             ddlLojaDe.SelectedIndex = 0;
             ddlLojaPara.SelectedIndex = 0;
-            txtDataTransferencia.Text = string.Empty;
+            txtDataTransferenciaDe.Text = string.Empty;
+            txtDataTransferenciaAte.Text = string.Empty;
         }
 
         protected void rptTransferencia_ItemDataBound(object sender, RepeaterItemEventArgs e)

@@ -240,6 +240,8 @@ namespace Site
             }
             else if (e.Row.RowType == DataControlRowType.DataRow)
             {
+                e.Row.Cells[1].ToolTip = "Reserva: " + e.Row.Cells[8].Text + " | A Programar: " + e.Row.Cells[11].Text;
+                
                 switch (usuarioSessao.TipoUsuarioID)
                 {
                     case 2:

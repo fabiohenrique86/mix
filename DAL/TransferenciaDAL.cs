@@ -164,7 +164,7 @@ namespace DAL
             return ds;
         }
 
-        public DataSet Listar(int transferenciaId, int lojaDeId, int lojaParaId, DateTime dataTransferencia, int sistemaId, int valida)
+        public DataSet Listar(int transferenciaId, int lojaDeId, int lojaParaId, DateTime dataTransferenciaDe, int sistemaId, int valida, DateTime dataTransferenciaAte)
         {
             Database db;
             DataSet ds;
@@ -191,9 +191,14 @@ namespace DAL
                         db.AddInParameter(cmd, "@LojaParaID", DbType.Int32, lojaParaId);
                     }
 
-                    if (dataTransferencia != DateTime.MinValue)
+                    if (dataTransferenciaDe != DateTime.MinValue)
                     {
-                        db.AddInParameter(cmd, "@DataTransferencia", DbType.Date, dataTransferencia);
+                        db.AddInParameter(cmd, "@DataTransferenciaDe", DbType.Date, dataTransferenciaDe);
+                    }
+
+                    if (dataTransferenciaAte != DateTime.MinValue)
+                    {
+                        db.AddInParameter(cmd, "@DataTransferenciaAte", DbType.Date, dataTransferenciaAte);
                     }
 
                     db.AddInParameter(cmd, "@Valida", DbType.Int32, valida);
