@@ -7,11 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Site {
-    
-    
-    public partial class VendaProdutoRel {
-        
+namespace Site
+{
+
+
+    public partial class VendaProdutoRel
+    {
+
+        /// <summary>
+        /// hdfProdutoValores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdfProdutoValores;
+
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -20,7 +31,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// Panel1 control.
         /// </summary>
@@ -29,16 +40,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-        
-        /// <summary>
-        /// DiaMesAno1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Site.DiaMesAno DiaMesAno1;
-        
+
         /// <summary>
         /// lblLoja control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLoja;
-        
+
         /// <summary>
         /// ddlLoja control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlLoja;
-        
+
         /// <summary>
         /// lblFuncionario control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFuncionario;
-        
+
         /// <summary>
         /// ddlFuncionario control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlFuncionario;
-        
+
         /// <summary>
         /// lblLinha control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLinha;
-        
+
         /// <summary>
         /// ddlLinha control.
         /// </summary>
@@ -92,7 +94,52 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlLinha;
-        
+
+        /// <summary>
+        /// lblDataPedido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDataPedido;
+
+        /// <summary>
+        /// txtDataPedidoDe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDataPedidoDe;
+
+        /// <summary>
+        /// txtDataPedidoDe_MaskedEditExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender txtDataPedidoDe_MaskedEditExtender;
+
+        /// <summary>
+        /// txtDataPedidoAte control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDataPedidoAte;
+
+        /// <summary>
+        /// txtDataPedidoAte_MaskedEditExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender txtDataPedidoAte_MaskedEditExtender;
+
         /// <summary>
         /// lblProduto control.
         /// </summary>
@@ -101,68 +148,68 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblProduto;
-        
+
         /// <summary>
-        /// ddlProduto control.
+        /// txtProduto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProduto;
-        
+        protected global::System.Web.UI.WebControls.TextBox txtProduto;
+
         /// <summary>
-        /// imbVisualizar control.
+        /// imbConsultar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imbVisualizar;
-        
+        protected global::System.Web.UI.WebControls.ImageButton imbConsultar;
+
         /// <summary>
-        /// mpeVendaProduto control.
+        /// imbGerar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender mpeVendaProduto;
-        
+        protected global::System.Web.UI.WebControls.ImageButton imbGerar;
+
         /// <summary>
-        /// pnlRelatorio control.
+        /// gdvProduto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlRelatorio;
-        
+        protected global::System.Web.UI.WebControls.GridView gdvProduto;
+
         /// <summary>
-        /// rpvVendaProduto control.
+        /// DivTotalPago control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer rpvVendaProduto;
-        
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivTotalPago;
+
         /// <summary>
-        /// imbFechar control.
+        /// lblTotalPreco control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imbFechar;
-        
+        protected global::System.Web.UI.WebControls.Label lblTotalPreco;
+
         /// <summary>
-        /// hdfGerar control.
+        /// txtTotalPreco control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdfGerar;
+        protected global::System.Web.UI.WebControls.TextBox txtTotalPreco;
     }
 }

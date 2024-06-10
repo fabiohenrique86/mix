@@ -66,6 +66,12 @@ namespace Site
                 {
                     var dataTable = this.ListarRelatorio();
 
+                    if (dataTable.Rows.Count <= 0)
+                    {
+                        UtilitarioBLL.ExibirMensagemAjax(this.Page, "Não existem notas fiscais com esses critérios de pesquisa");
+                        return;
+                    }
+
                     using (var wb = new XLWorkbook())
                     {
                         wb.Worksheets.Add(dataTable);
@@ -125,6 +131,9 @@ namespace Site
 
                     gdvNotaFiscal.DataSource = dataTable;
                     gdvNotaFiscal.DataBind();
+
+                    if (dataTable.Rows.Count <= 0)
+                        UtilitarioBLL.ExibirMensagemAjax(this.Page, "Não existem notas fiscais com esses critérios de pesquisa");
                 }
             }
             catch (FormatException)

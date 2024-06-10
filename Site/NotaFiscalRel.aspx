@@ -11,14 +11,17 @@
             Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
 
             function BeginRequestHandler(sender, args) {
+                console.log('BeginRequestHandler');
                 getValoresProduto();
             }
 
             function EndRequestHandler(sender, args) {
+                console.log('EndRequestHandler');
                 setValoresProduto();
                 getAutocomplete();
             }
-             
+
+            console.log('getAutocomplete');
             getAutocomplete();
 
         });

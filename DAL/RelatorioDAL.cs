@@ -170,7 +170,7 @@ namespace DAL
                 using (DbCommand cmd = db.GetStoredProcCommand("dbo.spListarEstoque"))
                 {
                     cmd.CommandTimeout = 300;
-                    
+
                     if (lojaId > 0)
                     {
                         db.AddInParameter(cmd, "@LojaID", DbType.Int32, lojaId);
@@ -361,39 +361,34 @@ namespace DAL
             return dt;
         }
 
-        public static DataTable ListarVendaProduto(DateTime dataPedidoInicial, DateTime dataPedidoFinal, int sistemaId, int? lojaId, int? linhaId, long? produtoId, int? funcionarioId)
+        public static DataTable ListarVendaProduto(DateTime dataPedidoInicial, DateTime dataPedidoFinal, int sistemaId, int lojaId, int linhaId, string produtos, int funcionarioId)
         {
             Database db;
             DataTable dt;
+
             try
             {
                 db = DatabaseFactory.CreateDatabase("Mix");
                 using (DbCommand cmd = db.GetStoredProcCommand("dbo.spListarVendaProduto"))
                 {
                     cmd.CommandTimeout = 300;
+
                     db.AddInParameter(cmd, "@DataPedidoInicial", DbType.Date, dataPedidoInicial);
                     db.AddInParameter(cmd, "@DataPedidoFinal", DbType.Date, dataPedidoFinal);
                     db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
-                    if (lojaId == 0)
-                    {
-                        lojaId = null;
-                    }
-                    if (linhaId == 0)
-                    {
-                        linhaId = null;
-                    }
-                    if (produtoId == 0L)
-                    {
-                        produtoId = null;
-                    }
-                    if (funcionarioId == 0)
-                    {
-                        funcionarioId = null;
-                    }
-                    db.AddInParameter(cmd, "@LojaID", DbType.Int32, lojaId);
-                    db.AddInParameter(cmd, "@LinhaID", DbType.Int32, linhaId);
-                    db.AddInParameter(cmd, "@ProdutoID", DbType.Int64, produtoId);
-                    db.AddInParameter(cmd, "@FuncionarioID", DbType.Int32, funcionarioId);
+
+                    if (lojaId > 0)
+                        db.AddInParameter(cmd, "@LojaID", DbType.Int32, lojaId);
+
+                    if (linhaId > 0)
+                        db.AddInParameter(cmd, "@LinhaID", DbType.Int32, linhaId);
+
+                    if (!string.IsNullOrEmpty(produtos))
+                        db.AddInParameter(cmd, "@ProdutoID", DbType.String, produtos);
+
+                    if (funcionarioId > 0)
+                        db.AddInParameter(cmd, "@FuncionarioID", DbType.Int32, funcionarioId);
+
                     dt = db.ExecuteDataSet(cmd).Tables[0];
                 }
             }
@@ -405,6 +400,7 @@ namespace DAL
             {
                 db = null;
             }
+
             return dt;
         }
 
@@ -515,7 +511,7 @@ namespace DAL
                     if (dtReservaFim != DateTime.MinValue)
                         db.AddInParameter(cmd, "@DataReservaFinal", DbType.Date, dtReservaFim);
 
-                    db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);                    
+                    db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
                     db.AddInParameter(cmd, "@LojaID", DbType.Int32, lojaId == 0 ? null : lojaId);
                     db.AddInParameter(cmd, "@FuncionarioID", DbType.Int32, funcionarioId == 0 ? null : funcionarioId);
 
@@ -590,7 +586,7 @@ namespace DAL
                 using (DbCommand cmd = db.GetStoredProcCommand("dbo.spListarRelatorioEstoque"))
                 {
                     cmd.CommandTimeout = 300;
-                   
+
                     db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
 
                     dt = db.ExecuteDataSet(cmd).Tables[0];
