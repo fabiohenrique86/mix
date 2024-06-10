@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile>2024-04-01T14:01:19.8545358-03:00</TimeStampOfAssociatedLegacyPublishXmlFile>
     <_PublishTargetUrl>C:\Publish\MiX\Debug</_PublishTargetUrl>
-    <History>True|2024-06-05T17:53:04.7427824Z;True|2024-06-04T16:18:01.6232110-03:00;True|2024-05-24T10:29:29.2283304-03:00;</History>
+    <History>True|2024-06-10T13:30:40.5605835Z;True|2024-06-05T14:53:04.7427824-03:00;True|2024-06-04T16:18:01.6232110-03:00;True|2024-05-24T10:29:29.2283304-03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="administrador/BaseAdm.Master">
@@ -155,10 +155,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/08/2023 04:09:56</publishTime>
     </File>
     <File Include="bin/Site.dll">
-      <publishTime>06/05/2024 14:53:03</publishTime>
+      <publishTime>06/10/2024 10:26:41</publishTime>
     </File>
     <File Include="bin/Site.pdb">
-      <publishTime>06/05/2024 14:53:03</publishTime>
+      <publishTime>06/10/2024 10:26:41</publishTime>
     </File>
     <File Include="bin/stdole.dll">
       <publishTime>05/06/2021 15:41:24</publishTime>
@@ -689,7 +689,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/01/2024 14:01:21</publishTime>
     </File>
     <File Include="VendaProdutoRel.aspx">
-      <publishTime>06/05/2024 14:42:19</publishTime>
+      <publishTime>06/10/2024 10:20:11</publishTime>
     </File>
     <File Include="VendaTipoPagamento.rdlc">
       <publishTime>04/01/2024 14:01:21</publishTime>

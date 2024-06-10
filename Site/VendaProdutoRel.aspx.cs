@@ -144,7 +144,7 @@ namespace Site
                 drTotal[9] = DBNull.Value;
                 drTotal[10] = "Total";
                 drTotal[11] = DBNull.Value;
-                drTotal[12] = dt.AsEnumerable().Sum(x => x.Field<double>("Preco"));
+                drTotal[12] = dt.AsEnumerable().Sum(x => x.Field<double?>("Preco") * x.Field<int?>("Quantidade"));
 
                 dt.Rows.Add(drTotal);
             }
@@ -179,7 +179,7 @@ namespace Site
                     if (dataTable.Rows.Count <= 0)
                         UtilitarioBLL.ExibirMensagemAjax(this.Page, "Não existem produtos com esses critérios de pesquisa");
 
-                    this.txtTotalPreco.Text = string.Format("{0:c}", dataTable.AsEnumerable().Sum(x => x.Field<double>("Preco")));
+                    this.txtTotalPreco.Text = string.Format("{0:c}", dataTable.AsEnumerable().Sum(x => x.Field<double?>("Preco") * x.Field<int?>("Quantidade")));
                 }
             }
             catch (FormatException ex)
