@@ -1,14 +1,11 @@
-﻿using System;
+﻿using BLL;
+using DAL;
+using DAO;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web.UI;
-using System.Configuration;
-using BLL;
-using DAO;
-using Dropbox.Api;
-using System.Threading.Tasks;
-using System.IO;
-using DAL;
 
 namespace Site
 {
@@ -47,7 +44,7 @@ namespace Site
                     else
                     {
                         CarregarDropDownListLoja();
-                        VisualizarFormulario();
+                        //VisualizarFormulario();
                     }
                 }
             }
@@ -72,9 +69,9 @@ namespace Site
             }
         }
 
-        private void VisualizarFormulario()
-        {
-            BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+        //private void VisualizarFormulario()
+        //{
+            //BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
 
             //if (
             //    (usuarioSessao.TipoUsuarioID == UtilitarioBLL.TipoUsuario.Administrador.GetHashCode()) ||
@@ -95,99 +92,99 @@ namespace Site
             //    ddlLoja.SelectedValue = usuarioSessao.LojaID.ToString();
             //    imbCadastrar.Visible = true;
             //}
-        }
+        //}
 
-        static async Task ImportarDropbox(DropboxClient dbx, int sistemaId)
-        {
-            List<string> mensagens = new List<string>();
-            string mensagem = string.Empty;
-            NotaFiscalBLL notaFiscalBLL = new NotaFiscalBLL();
-            NotaFiscalDAO notaFiscalDAO = new NotaFiscalDAO();
+        //static async Task ImportarDropbox(DropboxClient dbx, int sistemaId)
+        //{
+        //    List<string> mensagens = new List<string>();
+        //    string mensagem = string.Empty;
+        //    NotaFiscalBLL notaFiscalBLL = new NotaFiscalBLL();
+        //    NotaFiscalDAO notaFiscalDAO = new NotaFiscalDAO();
 
-            notaFiscalDAO.Estoque = 0;
-            notaFiscalDAO.SistemaID = sistemaId;
+        //    notaFiscalDAO.Estoque = 0;
+        //    notaFiscalDAO.SistemaID = sistemaId;
 
-            // lista a pasta "principal"
-            var pastas = await dbx.Files.ListFolderAsync(string.Empty);
+        //    // lista a pasta "principal"
+        //    var pastas = await dbx.Files.ListFolderAsync(string.Empty);
 
-            // lista os arquivos ".xml" por ordem decrescente de data de modificação
-            var arquivos = pastas.Entries.Where(x => x.IsFile && x.Name.Contains(".xml")).OrderByDescending(x => x.AsFile.ClientModified).Take(10);
+        //    // lista os arquivos ".xml" por ordem decrescente de data de modificação
+        //    var arquivos = pastas.Entries.Where(x => x.IsFile && x.Name.Contains(".xml")).OrderByDescending(x => x.AsFile.ClientModified).Take(10);
 
-            // adiciona cada arquivo no sistema mix
-            foreach (var item in arquivos)
-            {
-                try
-                {
-                    using (var response = await dbx.Files.DownloadAsync(item.PathLower))
-                    {
-                        var xml = await response.GetContentAsStringAsync();
+        //    // adiciona cada arquivo no sistema mix
+        //    foreach (var item in arquivos)
+        //    {
+        //        try
+        //        {
+        //            using (var response = await dbx.Files.DownloadAsync(item.PathLower))
+        //            {
+        //                var xml = await response.GetContentAsStringAsync();
 
-                        NotaFiscalXML notaFiscalXML = new NotaFiscalXML()
-                        {
-                            ContentType = "text/xml",
-                            InputStream = null,
-                            XML = xml
-                        };
+        //                NotaFiscalXML notaFiscalXML = new NotaFiscalXML()
+        //                {
+        //                    ContentType = "text/xml",
+        //                    InputStream = null,
+        //                    XML = xml
+        //                };
 
-                        notaFiscalDAO.NotasFiscaisXML.Clear();
-                        notaFiscalDAO.NotasFiscaisXML.Add(notaFiscalXML);
+        //                notaFiscalDAO.NotasFiscaisXML.Clear();
+        //                notaFiscalDAO.NotasFiscaisXML.Add(notaFiscalXML);
 
-                        // importa o xml no sistema mix
-                        var msgs = notaFiscalBLL.Importar(notaFiscalDAO, false, true);
+        //                // importa o xml no sistema mix
+        //                var msgs = notaFiscalBLL.Importar(notaFiscalDAO, false, true);
 
-                        // adiciona a msg de erro a lista de msgs
-                        mensagens.Add(msgs.FirstOrDefault());
+        //                // adiciona a msg de erro a lista de msgs
+        //                mensagens.Add(msgs.FirstOrDefault());
 
-                        // se não deu erro, move o arquivo para pasta de "lidos"
-                        if (msgs == null || msgs.Count() <= 0)
-                        {
-                            await dbx.Files.MoveAsync(item.PathLower, "/lidos/" + item.Name);
-                            mensagens.Add(string.Format("Arquivo {0} importado com sucesso.", item.Name));
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    mensagens.Add(ex.Message);
-                }
-            }
+        //                // se não deu erro, move o arquivo para pasta de "lidos"
+        //                if (msgs == null || msgs.Count() <= 0)
+        //                {
+        //                    await dbx.Files.MoveAsync(item.PathLower, "/lidos/" + item.Name);
+        //                    mensagens.Add(string.Format("Arquivo {0} importado com sucesso.", item.Name));
+        //                }
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            mensagens.Add(ex.Message);
+        //        }
+        //    }
 
-            mensagem = string.Join(@"\r\n", mensagens.ToArray());
+        //    mensagem = string.Join(@"\r\n", mensagens.ToArray());
 
-            if (mensagens != null && mensagens.Count() > 0)
-            {
-                throw new ApplicationException(mensagem);
-            }
-        }
+        //    if (mensagens != null && mensagens.Count() > 0)
+        //    {
+        //        throw new ApplicationException(mensagem);
+        //    }
+        //}
 
-        protected void imbImportarXML_Click(object sender, ImageClickEventArgs e)
-        {
-            string mensagem = string.Empty;
+        //protected void imbImportarXML_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    string mensagem = string.Empty;
 
-            try
-            {
-                var access_token = ConfigurationManager.AppSettings["DropBoxAccessToken"].ToString();
-                var dropboxClient = new DropboxClient(access_token);
-                var sistemaId = new BLL.Modelo.Usuario(Session["Usuario"]).SistemaID;
+        //    try
+        //    {
+        //        var access_token = ConfigurationManager.AppSettings["DropBoxAccessToken"].ToString();
+        //        var dropboxClient = new DropboxClient(access_token);
+        //        var sistemaId = new BLL.Modelo.Usuario(Session["Usuario"]).SistemaID;
 
-                ImportarDropbox(dropboxClient, sistemaId).Wait();
-            }
-            catch (ApplicationException ex)
-            {
-                ScriptManager.RegisterStartupScript(this, GetType(), "ImportarXML", "alert('" + ex.Message + "');", true);
-            }
-            catch (Exception ex)
-            {
-                if (ex.InnerException != null)
-                {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "ImportarXML", "alert('" + ex.InnerException.Message + "');", true);
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "ImportarXML", "alert('Ocorreu um erro ao tentar o arquivo XML. O arquivo não foi importado.');", true);
-                }
-            }
-        }
+        //        ImportarDropbox(dropboxClient, sistemaId).Wait();
+        //    }
+        //    catch (ApplicationException ex)
+        //    {
+        //        ScriptManager.RegisterStartupScript(this, GetType(), "ImportarXML", "alert('" + ex.Message + "');", true);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        if (ex.InnerException != null)
+        //        {
+        //            ScriptManager.RegisterStartupScript(this, GetType(), "ImportarXML", "alert('" + ex.InnerException.Message + "');", true);
+        //        }
+        //        else
+        //        {
+        //            ScriptManager.RegisterStartupScript(this, GetType(), "ImportarXML", "alert('Ocorreu um erro ao tentar o arquivo XML. O arquivo não foi importado.');", true);
+        //        }
+        //    }
+        //}
 
         protected void imbImportarColeta_Click(object sender, ImageClickEventArgs e)
         {
