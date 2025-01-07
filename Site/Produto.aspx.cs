@@ -622,7 +622,11 @@ namespace Site
 
                     if ((gdvProduto.Rows.Count <= 0) && (ViewState["filtro"] != null))
                     {
-                        ((Label)e.AccordionItem.FindControl("lblNomeFantasia")).Visible = false;
+                        var labelNomeFantasia = ((Label)e.AccordionItem.FindControl("lblNomeFantasia"));
+                        
+                        if (labelNomeFantasia != null)
+                            labelNomeFantasia.Visible = false;
+
                         gdvProduto.Visible = false;
                     }
                 }

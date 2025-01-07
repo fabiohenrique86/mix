@@ -144,3 +144,17 @@ D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Debug\BLL.cspro
 D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Debug\BLL.csproj.CopyComplete
 D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Debug\BLL.dll
 D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\BLL\obj\Debug\BLL.pdb
+C:\Users\fabio\source\repos\MiX\BLL\bin\Debug\BLL.dll
+C:\Users\fabio\source\repos\MiX\BLL\bin\Debug\BLL.pdb
+C:\Users\fabio\source\repos\MiX\BLL\bin\Debug\DAL.dll
+C:\Users\fabio\source\repos\MiX\BLL\bin\Debug\DAO.dll
+C:\Users\fabio\source\repos\MiX\BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\fabio\source\repos\MiX\BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\fabio\source\repos\MiX\BLL\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\fabio\source\repos\MiX\BLL\bin\Debug\DAL.pdb
+C:\Users\fabio\source\repos\MiX\BLL\bin\Debug\DAO.pdb
+C:\Users\fabio\source\repos\MiX\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\fabio\source\repos\MiX\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\fabio\source\repos\MiX\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\fabio\source\repos\MiX\BLL\obj\Debug\BLL.dll
+C:\Users\fabio\source\repos\MiX\BLL\obj\Debug\BLL.pdb

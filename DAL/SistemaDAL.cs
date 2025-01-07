@@ -216,5 +216,65 @@ namespace DAL
             }
             return ds;
         }
+
+        public static int? ListarPrazoDeEntrega(int sistemaId)
+        {
+            Database db;
+            int? prazoDeEntrega = null;
+
+            try
+            {
+                db = DatabaseFactory.CreateDatabase("Mix");
+                using (DbCommand cmd = db.GetStoredProcCommand("dbo.spListarPrazoDeEntrega"))
+                {
+                    cmd.CommandTimeout = 300;
+
+                    db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
+
+                    var resultado = db.ExecuteScalar(cmd);
+
+                    if (resultado != null && resultado != DBNull.Value)
+                    {
+                        prazoDeEntrega = Convert.ToInt32(resultado);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ApplicationException("Erro ao listar registro", ex);
+            }
+            finally
+            {
+                db = null;
+            }
+            return prazoDeEntrega;
+        }
+
+        public static void SalvarPrazoDeEntrega(int prazoDeEntrega, int sistemaId)
+        {
+            Database db;
+
+            try
+            {
+                db = DatabaseFactory.CreateDatabase("Mix");
+                using (DbCommand cmd = db.GetStoredProcCommand("dbo.spSalvarPrazoDeEntrega"))
+                {
+                    cmd.CommandTimeout = 300;
+
+                    db.AddInParameter(cmd, "@PrazoDeEntrega", DbType.Int32, prazoDeEntrega);
+                    db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
+
+                    db.ExecuteNonQuery(cmd);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ApplicationException("Erro ao listar registro", ex);
+            }
+            finally
+            {
+                db = null;
+            }
+        }
     }
 }

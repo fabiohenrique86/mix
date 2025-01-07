@@ -132,6 +132,7 @@
                             <li id="MenuPedidoAgendado" runat="server"><a href='<% Response.Write("../" + BLL.AplicacaoBLL.Empresa.Identificacao + "/PedidoAgendado.aspx"); %>'>Pedido Agendado</a>
                                 <ul>
                                     <li id="MenuLimiteReserva" runat="server"><a href='<% Response.Write("../" + BLL.AplicacaoBLL.Empresa.Identificacao + "/LimiteReserva.aspx"); %>'>Limite</a></li>
+                                    <li id="MenuPrazoDeEntrega" runat="server"><a href='<% Response.Write("../" + BLL.AplicacaoBLL.Empresa.Identificacao + "/PrazoDeEntrega.aspx"); %>'>Prazo De Entrega</a></li>
                                 </ul>
                             </li>
                             <li id="MenuBordero" runat="server"><a href='<% Response.Write("../" + BLL.AplicacaoBLL.Empresa.Identificacao + "/Bordero.aspx"); %>'>Borderô</a></li>

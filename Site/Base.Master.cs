@@ -53,6 +53,7 @@ namespace Site
                                 MenuBrinde.Visible = false;
                                 MenuPedidoAgendado.Visible = true;
                                 MenuLimiteReserva.Visible = false;
+                                MenuPrazoDeEntrega.Visible = false;
                                 MenuCliente.Visible = true;
                                 MenuPedidoMae.Visible = false;
                                 MenuCancelamento.Visible = false;
@@ -93,6 +94,7 @@ namespace Site
                                 MenuUsuario.Visible = false;
                                 MenuPedidoAgendado.Visible = true;
                                 MenuLimiteReserva.Visible = false;
+                                MenuPrazoDeEntrega.Visible = false;
                                 MenuPedidoMae.Visible = false;
                                 MenuCancelamento.Visible = false;
                                 MenuNotaFiscalManual.Visible = true;
@@ -120,6 +122,7 @@ namespace Site
                                 MenuUsuario.Visible = false;
                                 MenuPedidoAgendado.Visible = false;
                                 MenuLimiteReserva.Visible = false;
+                                MenuPrazoDeEntrega.Visible = false;
                                 MenuPedidoMae.Visible = false;
                                 MenuCancelamento.Visible = false;
                                 MenuNotaFiscalManual.Visible = false;
@@ -157,6 +160,7 @@ namespace Site
                                 MenuBrinde.Visible = false;
                                 MenuPedidoAgendado.Visible = true;
                                 MenuLimiteReserva.Visible = false;
+                                MenuPrazoDeEntrega.Visible = false;
                                 MenuBordero.Visible = true;
                                 MenuCliente.Visible = true;
                                 MenuPedidoMae.Visible = false;
@@ -200,6 +204,7 @@ namespace Site
                                 MenuCliente.Visible = true;
                                 MenuPedidoAgendado.Visible = true;
                                 MenuLimiteReserva.Visible = false;
+                                MenuPrazoDeEntrega.Visible = false;
                                 MenuBordero.Visible = false;
                                 MenuPedidoMae.Visible = true;
 

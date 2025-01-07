@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Site {
-    
-    
-    public partial class Base {
-        
+namespace Site
+{
+
+
+    public partial class Base
+    {
+
         /// <summary>
         /// Head1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-        
+
         /// <summary>
         /// head control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-        
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// ToolkitScriptManager control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ToolkitScriptManager ToolkitScriptManager;
-        
+
         /// <summary>
         /// updModalProgress control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel updModalProgress;
-        
+
         /// <summary>
         /// UpdateProgress1 control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdateProgress UpdateProgress1;
-        
+
         /// <summary>
         /// Menu control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Menu;
-        
+
         /// <summary>
         /// MenuConsulta control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuConsulta;
-        
+
         /// <summary>
         /// lblConsulta control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblConsulta;
-        
+
         /// <summary>
         /// MenuLoja control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuLoja;
-        
+
         /// <summary>
         /// MenuUsuario control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuUsuario;
-        
+
         /// <summary>
         /// MenuFuncionario control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuFuncionario;
-        
+
         /// <summary>
         /// MenuTipoPagamento control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuTipoPagamento;
-        
+
         /// <summary>
         /// MenuParcela control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuParcela;
-        
+
         /// <summary>
         /// MenuLinha control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuLinha;
-        
+
         /// <summary>
         /// MenuMedida control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuMedida;
-        
+
         /// <summary>
         /// MenuProduto control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuProduto;
-        
+
         /// <summary>
         /// MenuBrinde control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuBrinde;
-        
+
         /// <summary>
         /// MenuCliente control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuCliente;
-        
+
         /// <summary>
         /// MenuPedidoAgendado control.
         /// </summary>
@@ -191,7 +193,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuPedidoAgendado;
-        
+
         /// <summary>
         /// MenuLimiteReserva control.
         /// </summary>
@@ -200,7 +202,16 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuLimiteReserva;
-        
+
+        /// <summary>
+        /// MenuPrazoDeEntrega control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuPrazoDeEntrega;
+
         /// <summary>
         /// MenuBordero control.
         /// </summary>
@@ -209,7 +220,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuBordero;
-        
+
         /// <summary>
         /// MenuPedidoMae control.
         /// </summary>
@@ -218,7 +229,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuPedidoMae;
-        
+
         /// <summary>
         /// MenuLancamento control.
         /// </summary>
@@ -227,7 +238,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuLancamento;
-        
+
         /// <summary>
         /// MenuCancelamento control.
         /// </summary>
@@ -236,7 +247,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuCancelamento;
-        
+
         /// <summary>
         /// MenuNotaFiscalManual control.
         /// </summary>
@@ -245,7 +256,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuNotaFiscalManual;
-        
+
         /// <summary>
         /// MenuNotaFiscalAutomatica control.
         /// </summary>
@@ -254,7 +265,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuNotaFiscalAutomatica;
-        
+
         /// <summary>
         /// MenuOcorrencia control.
         /// </summary>
@@ -263,7 +274,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuOcorrencia;
-        
+
         /// <summary>
         /// MenuOrcamento control.
         /// </summary>
@@ -272,7 +283,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuOrcamento;
-        
+
         /// <summary>
         /// MenuPedido control.
         /// </summary>
@@ -281,7 +292,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuPedido;
-        
+
         /// <summary>
         /// MenuTransferencia control.
         /// </summary>
@@ -290,7 +301,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuTransferencia;
-        
+
         /// <summary>
         /// MenuTroca control.
         /// </summary>
@@ -299,7 +310,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuTroca;
-        
+
         /// <summary>
         /// MenuAlteracaoPedido control.
         /// </summary>
@@ -308,7 +319,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuAlteracaoPedido;
-        
+
         /// <summary>
         /// MenuRelatorio control.
         /// </summary>
@@ -317,7 +328,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorio;
-        
+
         /// <summary>
         /// MenuRelatorioCancelamento control.
         /// </summary>
@@ -326,7 +337,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorioCancelamento;
-        
+
         /// <summary>
         /// MenuRelatorioComissao control.
         /// </summary>
@@ -335,7 +346,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorioComissao;
-        
+
         /// <summary>
         /// MenuRelatorioEntrega control.
         /// </summary>
@@ -344,7 +355,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorioEntrega;
-        
+
         /// <summary>
         /// MenuRelatorioEstoque control.
         /// </summary>
@@ -353,7 +364,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorioEstoque;
-        
+
         /// <summary>
         /// MenuRelatorioEstoqueIdeal control.
         /// </summary>
@@ -362,7 +373,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorioEstoqueIdeal;
-        
+
         /// <summary>
         /// MenuRelatorioFrete control.
         /// </summary>
@@ -371,7 +382,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorioFrete;
-        
+
         /// <summary>
         /// MenuRelatorioNotaFiscal control.
         /// </summary>
@@ -380,7 +391,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorioNotaFiscal;
-        
+
         /// <summary>
         /// MenuRelatorioOcorrencia control.
         /// </summary>
@@ -389,7 +400,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorioOcorrencia;
-        
+
         /// <summary>
         /// MenuRelatorioQuadroClassificacao control.
         /// </summary>
@@ -398,7 +409,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorioQuadroClassificacao;
-        
+
         /// <summary>
         /// MenuRelatorioVenda control.
         /// </summary>
@@ -407,7 +418,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorioVenda;
-        
+
         /// <summary>
         /// MenuRelatorioVendaProduto control.
         /// </summary>
@@ -416,7 +427,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorioVendaProduto;
-        
+
         /// <summary>
         /// MenuRelatorioVendaTipoPagamento control.
         /// </summary>
@@ -425,7 +436,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorioVendaTipoPagamento;
-        
+
         /// <summary>
         /// lkbSair control.
         /// </summary>
@@ -434,7 +445,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lkbSair;
-        
+
         /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>

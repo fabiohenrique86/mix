@@ -307,7 +307,7 @@ namespace Site
 
                 var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
                 var reservaDAL = new ReservaDAL();
-                
+
                 if (Session["Usuario"] == null)
                 {
                     BLL.AplicacaoBLL.Empresa = null;
@@ -404,7 +404,7 @@ namespace Site
             }
             else
             {
-                BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+                var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
 
                 string pedidoId = string.Empty;
                 int lojaOrigemId = 0;
@@ -432,7 +432,7 @@ namespace Site
                     funcionarioId = Convert.ToInt32(ddlFuncionario.SelectedValue);
                 }
 
-                List<ProdutoDAO> listaProduto = new List<ProdutoDAO>();
+                var listaProduto = new List<ProdutoDAO>();
 
                 try
                 {
@@ -441,8 +441,8 @@ namespace Site
                         throw new ApplicationException("É necessário informar todos os campos obrigatórios para inserir pedido.");
                     }
 
-                    ProdutoDAL produtoDAL = new ProdutoDAL();
-                    ReservaDAO ReservaDAO = new ReservaDAO();
+                    var produtoDAL = new ProdutoDAL();
+                    var ReservaDAO = new ReservaDAO();
 
                     if (!string.IsNullOrEmpty(cpfFormatado) && !string.IsNullOrEmpty(cnpjFormatado))
                     {
@@ -466,6 +466,7 @@ namespace Site
                         ReservaDAO.Cnpj = cnpjFormatado;
                     }
 
+                    // loop de produtos
                     for (int i = 0; i < Request.Form.AllKeys.Count(); i++)
                     {
                         if (Request.Form["txtProdutoID_" + i] != null && Request.Form["txtQuantidade_" + i] != null && Request.Form["txtPreco_" + i] != null)
@@ -533,6 +534,29 @@ namespace Site
                                         ReservaDAO.DataEntrega = dtEntrega;
                                     }
 
+                                    /// regra solicitada por Paulo em 06/01/2025:
+                                    //  "se estoque <= 0" E "vendedor infringiu prazo de entrega definido por Paulo"
+                                    //      pop up na tela informando o prazo mínimo de dias a programar
+                                    //  "se estoque > 0"
+                                    //      dias a programar livre definidos pelo Vendedor
+                                    if (nomeFantasia.Trim().ToLower().Equals("depósito"))
+                                    {
+                                        var estoque = produtoDAL.ListarEstoqueProdutoLojaById(lojaSaidaId, Convert.ToInt64(produtoId), sistemaId);
+
+                                        if (estoque <= 0)
+                                        {
+                                            var prazoDeEntrega = SistemaDAL.ListarPrazoDeEntrega(sistemaId);
+
+                                            if (prazoDeEntrega != null)
+                                            {
+                                                if (ReservaDAO.DataEntrega.GetValueOrDefault() < DateTime.Today.AddDays(prazoDeEntrega.GetValueOrDefault()))
+                                                {
+                                                    throw new ApplicationException($"A saída do produto {produtoId} só poderá ser realizada a partir de {DateTime.Today.AddDays(prazoDeEntrega.GetValueOrDefault()).ToString("dd/MM/yyyy")}.\r\nO prazo cadastrado é de {prazoDeEntrega} dias.");
+                                                }
+                                            }
+                                        }
+                                    }
+
                                     statusId = UtilitarioBLL.StatusEntregaReserva.Pendente.GetHashCode();
                                 }
                                 else
@@ -567,12 +591,13 @@ namespace Site
                     ReservaDAO.StatusID = statusId;
                     ReservaDAO.ListaProduto = listaProduto;
                     ReservaDAO.ValorFrete = Convert.ToDecimal(txtValorFrete.Text);
+
                     if (!string.IsNullOrEmpty(txtCV.Text))
                     {
                         ReservaDAO.CV = Convert.ToInt64(txtCV.Text);
                     }
 
-                    new ReservaBLL().Inserir(ReservaDAO);
+                    //new ReservaBLL().Inserir(ReservaDAO);
 
                     CarregarRepeaterReserva();
 
@@ -712,7 +737,7 @@ namespace Site
         //        else
         //        {
         //            var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-                    
+
         //            ReportViewer rpvComandaEntrega = new ReportViewer();
         //            rpvComandaEntrega.Width = 735;
         //            rpvComandaEntrega.Height = 400;
@@ -794,7 +819,7 @@ namespace Site
                     var pedidoId = ((Label)e.Item.FindControl("lblPedidoID")).Text.ToUpper();
                     var repeaterReserva = (HtmlContainerControl)e.Item.FindControl("repeaterReserva");
                     var cbComanda = ((CheckBox)e.Item.FindControl("cbComanda"));
-                    
+
                     if
                     (
                         usuarioSessao.TipoUsuarioID == UtilitarioBLL.TipoUsuario.Administrador.GetHashCode()
@@ -1022,7 +1047,7 @@ namespace Site
                 // Create a document for the merged result.
                 TallComponents.PDF.Document mergedDocument = new TallComponents.PDF.Document();
                 List<FileStream> streams = new List<FileStream>();
-                
+
                 foreach (RepeaterItem item in rptReserva.Items)
                 {
                     var cbComanda = (CheckBox)item.FindControl("cbComanda");
@@ -1049,7 +1074,7 @@ namespace Site
                         viewer.LocalReport.Refresh();
 
                         var bytes = viewer.LocalReport.Render("PDF", null, out mimeType, out encoding, out filenameExtension, out streamids, out warnings);
-                        
+
                         var arquivo = HostingEnvironment.ApplicationPhysicalPath + @"\pdfs\" + Guid.NewGuid().ToString() + ".pdf";
 
                         File.WriteAllBytes(arquivo, bytes);

@@ -540,6 +540,13 @@
     <Compile Include="Transferencia.aspx.designer.cs">
       <DependentUpon>Transferencia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PrazoDeEntrega.aspx.cs">
+      <DependentUpon>PrazoDeEntrega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrazoDeEntrega.aspx.designer.cs">
+      <DependentUpon>PrazoDeEntrega.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.aspx.cs">
       <DependentUpon>Usuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -710,6 +717,7 @@
     <Content Include="PedidoAgendado.aspx" />
     <Content Include="TipoPagamento.aspx" />
     <Content Include="Transferencia.aspx" />
+    <Content Include="PrazoDeEntrega.aspx" />
     <Content Include="Usuario.aspx" />
     <Content Include="VendaProdutoRel.aspx" />
     <Content Include="VendaTipoPagamentoRel.aspx" />

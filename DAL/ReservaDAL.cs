@@ -244,16 +244,15 @@ namespace DAL
             }
             return reserva;
         }
-        
+
         public void Inserir(ReservaDAO reserva)
         {
             Database db;
             try
             {
                 db = DatabaseFactory.CreateDatabase("Mix");
-                TransactionOptions transactionOptions = new TransactionOptions();
-                transactionOptions.Timeout = TimeSpan.FromMinutes(5);
-                using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required, transactionOptions))
+
+                using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions() { Timeout = TimeSpan.FromMinutes(5) }))
                 {
                     DbCommand cmd;
                     using (cmd = db.GetStoredProcCommand("dbo.spInserirReserva"))
@@ -265,7 +264,7 @@ namespace DAL
                         db.AddInParameter(cmd, "@FuncionarioID", DbType.Int32, reserva.FuncionarioID);
                         db.AddInParameter(cmd, "@ClienteID", DbType.Int32, reserva.ClienteID);
                         db.AddInParameter(cmd, "@DataReserva", DbType.Date, reserva.DataReserva);
-                        db.AddInParameter(cmd, "@DataEntrega", DbType.Date, reserva.DataEntrega);
+                        db.AddInParameter(cmd, "@DataEntrega", DbType.Date, reserva.DataEntrega == DateTime.MinValue ? null : reserva.DataEntrega);
                         db.AddInParameter(cmd, "@SistemaID", DbType.Int32, reserva.SistemaID);
                         db.AddInParameter(cmd, "@Observacao", DbType.String, reserva.Observacao);
                         db.AddInParameter(cmd, "@StatusID", DbType.Int32, reserva.StatusID);
@@ -286,6 +285,7 @@ namespace DAL
                         foreach (ProdutoDAO produto in reserva.ListaProduto)
                         {
                             cmd.Parameters.Clear();
+
                             db.AddInParameter(cmd, "@ReservaID", DbType.String, reserva.ReservaID);
                             db.AddInParameter(cmd, "@LojaID", DbType.Int32, produto.LojaID);
                             db.AddInParameter(cmd, "@ProdutoID", DbType.Int64, produto.ProdutoID);
@@ -294,7 +294,7 @@ namespace DAL
                             db.AddInParameter(cmd, "@Preco", DbType.Decimal, produto.Preco);
                             db.AddInParameter(cmd, "@SistemaID", DbType.Int32, produto.SistemaID);
                             db.AddInParameter(cmd, "@DataReserva", DbType.Date, reserva.DataReserva.GetValueOrDefault().Date);
-                            db.AddInParameter(cmd, "@DataEntrega", DbType.Date, reserva.DataEntrega);
+                            db.AddInParameter(cmd, "@DataEntrega", DbType.Date, reserva.DataEntrega == DateTime.MinValue ? null : reserva.DataEntrega);
 
                             db.ExecuteNonQuery(cmd);
                         }
@@ -343,7 +343,7 @@ namespace DAL
                     db.AddInParameter(cmd, "@LojaID", DbType.Int32, lojaId);
                     db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
                     db.AddInParameter(cmd, "@TipoUsuarioID", DbType.Int32, tipoUsuarioId);
-                    
+
                     db.ExecuteNonQuery(cmd);
                 }
             }
@@ -720,13 +720,13 @@ namespace DAL
                 using (DbCommand cmd = db.GetStoredProcCommand("dbo.spListarRelatorioSintetico"))
                 {
                     cmd.CommandTimeout = 300;
-                    
+
                     if (dtReservaInicio != DateTime.MinValue)
                         db.AddInParameter(cmd, "@DataReservaInicio", DbType.Date, dtReservaInicio);
 
                     if (dtReservaFim != DateTime.MinValue)
                         db.AddInParameter(cmd, "@DataReservaFim", DbType.Date, dtReservaFim);
-                    
+
                     db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
 
                     dt = db.ExecuteDataSet(cmd).Tables[0];

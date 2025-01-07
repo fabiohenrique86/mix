@@ -50,7 +50,7 @@ C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Debug\DAO.dll
 C:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Debug\DAO.pdb
 D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\bin\Debug\DAO.dll
 D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\bin\Debug\DAO.pdb
+D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
 D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Debug\DAO.dll
 D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Debug\DAO.pdb
-D:\Users\fabio\Documents\Visual Studio 2015\Projects\MiX\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache

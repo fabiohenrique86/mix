@@ -528,7 +528,6 @@ namespace DAL
                         produto = true;
                     }
                 }
-                //return produto;
             }
             catch (SqlException ex)
             {
@@ -587,44 +586,40 @@ namespace DAL
             return retorno;
         }
 
-        //public ProdutoDAO ListarProdutoLojaById(long produtoId, int sistemaId)
-        //{
-        //    Database db;
-        //    var produtoDAO = new ProdutoDAO();
+        public int? ListarEstoqueProdutoLojaById(int lojaSaidaId, long produtoId, int sistemaId)
+        {
+            Database db;
+            int? estoque = 0;
 
-        //    try
-        //    {
-        //        db = DatabaseFactory.CreateDatabase("Mix");
-        //        using (DbCommand cmd = db.GetStoredProcCommand("dbo.spListarProdutoLojaById"))
-        //        {
-        //            cmd.CommandTimeout = 300;
+            try
+            {
+                db = DatabaseFactory.CreateDatabase("Mix");
+                using (DbCommand cmd = db.GetStoredProcCommand("dbo.ListarEstoqueProdutoLojaById"))
+                {
+                    cmd.CommandTimeout = 300;
 
-        //            db.AddInParameter(cmd, "@ProdutoID", DbType.Int64, produtoId);
-        //            db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
+                    db.AddInParameter(cmd, "@LojaSaidaID", DbType.Int32, lojaSaidaId);
+                    db.AddInParameter(cmd, "@ProdutoID", DbType.Int64, produtoId);
+                    db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
 
-        //            var dr = db.ExecuteReader(cmd);
+                    var resultado = db.ExecuteScalar(cmd);
 
-        //            while (dr.Read())
-        //            {
-        //                produtoDAO.ProdutoID = Convert.ToInt64(dr["ProdutoID"]);
-        //                produtoDAO.LinhaID = Convert.ToInt32(dr["LinhaID"]);
-        //                produtoDAO.Descricao = dr["Descricao"].ToString();
-        //                produtoDAO.MedidaID = Convert.ToInt32(dr["MedidaID"]);
-        //                produtoDAO.ComissaoFuncionario = Convert.ToInt16(dr["ComissaoFuncionario"]);
-        //                produtoDAO.ComissaoFranqueado = Convert.ToInt16(dr["ComissaoFranqueado"]);
-        //                produtoDAO.SistemaID = Convert.ToInt32(dr["SistemaID"]);
-        //            }
-        //        }
-        //    }
-        //    catch (SqlException ex)
-        //    {
-        //        throw new ApplicationException("Erro ao listar registro", ex);
-        //    }
-        //    finally
-        //    {
-        //        db = null;
-        //    }
-        //    return produtoDAO;
-        //}
+                    if (resultado != null && resultado != DBNull.Value)
+                    {
+                        estoque = Convert.ToInt32(resultado);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ApplicationException("Erro ao listar registro", ex);
+            }
+            finally
+            {
+                db = null;
+            }
+
+            return estoque;
+        }
     }
 }
