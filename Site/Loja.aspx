@@ -26,7 +26,7 @@
                             <td>
                                 <asp:TextBox ID="txtLojaID" runat="server" CssClass="desabilitado" Enabled="false"
                                     Width="40px" MaxLength="3" SkinID="TextBox"></asp:TextBox>
-                                <asp:CheckBox ID="ckbLojaID" runat="server" AutoPostBack="true" Text="Atualizar/Excluir"
+                                <asp:CheckBox ID="ckbLojaID" runat="server" AutoPostBack="true" Text="Atualizar/Inativar"
                                     OnCheckedChanged="ckbLojaID_CheckedChanged" Visible="false" />
                             </td>
                         </tr>
@@ -85,7 +85,7 @@
                                     OnClick="imbCadastrar_Click" Visible="false" />
                                 <asp:ImageButton ID="imbAtualizar" runat="server" ImageUrl="~/img/atualizar.png"
                                     Visible="false" OnClick="imbAtualizar_Click" />
-                                <asp:ImageButton ID="imbExcluir" runat="server" ImageUrl="~/img/excluir.png" OnClick="imbExcluir_Click"
+                                <asp:ImageButton ID="imbExcluir" runat="server" ImageUrl="~/img/inativar.png" OnClick="imbExcluir_Click"
                                     Visible="false" />
                                 <cc1:ConfirmButtonExtender ID="imbExcluir_ConfirmButtonExtender" runat="server" ConfirmText="A exclusão de uma Loja implica em deletar TODOS os Produtos, Funcionários, Pedidos, Reservas, Notas Fiscais, Transferências e Cancelamentos relacionados a ela. Tem certeza que deseja continuar ?"
                                     TargetControlID="imbExcluir">

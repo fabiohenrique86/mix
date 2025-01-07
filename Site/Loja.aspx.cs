@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using BLL;
+using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BLL;
-using DAO;
-using DAL;
 
 namespace Site
 {
-    public partial class Loja : System.Web.UI.Page
+    public partial class Loja : Page
     {
         private bool CarregarDados(string cnpj, string razaoSocial, string nomeFantasia, string telefone, string cota, int sistemaId)
         {
@@ -52,7 +47,7 @@ namespace Site
                 this.imbConsultar.Visible = true;
                 this.imbAtualizar.Visible = false;
                 this.imbExcluir.Visible = false;
-                this.ckbLojaID.Text = "Atualizar/Excluir";
+                this.ckbLojaID.Text = "Atualizar/Inativar";
             }
             this.LimparFormulario(this.txtLojaID, this.txtCnpj, this.txtNomeFantasia, this.txtRazaoSocial, this.txtTelefone, this.txtCota);
         }

@@ -58,7 +58,7 @@ namespace Site
                 this.imbConsultar.Visible = true;
                 this.imbAtualizar.Visible = false;
                 this.imbExcluir.Visible = false;
-                this.ckbFuncionarioID.Text = "Cadastrar/Atualizar/Excluir";
+                this.ckbFuncionarioID.Text = "Cadastrar/Atualizar/Inativar";
             }
             this.LimparFormulario(this.txtFuncionarioID, this.txtNome, this.ddlLoja, this.txtTelefone, this.txtEmail);
         }

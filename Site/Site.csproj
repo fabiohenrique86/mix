@@ -591,6 +591,7 @@
     <Content Include="css\superfish.css" />
     <Content Include="Default.aspx" />
     <Content Include="DiaMesAno.ascx" />
+    <Content Include="img\inativar.png" />
     <Content Include="img\relatorio-sintetico.png" />
     <Content Include="OcorrenciaRel.aspx" />
     <Content Include="EntregaRel.aspx" />

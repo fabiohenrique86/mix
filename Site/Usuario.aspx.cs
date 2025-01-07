@@ -1,17 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using BLL;
+using DAL;
+using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BLL;
-using DAO;
-using DAL;
 
 namespace Site
 {
-    public partial class Usuario : System.Web.UI.Page
+    public partial class Usuario : Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!base.IsPostBack)
+                {
+                    if (!UtilitarioBLL.PermissaoUsuario(Session["Usuario"]))
+                    {
+                        UtilitarioBLL.Sair();
+                        if (base.Request.Url.Segments.Length == 3)
+                        {
+                            base.Response.Redirect("../Default.aspx", false);
+                        }
+                        else
+                        {
+                            base.Response.Redirect("Default.aspx", false);
+                        }
+                    }
+                    else
+                    {
+                        this.VisualizarFormulario();
+                        this.CarregarDados();
+                        this.SetarBordaGridView();
+                    }
+                }
+            }
+            catch (ApplicationException ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
+            }
+        }
+
         private void CarregarDados()
         {
             BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
@@ -27,7 +59,7 @@ namespace Site
                 this.ddlTipoUsuario.DataSource = TipoUsuarioDAL.ListarDropDownList();
             }
             this.ddlTipoUsuario.DataBind();
-            
+
             this.gdvUsuario.DataSource = new DAL.UsuarioDAL().Listar(usuarioSessao.SistemaID);
             this.gdvUsuario.DataBind();
         }
@@ -55,7 +87,7 @@ namespace Site
                 this.imbExcluir.Visible = false;
                 this.ddlLoja.Enabled = true;
                 this.ddlLoja.CssClass = "";
-                this.ckbUsuarioID.Text = "Atualizar/Excluir";
+                this.ckbUsuarioID.Text = "Atualizar/Inativar";
                 this.ddlTipoUsuario.DataSource = DAL.TipoUsuarioDAL.ListarDropDownListAdmEst();
             }
             this.ddlTipoUsuario.DataBind();
@@ -123,11 +155,14 @@ namespace Site
                     {
                         throw new ApplicationException("É necessário informar o UsuarioID a ser atualizado.");
                     }
+
                     if (!usuarioDAL.Listar(Convert.ToInt32(this.txtUsuarioID.Text), usuarioSessao.SistemaID))
                     {
                         throw new ApplicationException("Usuário inexistente.");
                     }
+
                     usuarioDAL.Atualizar(this.txtUsuarioID.Text, this.ddlTipoUsuario.SelectedValue, this.ddlLoja.SelectedValue, this.txtLogin.Text, this.txtSenha.Text);
+
                     this.LimparFormulario(this.txtUsuarioID, this.ddlTipoUsuario, this.ddlLoja, this.txtLogin, this.txtSenha);
                     this.CarregarDados();
                 }
@@ -246,42 +281,6 @@ namespace Site
             ddlLojaID.SelectedIndex = 0;
             Login.Text = string.Empty;
             Senha.Text = string.Empty;
-        }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!base.IsPostBack)
-                {
-                    if (!UtilitarioBLL.PermissaoUsuario(Session["Usuario"]))
-                    {
-                        UtilitarioBLL.Sair();
-                        if (base.Request.Url.Segments.Length == 3)
-                        {
-                            base.Response.Redirect("../Default.aspx", false);
-                        }
-                        else
-                        {
-                            base.Response.Redirect("Default.aspx", false);
-                        }
-                    }
-                    else
-                    {
-                        this.VisualizarFormulario();
-                        this.CarregarDados();
-                        this.SetarBordaGridView();
-                    }
-                }
-            }
-            catch (ApplicationException ex)
-            {
-                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message);
-            }
-            catch (Exception ex)
-            {
-                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
-            }
         }
 
         private void VisualizarFormulario()

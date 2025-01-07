@@ -25,7 +25,7 @@
                             <td style="text-align: left;">
                                 <asp:TextBox ID="txtUsuarioID" runat="server" Width="50px" MaxLength="3" CssClass="desabilitado"
                                     Enabled="false" SkinID="TextBox"></asp:TextBox>
-                                <asp:CheckBox ID="ckbUsuarioID" runat="server" AutoPostBack="true" Text="Atualizar/Excluir"
+                                <asp:CheckBox ID="ckbUsuarioID" runat="server" AutoPostBack="true" Text="Atualizar/Inativar"
                                     OnCheckedChanged="ckbUsuarioID_CheckedChanged" />
                             </td>
                         </tr>
@@ -73,7 +73,7 @@
                                     OnClick="imbCadastrar_Click" />
                                 <asp:ImageButton ID="imbAtualizar" runat="server" ImageUrl="~/img/atualizar.png"
                                     OnClick="imbAtualizar_Click" Visible="false" />
-                                <asp:ImageButton ID="imbExcluir" runat="server" ImageUrl="~/img/excluir.png" OnClick="imbExcluir_Click"
+                                <asp:ImageButton ID="imbExcluir" runat="server" ImageUrl="~/img/inativar.png" OnClick="imbExcluir_Click"
                                     Visible="false" />
                             </td>
                         </tr>

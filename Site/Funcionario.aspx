@@ -29,7 +29,7 @@
                                 <cc1:FilteredTextBoxExtender ID="txtFuncionarioID_FilteredTextBoxExtender" runat="server"
                                     FilterType="Numbers" TargetControlID="txtFuncionarioID">
                                 </cc1:FilteredTextBoxExtender>
-                                <asp:CheckBox ID="ckbFuncionarioID" AutoPostBack="true" Text="Atualizar/Excluir/Cadastrar"
+                                <asp:CheckBox ID="ckbFuncionarioID" AutoPostBack="true" Text="Atualizar/Inativar/Cadastrar"
                                     runat="server" OnCheckedChanged="ckbFuncionarioID_CheckedChanged" Visible="false" />
                             </td>
                         </tr>
@@ -81,7 +81,7 @@
                                     OnClick="imbCadastrar_Click" Visible="false" ValidationGroup="formulario" />
                                 <asp:ImageButton ID="imbAtualizar" runat="server" ImageUrl="~/img/atualizar.png"
                                     Visible="false" OnClick="imbAtualizar_Click" ValidationGroup="formulario" />
-                                <asp:ImageButton ID="imbExcluir" runat="server" ImageUrl="~/img/excluir.png" Visible="false"
+                                <asp:ImageButton ID="imbExcluir" runat="server" ImageUrl="~/img/inativar.png" Visible="false"
                                     OnClick="imbExcluir_Click" />
                             </td>
                         </tr>

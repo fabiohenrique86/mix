@@ -13,7 +13,7 @@
         <ContentTemplate>
             <div id="conteudo">
                 <div id="topo_cabeca">
-                    CADASTRO - PRAZO DE ENTREGA
+                    CONSULTA | CADASTRO | ATUALIZAÇÃO | EXCLUSÃO - PEDIDO AGENDADO - PRAZO DE ENTREGA
                 </div>
                 <div id="cabeca">
                     <table style="width: 100%;">

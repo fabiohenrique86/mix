@@ -4,7 +4,7 @@
     <ProjectView>ProjectFiles</ProjectView>
     <NameOfLastUsedPublishProfile>C:\Users\fabio\source\repos\MiX\Site\Properties\PublishProfiles\Profile1.pubxml</NameOfLastUsedPublishProfile>
     <UseIISExpress>false</UseIISExpress>
-    <LastActiveSolutionConfig>Release|Any CPU</LastActiveSolutionConfig>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
