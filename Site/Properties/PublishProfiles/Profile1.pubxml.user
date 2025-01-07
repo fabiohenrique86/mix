@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile>2024-04-01T14:01:19.8545358-03:00</TimeStampOfAssociatedLegacyPublishXmlFile>
     <_PublishTargetUrl>C:\Publish\MiX\Debug</_PublishTargetUrl>
-    <History>True|2024-09-24T13:26:43.9813930Z;True|2024-09-23T21:11:15.8574526-03:00;True|2024-06-10T18:11:32.8918053-03:00;True|2024-06-10T10:30:40.5605835-03:00;True|2024-06-05T14:53:04.7427824-03:00;True|2024-06-04T16:18:01.6232110-03:00;True|2024-05-24T10:29:29.2283304-03:00;</History>
+    <History>True|2025-01-07T13:01:20.2044597Z;True|2024-09-24T10:26:43.9813930-03:00;True|2024-09-23T21:11:15.8574526-03:00;True|2024-06-10T18:11:32.8918053-03:00;True|2024-06-10T10:30:40.5605835-03:00;True|2024-06-05T14:53:04.7427824-03:00;True|2024-06-04T16:18:01.6232110-03:00;True|2024-05-24T10:29:29.2283304-03:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -39,7 +39,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/01/2024 14:01:35</publishTime>
     </File>
     <File Include="Base.Master">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/06/2025 17:46:54</publishTime>
     </File>
     <File Include="bin/AjaxControlToolkit.dll">
       <publishTime>04/01/2024 15:17:37</publishTime>
@@ -48,10 +48,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/01/2024 15:17:37</publishTime>
     </File>
     <File Include="bin/BLL.dll">
-      <publishTime>09/24/2024 10:25:15</publishTime>
+      <publishTime>01/07/2025 10:01:17</publishTime>
     </File>
     <File Include="bin/BLL.pdb">
-      <publishTime>09/24/2024 10:25:15</publishTime>
+      <publishTime>01/07/2025 10:01:17</publishTime>
     </File>
     <File Include="bin/chromedriver.exe">
       <publishTime>10/05/2017 15:51:40</publishTime>
@@ -63,10 +63,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/01/2024 14:01:33</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>09/24/2024 10:25:15</publishTime>
+      <publishTime>01/07/2025 10:01:17</publishTime>
     </File>
     <File Include="bin/DAL.pdb">
-      <publishTime>09/24/2024 10:25:15</publishTime>
+      <publishTime>01/07/2025 10:01:17</publishTime>
     </File>
     <File Include="bin/DAO.dll">
       <publishTime>09/24/2024 10:25:14</publishTime>
@@ -156,40 +156,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/08/2023 04:09:56</publishTime>
     </File>
     <File Include="bin/Site.dll">
-      <publishTime>09/24/2024 10:26:25</publishTime>
+      <publishTime>01/07/2025 10:01:18</publishTime>
     </File>
     <File Include="bin/Site.pdb">
-      <publishTime>09/24/2024 10:26:25</publishTime>
+      <publishTime>01/07/2025 10:01:18</publishTime>
     </File>
     <File Include="bin/stdole.dll">
       <publishTime>05/06/2021 15:41:24</publishTime>
     </File>
     <File Include="bin/System.IO.dll">
-      <publishTime>02/18/2015 15:07:08</publishTime>
+      <publishTime>02/18/2015 16:07:08</publishTime>
     </File>
     <File Include="bin/System.Net.Http.dll">
-      <publishTime>02/19/2015 18:10:46</publishTime>
+      <publishTime>02/19/2015 19:10:46</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Extensions.dll">
-      <publishTime>02/19/2015 18:10:46</publishTime>
+      <publishTime>02/19/2015 19:10:46</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Primitives.dll">
-      <publishTime>02/19/2015 18:10:46</publishTime>
+      <publishTime>02/19/2015 19:10:46</publishTime>
     </File>
     <File Include="bin/System.Net.Http.WebRequest.dll">
-      <publishTime>02/19/2015 18:10:46</publishTime>
+      <publishTime>02/19/2015 19:10:46</publishTime>
     </File>
     <File Include="bin/System.Runtime.dll">
-      <publishTime>02/18/2015 15:07:08</publishTime>
+      <publishTime>02/18/2015 16:07:08</publishTime>
     </File>
     <File Include="bin/System.Threading.Tasks.dll">
-      <publishTime>02/18/2015 15:07:08</publishTime>
+      <publishTime>02/18/2015 16:07:08</publishTime>
     </File>
     <File Include="bin/TallComponents.PDF.Kit.dll">
       <publishTime>04/01/2024 15:17:37</publishTime>
     </File>
     <File Include="bin/WebDriver.dll">
-      <publishTime>11/02/2017 15:46:40</publishTime>
+      <publishTime>11/02/2017 16:46:40</publishTime>
     </File>
     <File Include="Bordero.aspx">
       <publishTime>04/01/2024 14:01:21</publishTime>
@@ -649,6 +649,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="PedidoVenda.rdlc">
       <publishTime>04/01/2024 14:01:21</publishTime>
+    </File>
+    <File Include="PrazoDeEntrega.aspx">
+      <publishTime>01/06/2025 17:57:45</publishTime>
     </File>
     <File Include="Produto.aspx">
       <publishTime>06/04/2024 16:11:47</publishTime>

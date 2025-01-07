@@ -597,7 +597,7 @@ namespace Site
                         ReservaDAO.CV = Convert.ToInt64(txtCV.Text);
                     }
 
-                    //new ReservaBLL().Inserir(ReservaDAO);
+                    new ReservaBLL().Inserir(ReservaDAO);
 
                     CarregarRepeaterReserva();
 
