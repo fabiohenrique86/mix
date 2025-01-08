@@ -87,7 +87,7 @@
                                     Visible="false" OnClick="imbAtualizar_Click" />
                                 <asp:ImageButton ID="imbExcluir" runat="server" ImageUrl="~/img/inativar.png" OnClick="imbExcluir_Click"
                                     Visible="false" />
-                                <cc1:ConfirmButtonExtender ID="imbExcluir_ConfirmButtonExtender" runat="server" ConfirmText="A exclusão de uma Loja implica em deletar TODOS os Produtos, Funcionários, Pedidos, Reservas, Notas Fiscais, Transferências e Cancelamentos relacionados a ela. Tem certeza que deseja continuar ?"
+                                <cc1:ConfirmButtonExtender ID="imbExcluir_ConfirmButtonExtender" runat="server" ConfirmText="A inativação de uma Loja implica em inativar todos os Funcionários e Usuários relacionados a ela. Tem certeza que deseja continuar?"
                                     TargetControlID="imbExcluir">
                                 </cc1:ConfirmButtonExtender>
                             </td>

@@ -5,77 +5,77 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <TimeStampOfAssociatedLegacyPublishXmlFile>2024-04-01T14:01:19.8545358-03:00</TimeStampOfAssociatedLegacyPublishXmlFile>
+    <TimeStampOfAssociatedLegacyPublishXmlFile>2025-01-07T12:17:31.3282510-03:00</TimeStampOfAssociatedLegacyPublishXmlFile>
     <_PublishTargetUrl>C:\Publish\MiX\Debug</_PublishTargetUrl>
-    <History>True|2025-01-07T13:01:20.2044597Z;True|2024-09-24T10:26:43.9813930-03:00;True|2024-09-23T21:11:15.8574526-03:00;True|2024-06-10T18:11:32.8918053-03:00;True|2024-06-10T10:30:40.5605835-03:00;True|2024-06-05T14:53:04.7427824-03:00;True|2024-06-04T16:18:01.6232110-03:00;True|2024-05-24T10:29:29.2283304-03:00;</History>
+    <History>False|2025-01-07T17:57:12.0958930Z;True|2025-01-07T10:01:20.2044597-03:00;True|2024-09-24T10:26:43.9813930-03:00;True|2024-09-23T21:11:15.8574526-03:00;True|2024-06-10T18:11:32.8918053-03:00;True|2024-06-10T10:30:40.5605835-03:00;True|2024-06-05T14:53:04.7427824-03:00;True|2024-06-04T16:18:01.6232110-03:00;True|2024-05-24T10:29:29.2283304-03:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
     <File Include="administrador/BaseAdm.Master">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="administrador/Default.aspx">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="administrador/estiloadm.css">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="administrador/Sistema.aspx">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="administrador/TipoUsuario.aspx">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="App_Themes/MiX/DropDownList.skin">
-      <publishTime>04/01/2024 14:01:35</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="App_Themes/MiX/GridView.skin">
-      <publishTime>04/01/2024 14:01:35</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="App_Themes/MiX/Label.skin">
-      <publishTime>04/01/2024 14:01:35</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="App_Themes/MiX/TextBox.skin">
-      <publishTime>04/01/2024 14:01:35</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Base.Master">
-      <publishTime>01/06/2025 17:46:54</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/AjaxControlToolkit.dll">
-      <publishTime>04/01/2024 15:17:37</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/AjaxMin.dll">
-      <publishTime>04/01/2024 15:17:37</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/BLL.dll">
-      <publishTime>01/07/2025 10:01:17</publishTime>
+      <publishTime>01/07/2025 14:57:10</publishTime>
     </File>
     <File Include="bin/BLL.pdb">
-      <publishTime>01/07/2025 10:01:17</publishTime>
+      <publishTime>01/07/2025 14:57:10</publishTime>
     </File>
     <File Include="bin/chromedriver.exe">
       <publishTime>10/05/2017 15:51:40</publishTime>
     </File>
     <File Include="bin/ClosedXML.dll">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/ClosedXML.pdb">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>01/07/2025 10:01:17</publishTime>
+      <publishTime>01/07/2025 14:57:10</publishTime>
     </File>
     <File Include="bin/DAL.pdb">
-      <publishTime>01/07/2025 10:01:17</publishTime>
+      <publishTime>01/07/2025 14:57:10</publishTime>
     </File>
     <File Include="bin/DAO.dll">
-      <publishTime>09/24/2024 10:25:14</publishTime>
+      <publishTime>01/07/2025 14:57:09</publishTime>
     </File>
     <File Include="bin/DAO.pdb">
-      <publishTime>09/24/2024 10:25:14</publishTime>
+      <publishTime>01/07/2025 14:57:09</publishTime>
     </File>
     <File Include="bin/DocumentFormat.OpenXml.dll">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/Dropbox.Api.dll">
       <publishTime>03/06/2017 16:28:30</publishTime>
@@ -90,28 +90,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2015 17:20:24</publishTime>
     </File>
     <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
-      <publishTime>04/01/2024 15:17:37</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll">
-      <publishTime>04/01/2024 15:17:37</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/Microsoft.Practices.ObjectBuilder2.dll">
-      <publishTime>04/01/2024 15:17:37</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.Common.dll">
-      <publishTime>04/01/2024 15:17:37</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.Design.dll">
-      <publishTime>04/01/2024 15:17:37</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.ProcessingObjectModel.dll">
-      <publishTime>04/01/2024 15:17:37</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.WebDesign.dll">
-      <publishTime>04/01/2024 15:17:37</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.WebForms.dll">
-      <publishTime>04/01/2024 15:17:37</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.WinForms.dll">
       <publishTime>02/20/2011 03:40:08</publishTime>
@@ -156,10 +156,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/08/2023 04:09:56</publishTime>
     </File>
     <File Include="bin/Site.dll">
-      <publishTime>01/07/2025 10:01:18</publishTime>
+      <publishTime>01/07/2025 14:58:30</publishTime>
     </File>
     <File Include="bin/Site.pdb">
-      <publishTime>01/07/2025 10:01:18</publishTime>
+      <publishTime>01/07/2025 14:58:30</publishTime>
     </File>
     <File Include="bin/stdole.dll">
       <publishTime>05/06/2021 15:41:24</publishTime>
@@ -186,133 +186,133 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/18/2015 16:07:08</publishTime>
     </File>
     <File Include="bin/TallComponents.PDF.Kit.dll">
-      <publishTime>04/01/2024 15:17:37</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/WebDriver.dll">
       <publishTime>11/02/2017 16:46:40</publishTime>
     </File>
     <File Include="Bordero.aspx">
-      <publishTime>04/01/2024 14:01:21</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Brinde.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Cancelamento.aspx">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Cancelamento.rdlc">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="CancelamentoDetalhe.aspx">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="CancelamentoRel.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="chromedriver.exe">
-      <publishTime>05/24/2024 10:03:30</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Cliente.aspx">
-      <publishTime>04/01/2024 14:01:16</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ClosedXML/ClosedXML.dll">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ClosedXML/ClosedXML.pdb">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ClosedXML/DocumentFormat.OpenXml.dll">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ComandaEntrega.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ComandaEntrega.rdlc">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ComandaOcorrencia.rdlc">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ComandaTroca.rdlc">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ComissaoFranqueado.rdlc">
-      <publishTime>04/01/2024 14:01:21</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ComissaoFranqueadoRel.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ComissaoFuncionario.rdlc">
-      <publishTime>04/01/2024 14:01:21</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ComissaoFuncionarioRel.aspx">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="connectionStrings.config">
-      <publishTime>06/05/2024 13:08:15</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Contato.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/estilo.css">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/images/ui-bg_flat_0_aaaaaa_40x100.png">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/images/ui-bg_flat_75_ffffff_40x100.png">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/images/ui-bg_glass_55_fbf9ee_1x400.png">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/images/ui-bg_glass_65_ffffff_1x400.png">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/images/ui-bg_glass_75_dadada_1x400.png">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/images/ui-bg_glass_75_e6e6e6_1x400.png">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/images/ui-bg_glass_95_fef1ec_1x400.png">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/images/ui-icons_222222_256x240.png">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/images/ui-icons_2e83ff_256x240.png">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/images/ui-icons_454545_256x240.png">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/images/ui-icons_888888_256x240.png">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/images/ui-icons_cd0a0a_256x240.png">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/jquery-ui.css">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/jquery.alerts.css">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/jquery.ui.datepicker.css">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/superfish.css">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>04/23/2024 16:57:01</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="DiaMesAno.ascx">
-      <publishTime>05/24/2024 10:03:29</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ds.xsc">
       <publishTime>08/18/2020 15:25:39</publishTime>
@@ -321,352 +321,355 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/18/2020 15:25:39</publishTime>
     </File>
     <File Include="dsComandaOcorrencia.xsc">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="dsComandaOcorrencia.xss">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="dsComandaTroca.xsc">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="dsComandaTroca.xss">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="dsEntrega.xsc">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="dsEntrega.xss">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="dsEstoque.xsc">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="dsEstoque.xss">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="dsListarComissaoFuncionarioSintetico.xsc">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="dsListarComissaoFuncionarioSintetico.xss">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="dsRelatorioSintetico.xsc">
-      <publishTime>04/01/2024 14:01:16</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="dsRelatorioSintetico.xss">
-      <publishTime>04/01/2024 14:01:16</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ds_frete_rel.xsc">
-      <publishTime>04/01/2024 14:01:19</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ds_frete_rel.xss">
-      <publishTime>04/01/2024 14:01:19</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ds_frete_relatorio.xsc">
-      <publishTime>04/01/2024 14:01:19</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="ds_frete_relatorio.xss">
-      <publishTime>04/01/2024 14:01:19</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Entrega.rdlc">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="EntregaRel.aspx">
-      <publishTime>05/24/2024 10:03:29</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="erros/Error404.aspx">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Estoque.rdlc">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="EstoqueIdeal.rdlc">
-      <publishTime>04/01/2024 14:01:21</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="EstoqueIdealRel.aspx">
-      <publishTime>04/01/2024 14:01:19</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="EstoqueRel.aspx">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="FreteRel.aspx">
-      <publishTime>04/01/2024 14:01:19</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="FreteRel.rdlc">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Funcionario.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 14:25:00</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/ajax-loader.gif">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/ajax-loader2.gif">
-      <publishTime>04/01/2024 14:01:35</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/ajax-loader3.gif">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/ajax-loader_old.gif">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/arrows-ffffff.png">
-      <publishTime>04/01/2024 14:01:35</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/atualizar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/azul.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/cadastrar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/cadastrar_mais.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/cancelar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/cancelar_pedido_reserva.png">
-      <publishTime>04/01/2024 14:01:35</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/confirmar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/consultar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/dar_baixa.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/entrar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/enviar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/excluir.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/excluir_produto.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/favicon.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/favouriteicon.ico">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/fechar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/finalizar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/gerar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/gerar_comanda.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/icone_mix.png">
-      <publishTime>04/01/2024 14:01:35</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/importar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/imprimir.gif">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
+    </File>
+    <File Include="img/inativar.png">
+      <publishTime>01/07/2025 14:20:30</publishTime>
     </File>
     <File Include="img/inserir_pedido.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/inserir_reserva.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/laranja.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/limpar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/logo_mix.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/logo_mix_small.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/pesquisar.png">
-      <publishTime>04/01/2024 14:01:35</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/preto.png">
-      <publishTime>04/01/2024 14:01:35</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/prorrogar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/reabrir.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/relatorio-sintetico.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/sair.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/shadow.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/transferir.png">
-      <publishTime>04/01/2024 14:01:35</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/transito.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/validar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/verde.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/vermelho.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/visualizar.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/zerar_estoque.png">
-      <publishTime>04/01/2024 14:01:34</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="js/hoverIntent.js">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="js/images/help.gif">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="js/images/important.gif">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="js/images/info.gif">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="js/images/title.gif">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="js/jquery-ui-1.8.24.js">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="js/jquery.alerts.js">
-      <publishTime>05/24/2024 10:03:30</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="js/jquery.js">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="js/jquery.price_format.js">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="js/superfish.js">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="js/supersubs.js">
-      <publishTime>04/01/2024 14:01:33</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="LimiteReserva.aspx">
-      <publishTime>04/01/2024 14:01:19</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Linha.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Loja.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 14:39:35</publishTime>
     </File>
     <File Include="Medida.aspx">
-      <publishTime>04/01/2024 14:01:19</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="MesAno.ascx">
-      <publishTime>05/24/2024 10:03:29</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="NotaFiscal.aspx">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="NotaFiscal.rdlc">
-      <publishTime>04/01/2024 14:01:21</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="NotaFiscalAutomatica.aspx">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="NotaFiscalRel.aspx">
-      <publishTime>06/05/2024 13:30:59</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Ocorrencia.aspx">
-      <publishTime>04/01/2024 14:01:19</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Ocorrencia.rdlc">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="OcorrenciaRel.aspx">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Orcamento.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Orcamento.rdlc">
-      <publishTime>04/01/2024 14:01:21</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="OrcamentoRel.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>11/05/2017 13:32:00</publishTime>
     </File>
     <File Include="Parcela.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Pedido.aspx">
-      <publishTime>05/24/2024 10:03:29</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Pedido2.aspx">
-      <publishTime>04/01/2024 14:01:19</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="PedidoAgendado.aspx">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="PedidoAlteracao.aspx">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="PedidoDetalhe.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="PedidoMae.aspx">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="PedidoVenda.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="PedidoVenda.rdlc">
-      <publishTime>04/01/2024 14:01:21</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="PrazoDeEntrega.aspx">
-      <publishTime>01/06/2025 17:57:45</publishTime>
+      <publishTime>01/07/2025 14:52:03</publishTime>
     </File>
     <File Include="Produto.aspx">
-      <publishTime>06/04/2024 16:11:47</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="QuadroClassificacao.rdlc">
-      <publishTime>04/01/2024 14:01:21</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="QuadroClassificacaoRel.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="RelatorioSintetico.rdlc">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="RelatorioSintetico_ComissaoFuncionario.rdlc">
-      <publishTime>04/01/2024 14:01:16</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Reserva.aspx">
       <publishTime>02/16/2016 20:59:59</publishTime>
@@ -675,34 +678,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/21/2016 19:33:00</publishTime>
     </File>
     <File Include="smtp.config">
-      <publishTime>04/01/2024 14:01:21</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="TipoPagamento.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Transferencia.aspx">
-      <publishTime>06/04/2024 15:22:07</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Troca.aspx">
-      <publishTime>04/01/2024 14:01:17</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Usuario.aspx">
-      <publishTime>04/01/2024 14:01:18</publishTime>
+      <publishTime>01/07/2025 14:47:34</publishTime>
     </File>
     <File Include="VendaProduto.rdlc">
-      <publishTime>04/01/2024 14:01:21</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="VendaProdutoRel.aspx">
-      <publishTime>06/10/2024 10:20:11</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="VendaTipoPagamento.rdlc">
-      <publishTime>04/01/2024 14:01:21</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="VendaTipoPagamentoRel.aspx">
-      <publishTime>04/01/2024 14:01:20</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/24/2024 10:20:28</publishTime>
+      <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
   </ItemGroup>
 </Project>
