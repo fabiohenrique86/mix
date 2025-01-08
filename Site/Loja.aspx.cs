@@ -311,11 +311,11 @@ namespace Site
 
                     if (string.IsNullOrEmpty(this.txtLojaID.Text))
                     {
-                        throw new ApplicationException("A exclusão de uma loja só pode ser feita pelo LojaID.\r\n\r\nDigite-o no campo LojaID e clique novamente no botão Excluir.");
+                        throw new ApplicationException("A inativação de uma loja só pode ser feita pelo LojaID.\r\n\r\nDigite-o no campo LojaID e clique novamente no botão Excluir.");
                     }
                     if (!lojaDAL.Listar(this.txtLojaID.Text, usuarioSessao.SistemaID))
                     {
-                        throw new ApplicationException("Loja inexistente. Informe outro LojaID a ser excluído.");
+                        throw new ApplicationException("Loja inexistente. Informe outro LojaID a ser inativado.");
                     }
 
                     lojaDAL.Excluir(this.txtLojaID.Text, usuarioSessao.SistemaID);
