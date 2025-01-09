@@ -58,7 +58,7 @@
                 <div id="corpo">
                     <asp:GridView ID="gdvTipoPagamento" runat="server" SkinID="GridView" OnRowDataBound="gdvTipoPagamento_RowDataBound">
                         <Columns>
-                            <asp:BoundField DataField="TipoPagamentoID" HeaderText="TipoPagamentoID" ItemStyle-Width="5%" />
+                            <asp:BoundField DataField="TipoPagamentoID" HeaderText="ID" ItemStyle-Width="5%" />
                             <asp:BoundField DataField="Descricao" HeaderText="Tipo Pagamento" ItemStyle-Width="95%" />
                         </Columns>
                     </asp:GridView>

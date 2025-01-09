@@ -55,7 +55,7 @@
                     <asp:GridView ID="gdvMedida" runat="server" OnRowDataBound="gdvMedida_RowDataBound"
                         SkinID="GridViewFooter" OnPageIndexChanging="gdvMedida_PageIndexChanging">
                         <Columns>
-                            <asp:BoundField DataField="MedidaID" HeaderText="MedidaID" ItemStyle-Width="5%" />
+                            <asp:BoundField DataField="MedidaID" HeaderText="ID" ItemStyle-Width="5%" />
                             <asp:BoundField DataField="Descricao" HeaderText="Medida" ItemStyle-Width="95%" />
                         </Columns>
                     </asp:GridView>

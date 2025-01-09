@@ -57,7 +57,7 @@ namespace DAL
             }
         }
 
-        public void Excluir(string UsuarioId)
+        public void Excluir(int usuarioId)
         {
             Database db;
             try
@@ -66,7 +66,7 @@ namespace DAL
                 using (DbCommand cmd = db.GetStoredProcCommand("dbo.spExcluirUsuario"))
                 {
                     cmd.CommandTimeout = 300;
-                    db.AddInParameter(cmd, "@UsuarioID", DbType.Int32, Convert.ToInt32(UsuarioId));
+                    db.AddInParameter(cmd, "@UsuarioID", DbType.Int32, Convert.ToInt32(usuarioId));
                     db.ExecuteNonQuery(cmd);
                 }
             }

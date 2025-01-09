@@ -1,17 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using BLL;
+using DAO;
+using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BLL;
-using DAO;
-using DAL;
 
 namespace Site
 {
-    public partial class Funcionario : System.Web.UI.Page
+    public partial class Funcionario : Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!base.IsPostBack)
+                {
+                    if (!UtilitarioBLL.PermissaoUsuario(Session["Usuario"]))
+                    {
+                        UtilitarioBLL.Sair();
+                        if (base.Request.Url.Segments.Length == 3)
+                        {
+                            base.Response.Redirect("../Default.aspx", false);
+                        }
+                        else
+                        {
+                            base.Response.Redirect("Default.aspx", false);
+                        }
+                    }
+                    else
+                    {
+                        this.VisualizarFormulario();
+                        this.CarregarRepeaterLoja();
+                        this.CarregarDropDownListLoja();
+                    }
+                }
+            }
+            catch (ApplicationException ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
+            }
+        }
+
         private bool CarregarDados(bool filtro)
         {
             this.ViewState["filtro"] = true;
@@ -47,7 +79,7 @@ namespace Site
                 this.imbCadastrar.Visible = true;
                 this.imbConsultar.Visible = false;
                 this.imbAtualizar.Visible = true;
-                this.imbExcluir.Visible = true;
+                //this.imbExcluir.Visible = true;
                 this.ckbFuncionarioID.Text = "Consultar";
             }
             else
@@ -57,28 +89,10 @@ namespace Site
                 this.imbCadastrar.Visible = false;
                 this.imbConsultar.Visible = true;
                 this.imbAtualizar.Visible = false;
-                this.imbExcluir.Visible = false;
-                this.ckbFuncionarioID.Text = "Cadastrar/Atualizar/Inativar";
+                //this.imbExcluir.Visible = false;
+                this.ckbFuncionarioID.Text = "Cadastrar/Atualizar";
             }
             this.LimparFormulario(this.txtFuncionarioID, this.txtNome, this.ddlLoja, this.txtTelefone, this.txtEmail);
-        }
-
-        protected void gdvFuncionario_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Cells[1].Text = e.Row.Cells[1].Text.ToUpper();
-
-                string telefone = e.Row.Cells[2].Text;
-                if (telefone.Length == 8)
-                {
-                    e.Row.Cells[2].Text = string.Format("{0:####-####}", Convert.ToInt64(telefone));
-                }
-                else if (telefone.Length == 10)
-                {
-                    e.Row.Cells[2].Text = string.Format("{0:(##)####-####}", Convert.ToInt64(telefone));
-                }
-            }
         }
 
         protected void imbAtualizar_Click(object sender, ImageClickEventArgs e)
@@ -249,56 +263,106 @@ namespace Site
             }
         }
 
-        protected void imbExcluir_Click(object sender, ImageClickEventArgs e)
-        {
-            try
-            {
-                if (Session["Usuario"] == null)
-                {
-                    BLL.AplicacaoBLL.Empresa = null;
+        //protected void imbExcluir_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (Session["Usuario"] == null)
+        //        {
+        //            BLL.AplicacaoBLL.Empresa = null;
 
-                    if (base.Request.Url.Segments.Length == 3)
-                    {
-                        base.Response.Redirect("../Default.aspx", true);
-                    }
-                    else
-                    {
-                        base.Response.Redirect("Default.aspx", true);
-                    }
-                }
-                else
+        //            if (base.Request.Url.Segments.Length == 3)
+        //            {
+        //                base.Response.Redirect("../Default.aspx", true);
+        //            }
+        //            else
+        //            {
+        //                base.Response.Redirect("Default.aspx", true);
+        //            }
+        //        }
+        //        else
+        //        {
+        //            BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+        //            int funcionarioId = 0;
+        //            if (!string.IsNullOrEmpty(this.txtFuncionarioID.Text.Trim().ToUpper()))
+        //            {
+        //                funcionarioId = Convert.ToInt32(this.txtFuncionarioID.Text.Trim().ToUpper());
+        //            }
+        //            if (funcionarioId <= 0)
+        //            {
+        //                throw new ApplicationException("Informe o FuncionárioID para efetuar a exclusão.");
+        //            }
+        //            if (!DAL.FuncionarioDAL.Listar(this.txtFuncionarioID.Text, usuarioSessao.SistemaID))
+        //            {
+        //                throw new ApplicationException("Funcionário inexistente.");
+        //            }
+        //            if (!DAL.FuncionarioDAL.EstaAtivo(funcionarioId, usuarioSessao.SistemaID))
+        //            {
+        //                throw new ApplicationException("Funcionário inexistente.");
+        //            }
+        //            DAL.FuncionarioDAL.Excluir(new DAO.FuncionarioDAO(funcionarioId, usuarioSessao.SistemaID));
+        //            this.Session["bdFuncionario"] = true;
+        //            this.LimparFormulario(this.txtFuncionarioID, this.txtNome, this.ddlLoja, this.txtTelefone, this.txtEmail);
+        //            this.CarregarRepeaterLoja();
+        //        }
+        //    }
+        //    catch (ApplicationException ex)
+        //    {
+        //        UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
+        //    }
+        //}
+
+        protected void gdvFuncionario_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "AtivarInativar")
+            {
+                BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+                int funcionarioId = Convert.ToInt32(e.CommandArgument);
+                
+                DAL.FuncionarioDAL.Excluir(new FuncionarioDAO(funcionarioId, usuarioSessao.SistemaID));
+                this.Session["bdFuncionario"] = true;
+
+                this.CarregarRepeaterLoja();
+            }
+        }
+
+        protected void gdvFuncionario_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[1].Text = e.Row.Cells[1].Text.ToUpper();
+
+                string telefone = e.Row.Cells[2].Text;
+                if (telefone.Length == 8)
                 {
-                    BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-                    int funcionarioId = 0;
-                    if (!string.IsNullOrEmpty(this.txtFuncionarioID.Text.Trim().ToUpper()))
+                    e.Row.Cells[2].Text = string.Format("{0:####-####}", Convert.ToInt64(telefone));
+                }
+                else if (telefone.Length == 10)
+                {
+                    e.Row.Cells[2].Text = string.Format("{0:(##)####-####}", Convert.ToInt64(telefone));
+                }
+
+                if (usuarioSessao.TipoUsuarioID != UtilitarioBLL.TipoUsuario.Administrador.GetHashCode())
+                {
+                    var btnAtivarInativar = (Button)e.Row.FindControl("btnAtivarInativar");
+                    if (btnAtivarInativar != null)
                     {
-                        funcionarioId = Convert.ToInt32(this.txtFuncionarioID.Text.Trim().ToUpper());
+                        btnAtivarInativar.Visible = false;
                     }
-                    if (funcionarioId <= 0)
-                    {
-                        throw new ApplicationException("Informe o FuncionárioID para efetuar a exclusão.");
-                    }
-                    if (!DAL.FuncionarioDAL.Listar(this.txtFuncionarioID.Text, usuarioSessao.SistemaID))
-                    {
-                        throw new ApplicationException("Funcionário inexistente.");
-                    }
-                    if (!DAL.FuncionarioDAL.EstaAtivo(funcionarioId, usuarioSessao.SistemaID))
-                    {
-                        throw new ApplicationException("Funcionário inexistente.");
-                    }
-                    DAL.FuncionarioDAL.Excluir(new DAO.FuncionarioDAO(funcionarioId, usuarioSessao.SistemaID));
-                    this.Session["bdFuncionario"] = true;
-                    this.LimparFormulario(this.txtFuncionarioID, this.txtNome, this.ddlLoja, this.txtTelefone, this.txtEmail);
-                    this.CarregarRepeaterLoja();
                 }
             }
-            catch (ApplicationException ex)
+            else if (e.Row.RowType == DataControlRowType.Header || e.Row.RowType == DataControlRowType.Footer)
             {
-                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message);
-            }
-            catch (Exception ex)
-            {
-                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
+                if (usuarioSessao.TipoUsuarioID != UtilitarioBLL.TipoUsuario.Administrador.GetHashCode())
+                {
+                    e.Row.Cells[4].Visible = false;
+                }
             }
         }
 
@@ -309,42 +373,6 @@ namespace Site
             ddlLoja.SelectedIndex = 0;
             txtTelefone.Text = string.Empty;
             txtEmail.Text = string.Empty;
-        }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!base.IsPostBack)
-                {
-                    if (!UtilitarioBLL.PermissaoUsuario(Session["Usuario"]))
-                    {
-                        UtilitarioBLL.Sair();
-                        if (base.Request.Url.Segments.Length == 3)
-                        {
-                            base.Response.Redirect("../Default.aspx", false);
-                        }
-                        else
-                        {
-                            base.Response.Redirect("Default.aspx", false);
-                        }
-                    }
-                    else
-                    {
-                        this.VisualizarFormulario();
-                        this.CarregarRepeaterLoja();
-                        this.CarregarDropDownListLoja();
-                    }
-                }
-            }
-            catch (ApplicationException ex)
-            {
-                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message);
-            }
-            catch (Exception ex)
-            {
-                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
-            }
         }
 
         protected void rptLoja_ItemDataBound(object sender, RepeaterItemEventArgs e)
