@@ -73,6 +73,18 @@
                             </td>
                         </tr>
                         <tr>
+                            <td class="style1">
+                                <asp:Label ID="lblStatus" runat="server" Text="Status"></asp:Label>
+                            </td>
+                            <td style="text-align: left;">
+                                <asp:RadioButtonList ID="rblStatus" runat="server" RepeatDirection="Horizontal">
+                                    <asp:ListItem Selected="True" Text="Ativos" Value="true" />
+                                    <asp:ListItem Text="Inativos" Value="false" />
+                                    <asp:ListItem Text="Todos" Value="" />
+                                </asp:RadioButtonList>
+                            </td>
+                        </tr>
+                        <tr>
                             <td colspan="2">
                                 <asp:ImageButton ID="imbConsultar" runat="server" ImageUrl="~/img/consultar.png"
                                     OnClick="imbConsultar_Click" />
@@ -80,8 +92,6 @@
                                     OnClick="imbCadastrar_Click" Visible="false" ValidationGroup="formulario" />
                                 <asp:ImageButton ID="imbAtualizar" runat="server" ImageUrl="~/img/atualizar.png"
                                     Visible="false" OnClick="imbAtualizar_Click" ValidationGroup="formulario" />
-                                <%--<asp:ImageButton ID="imbExcluir" runat="server" ImageUrl="~/img/inativar.png" Visible="false"
-                                    OnClick="imbExcluir_Click" />--%>
                             </td>
                         </tr>
                     </table>

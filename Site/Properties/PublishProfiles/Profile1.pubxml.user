@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile>2025-01-07T12:17:31.3282510-03:00</TimeStampOfAssociatedLegacyPublishXmlFile>
     <_PublishTargetUrl>C:\Publish\MiX\Debug</_PublishTargetUrl>
-    <History>False|2025-01-07T17:57:12.0958930Z;True|2025-01-07T10:01:20.2044597-03:00;True|2024-09-24T10:26:43.9813930-03:00;True|2024-09-23T21:11:15.8574526-03:00;True|2024-06-10T18:11:32.8918053-03:00;True|2024-06-10T10:30:40.5605835-03:00;True|2024-06-05T14:53:04.7427824-03:00;True|2024-06-04T16:18:01.6232110-03:00;True|2024-05-24T10:29:29.2283304-03:00;</History>
+    <History>True|2025-01-09T17:11:20.3602588Z;False|2025-01-07T14:57:12.0958930-03:00;True|2025-01-07T10:01:20.2044597-03:00;True|2024-09-24T10:26:43.9813930-03:00;True|2024-09-23T21:11:15.8574526-03:00;True|2024-06-10T18:11:32.8918053-03:00;True|2024-06-10T10:30:40.5605835-03:00;True|2024-06-05T14:53:04.7427824-03:00;True|2024-06-04T16:18:01.6232110-03:00;True|2024-05-24T10:29:29.2283304-03:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -48,10 +48,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/BLL.dll">
-      <publishTime>01/08/2025 10:51:37</publishTime>
+      <publishTime>01/09/2025 14:11:18</publishTime>
     </File>
     <File Include="bin/BLL.pdb">
-      <publishTime>01/08/2025 10:51:37</publishTime>
+      <publishTime>01/09/2025 14:11:18</publishTime>
     </File>
     <File Include="bin/chromedriver.exe">
       <publishTime>10/05/2017 15:51:40</publishTime>
@@ -63,10 +63,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>01/08/2025 10:51:36</publishTime>
+      <publishTime>01/09/2025 14:11:18</publishTime>
     </File>
     <File Include="bin/DAL.pdb">
-      <publishTime>01/08/2025 10:51:36</publishTime>
+      <publishTime>01/09/2025 14:11:18</publishTime>
     </File>
     <File Include="bin/DAO.dll">
       <publishTime>01/07/2025 14:57:09</publishTime>
@@ -156,10 +156,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/08/2023 04:09:56</publishTime>
     </File>
     <File Include="bin/Site.dll">
-      <publishTime>01/08/2025 10:51:38</publishTime>
+      <publishTime>01/09/2025 14:11:19</publishTime>
     </File>
     <File Include="bin/Site.pdb">
-      <publishTime>01/08/2025 10:51:38</publishTime>
+      <publishTime>01/09/2025 14:11:19</publishTime>
     </File>
     <File Include="bin/stdole.dll">
       <publishTime>05/06/2021 15:41:24</publishTime>
@@ -396,7 +396,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Funcionario.aspx">
-      <publishTime>01/07/2025 14:25:00</publishTime>
+      <publishTime>01/09/2025 14:05:22</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -582,13 +582,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Linha.aspx">
-      <publishTime>01/07/2025 12:17:31</publishTime>
+      <publishTime>01/09/2025 14:06:46</publishTime>
     </File>
     <File Include="Loja.aspx">
-      <publishTime>01/08/2025 10:49:21</publishTime>
+      <publishTime>01/09/2025 14:04:42</publishTime>
     </File>
     <File Include="Medida.aspx">
-      <publishTime>01/07/2025 12:17:31</publishTime>
+      <publishTime>01/09/2025 14:07:09</publishTime>
     </File>
     <File Include="MesAno.ascx">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -681,7 +681,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="TipoPagamento.aspx">
-      <publishTime>01/07/2025 12:17:31</publishTime>
+      <publishTime>01/09/2025 14:06:23</publishTime>
     </File>
     <File Include="Transferencia.aspx">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -690,7 +690,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Usuario.aspx">
-      <publishTime>01/07/2025 14:47:34</publishTime>
+      <publishTime>01/09/2025 14:04:32</publishTime>
     </File>
     <File Include="VendaProduto.rdlc">
       <publishTime>01/07/2025 12:17:31</publishTime>

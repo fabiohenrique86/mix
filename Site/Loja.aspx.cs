@@ -44,23 +44,50 @@ namespace Site
             }
         }
 
-        private bool CarregarDados(string cnpj, string razaoSocial, string nomeFantasia, string telefone, string cota, int sistemaId)
+        private bool Consultar()
         {
-            this.gdvLoja.DataSource = new DAL.LojaDAL().Listar(cnpj, razaoSocial, nomeFantasia, telefone, cota, sistemaId);
+            string cnpj = this.txtCnpj.Text.Replace(".", "").Replace("/", "").Replace("-", "").Replace(",", "").Replace("_", "");
+            string razaoSocial = txtRazaoSocial.Text.Trim();
+            string nomeFantasia = txtNomeFantasia.Text.Trim();
+            string telefone = txtTelefone.Text.Replace("(", "").Replace(")", "").Replace("_", "").Replace("-", "");
+
+            string cota = this.txtCota.Text;
+            if (cota == "0,00")
+            {
+                cota = "";
+            }
+
+            bool? ativo = null;
+            if (string.IsNullOrWhiteSpace(rblStatus.SelectedValue))
+            {
+                ativo = null;
+            }
+            else if (bool.TryParse(rblStatus.SelectedValue, out bool parsedValue))
+            {
+                ativo = parsedValue;
+            }
+
+            BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+
+            this.gdvLoja.DataSource = new DAL.LojaDAL().ListarFiltro(cnpj, razaoSocial, nomeFantasia, telefone, cota, usuarioSessao.SistemaID, ativo);
             this.gdvLoja.DataBind();
+
             return (this.gdvLoja.Rows.Count > 0);
         }
 
         private bool CarregarGridLoja()
         {
             BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+
             if ((this.Session["dsLoja"] == null) || (this.Session["bdLoja"] != null))
             {
                 this.Session["dsLoja"] = new DAL.LojaDAL().Listar(usuarioSessao.SistemaID);
                 this.Session["bdLoja"] = null;
             }
+
             this.gdvLoja.DataSource = this.Session["dsLoja"];
             this.gdvLoja.DataBind();
+
             return (this.gdvLoja.Rows.Count > 0);
         }
 
@@ -73,7 +100,6 @@ namespace Site
                 this.imbCadastrar.Visible = false;
                 this.imbConsultar.Visible = false;
                 this.imbAtualizar.Visible = true;
-                //this.imbExcluir.Visible = true;
                 this.ckbLojaID.Text = "Consultar/Cadastrar";
             }
             else
@@ -83,7 +109,6 @@ namespace Site
                 this.imbCadastrar.Visible = true;
                 this.imbConsultar.Visible = true;
                 this.imbAtualizar.Visible = false;
-                //this.imbExcluir.Visible = false;
                 this.ckbLojaID.Text = "Atualizar";
             }
             this.LimparFormulario(this.txtLojaID, this.txtCnpj, this.txtNomeFantasia, this.txtRazaoSocial, this.txtTelefone, this.txtCota);
@@ -95,19 +120,7 @@ namespace Site
             {
                 BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
                 this.gdvLoja.PageIndex = e.NewPageIndex;
-                if (((!string.IsNullOrEmpty(this.txtCnpj.Text) && (this.txtCnpj.Text != "__.___.___/____-__")) || ((!string.IsNullOrEmpty(this.txtRazaoSocial.Text) || !string.IsNullOrEmpty(this.txtNomeFantasia.Text)) || (!string.IsNullOrEmpty(this.txtTelefone.Text) && (this.txtTelefone.Text != "(__)____-____")))) || !string.IsNullOrEmpty(this.txtCota.Text))
-                {
-                    string cota = this.txtCota.Text;
-                    if (cota == "0,00")
-                    {
-                        cota = "";
-                    }
-                    this.CarregarDados(this.txtCnpj.Text.Replace(".", "").Replace("/", "").Replace("-", "").Replace(",", ""), this.txtRazaoSocial.Text, this.txtNomeFantasia.Text, this.txtTelefone.Text.Trim().ToUpper().Replace("(", "").Replace(")", "").Replace("_", "").Replace("-", ""), cota, usuarioSessao.SistemaID);
-                }
-                else
-                {
-                    this.CarregarGridLoja();
-                }
+                this.Consultar();
             }
             catch (ApplicationException ex)
             {
@@ -322,18 +335,7 @@ namespace Site
                 }
                 else
                 {
-                    BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-                    if (((string.IsNullOrEmpty(this.txtCnpj.Text) || (this.txtCnpj.Text == "__.___.___/____-__")) && ((string.IsNullOrEmpty(this.txtRazaoSocial.Text) && string.IsNullOrEmpty(this.txtNomeFantasia.Text)) && (string.IsNullOrEmpty(this.txtTelefone.Text) || (this.txtTelefone.Text == "(__)____-____")))) && string.IsNullOrEmpty(this.txtCota.Text))
-                    {
-                        throw new ApplicationException("É necessário informar um ou mais campos para consultar.");
-                    }
-                    string cnpjFormatado = this.txtCnpj.Text.Replace(".", "").Replace("/", "").Replace("-", "").Replace(",", "").Replace("_", "");
-                    string cota = this.txtCota.Text;
-                    if (cota == "0,00")
-                    {
-                        cota = "";
-                    }
-                    if (!this.CarregarDados(cnpjFormatado, this.txtRazaoSocial.Text, this.txtNomeFantasia.Text, this.txtTelefone.Text.Trim().ToUpper().Replace("(", "").Replace(")", "").Replace("_", "").Replace("-", ""), cota, usuarioSessao.SistemaID))
+                    if (!this.Consultar())
                     {
                         throw new ApplicationException("Loja inexistente.");
                     }
@@ -348,55 +350,6 @@ namespace Site
                 UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
             }
         }
-
-        //protected void imbExcluir_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (Session["Usuario"] == null)
-        //        {
-        //            BLL.AplicacaoBLL.Empresa = null;
-
-        //            if (base.Request.Url.Segments.Length == 3)
-        //            {
-        //                base.Response.Redirect("../Default.aspx", true);
-        //            }
-        //            else
-        //            {
-        //                base.Response.Redirect("Default.aspx", true);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-        //            DAL.LojaDAL lojaDAL = new DAL.LojaDAL();
-
-        //            if (string.IsNullOrEmpty(this.txtLojaID.Text))
-        //            {
-        //                throw new ApplicationException("A inativação de uma loja só pode ser feita pelo LojaID.\r\n\r\nDigite-o no campo LojaID e clique novamente no botão Excluir.");
-        //            }
-        //            if (!lojaDAL.Listar(this.txtLojaID.Text, usuarioSessao.SistemaID))
-        //            {
-        //                throw new ApplicationException("Loja inexistente. Informe outro LojaID a ser inativado.");
-        //            }
-
-        //            lojaDAL.Excluir(this.txtLojaID.Text, usuarioSessao.SistemaID);
-
-        //            this.Session["bdLoja"] = true;
-        //            this.LimparFormulario(this.txtLojaID, this.txtCnpj, this.txtNomeFantasia, this.txtRazaoSocial, this.txtTelefone, this.txtCota);
-        //            this.CarregarGridLoja();
-        //        }
-        //    }
-        //    catch (ApplicationException ex)
-        //    {
-        //        UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
-        //    }
-        //}
-
         private void LimparFormulario(TextBox lojaId, TextBox cnpj, TextBox razaoSocial, TextBox nomeFantasia, TextBox telefone, TextBox cota)
         {
             lojaId.Text = string.Empty;
