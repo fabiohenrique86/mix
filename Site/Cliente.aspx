@@ -113,6 +113,7 @@
                             </td>
                             <td style="text-align: left;" colspan="7">
                                 <asp:TextBox ID="txtCEP" runat="server" Width="100px" MaxLength="300" SkinID="TextBox"></asp:TextBox>
+                                <asp:Button ID="btnConsultar" runat="server" Text="Consultar" OnClick="btnConsultar_Click" />
                             </td>
                         </tr>
                         <tr>

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Site {
-    
-    
-    public partial class Cliente {
-        
+namespace Site
+{
+
+
+    public partial class Cliente
+    {
+
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// lblTopo control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTopo;
-        
+
         /// <summary>
         /// lblClienteID control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblClienteID;
-        
+
         /// <summary>
         /// txtClienteID control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtClienteID;
-        
+
         /// <summary>
         /// txtClienteID_FilteredTextBoxExtender control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender txtClienteID_FilteredTextBoxExtender;
-        
+
         /// <summary>
         /// ckbClienteID control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox ckbClienteID;
-        
+
         /// <summary>
         /// lblTipoCliente control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTipoCliente;
-        
+
         /// <summary>
         /// rblTipoCliente control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblTipoCliente;
-        
+
         /// <summary>
         /// lblNome_ control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNome_;
-        
+
         /// <summary>
         /// txtNome control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNome;
-        
+
         /// <summary>
         /// txtNomeFantasia control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNomeFantasia;
-        
+
         /// <summary>
         /// lblRazaoSocial_ control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRazaoSocial_;
-        
+
         /// <summary>
         /// txtRazaoSocial control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRazaoSocial;
-        
+
         /// <summary>
         /// lblEmail_ control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEmail_;
-        
+
         /// <summary>
         /// txtEmail control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-        
+
         /// <summary>
         /// lblCpfCnpj_ control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCpfCnpj_;
-        
+
         /// <summary>
         /// txtCnpj control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCnpj;
-        
+
         /// <summary>
         /// txtCnpj_MaskedEditExtender control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender txtCnpj_MaskedEditExtender;
-        
+
         /// <summary>
         /// txtCpf control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCpf;
-        
+
         /// <summary>
         /// meeCpf control.
         /// </summary>
@@ -191,7 +193,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender meeCpf;
-        
+
         /// <summary>
         /// lblDataNascimento_ control.
         /// </summary>
@@ -200,7 +202,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDataNascimento_;
-        
+
         /// <summary>
         /// txtDataNascimento control.
         /// </summary>
@@ -209,7 +211,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDataNascimento;
-        
+
         /// <summary>
         /// txtDataNascimento_MaskedEditExtender control.
         /// </summary>
@@ -218,7 +220,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender txtDataNascimento_MaskedEditExtender;
-        
+
         /// <summary>
         /// lblCep control.
         /// </summary>
@@ -227,7 +229,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCep;
-        
+
         /// <summary>
         /// txtCEP control.
         /// </summary>
@@ -236,7 +238,16 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCEP;
-        
+
+        /// <summary>
+        /// btnConsultar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnConsultar;
+
         /// <summary>
         /// lblEndereco control.
         /// </summary>
@@ -245,7 +256,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEndereco;
-        
+
         /// <summary>
         /// txtEndereco control.
         /// </summary>
@@ -254,7 +265,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEndereco;
-        
+
         /// <summary>
         /// lblBairro control.
         /// </summary>
@@ -263,7 +274,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBairro;
-        
+
         /// <summary>
         /// txtBairro control.
         /// </summary>
@@ -272,7 +283,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBairro;
-        
+
         /// <summary>
         /// lblCidade control.
         /// </summary>
@@ -281,7 +292,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCidade;
-        
+
         /// <summary>
         /// txtCidade control.
         /// </summary>
@@ -290,7 +301,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCidade;
-        
+
         /// <summary>
         /// lblEstado control.
         /// </summary>
@@ -299,7 +310,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEstado;
-        
+
         /// <summary>
         /// txtEstado control.
         /// </summary>
@@ -308,7 +319,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEstado;
-        
+
         /// <summary>
         /// lblPontoReferencia control.
         /// </summary>
@@ -317,7 +328,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPontoReferencia;
-        
+
         /// <summary>
         /// txtPontoReferencia control.
         /// </summary>
@@ -326,7 +337,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPontoReferencia;
-        
+
         /// <summary>
         /// lblTelefoneResidencial control.
         /// </summary>
@@ -335,7 +346,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTelefoneResidencial;
-        
+
         /// <summary>
         /// txtTelefoneResidencial control.
         /// </summary>
@@ -344,7 +355,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTelefoneResidencial;
-        
+
         /// <summary>
         /// lblTelefoneResidencial2 control.
         /// </summary>
@@ -353,7 +364,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTelefoneResidencial2;
-        
+
         /// <summary>
         /// txtTelefoneResidencial2 control.
         /// </summary>
@@ -362,7 +373,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTelefoneResidencial2;
-        
+
         /// <summary>
         /// lblTelefoneCelular control.
         /// </summary>
@@ -371,7 +382,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTelefoneCelular;
-        
+
         /// <summary>
         /// txtTelefoneCelular control.
         /// </summary>
@@ -380,7 +391,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTelefoneCelular;
-        
+
         /// <summary>
         /// lblTelefoneCelular2 control.
         /// </summary>
@@ -389,7 +400,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTelefoneCelular2;
-        
+
         /// <summary>
         /// txtTelefoneCelular2 control.
         /// </summary>
@@ -398,7 +409,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTelefoneCelular2;
-        
+
         /// <summary>
         /// txtTelefoneResidencial_MaskedEditExtender control.
         /// </summary>
@@ -407,7 +418,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender txtTelefoneResidencial_MaskedEditExtender;
-        
+
         /// <summary>
         /// txtTelefoneResidencial2_MaskedEditExtender control.
         /// </summary>
@@ -416,7 +427,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender txtTelefoneResidencial2_MaskedEditExtender;
-        
+
         /// <summary>
         /// txtTelefoneCelular_MaskedEditExtender control.
         /// </summary>
@@ -425,7 +436,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender txtTelefoneCelular_MaskedEditExtender;
-        
+
         /// <summary>
         /// txtTelefoneCelular2_MaskedEditExtender control.
         /// </summary>
@@ -434,7 +445,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender txtTelefoneCelular2_MaskedEditExtender;
-        
+
         /// <summary>
         /// lblFuncionario control.
         /// </summary>
@@ -443,7 +454,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFuncionario;
-        
+
         /// <summary>
         /// ddlFuncionario control.
         /// </summary>
@@ -452,7 +463,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlFuncionario;
-        
+
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -461,7 +472,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// ddlMes control.
         /// </summary>
@@ -470,7 +481,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlMes;
-        
+
         /// <summary>
         /// imbConsultar control.
         /// </summary>
@@ -479,7 +490,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbConsultar;
-        
+
         /// <summary>
         /// imbCadastrar control.
         /// </summary>
@@ -488,7 +499,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbCadastrar;
-        
+
         /// <summary>
         /// imbAtualizar control.
         /// </summary>
@@ -497,7 +508,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbAtualizar;
-        
+
         /// <summary>
         /// imbExcluir control.
         /// </summary>
@@ -506,7 +517,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbExcluir;
-        
+
         /// <summary>
         /// gdvCliente control.
         /// </summary>

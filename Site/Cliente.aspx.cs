@@ -3,6 +3,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAO;
 using BLL;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json;
+using System.Linq;
 
 namespace Site
 {
@@ -12,6 +16,8 @@ namespace Site
         {
             try
             {
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+
                 if (!base.IsPostBack)
                 {
                     if (!UtilitarioBLL.PermissaoUsuario(Session["Usuario"]))
@@ -807,6 +813,110 @@ namespace Site
             {
                 UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message, ex);
             }
+        }
+
+        protected void btnConsultar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cep = new string(txtCEP.Text.Trim().Where(char.IsDigit).ToArray());
+
+                if (string.IsNullOrEmpty(cep) || cep.Length != 8)
+                {
+                    throw new ApplicationException("Por favor, insira um CEP válido (8 números).");
+                }
+
+                string url = $"https://viacep.com.br/ws/{cep}/json/";
+
+                string json = ConsultarCEP(url);
+
+                if (!string.IsNullOrEmpty(json))
+                {
+                    var dadosCep = JsonConvert.DeserializeObject<Endereco>(json);
+
+                    if (dadosCep != null && string.IsNullOrEmpty(dadosCep.Erro))
+                    {
+                        txtEndereco.Text = dadosCep.Logradouro;
+                        txtBairro.Text = dadosCep.Bairro;
+                        txtCidade.Text = dadosCep.Localidade;
+                        txtEstado.Text = dadosCep.Uf;
+                        txtPontoReferencia.Text = dadosCep.Complemento;
+                    }
+                    else
+                    {
+                        throw new ApplicationException("CEP não encontrado");
+                    }
+                }
+                else
+                {
+                    throw new ApplicationException("Erro ao consultar o CEP.");
+                }
+            }
+            catch (ApplicationException ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message, ex);
+            }
+        }
+
+        private string ConsultarCEP(string url)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        return reader.ReadToEnd();
+                    }
+                }
+                else
+                {
+                    throw new Exception($"Erro na consulta. Código HTTP: {response.StatusCode}");
+                }
+            }
+        }
+
+        public class Endereco
+        {
+            [JsonProperty("cep")]
+            public string Cep { get; set; }
+
+            [JsonProperty("logradouro")]
+            public string Logradouro { get; set; }
+
+            [JsonProperty("complemento")]
+            public string Complemento { get; set; }
+
+            [JsonProperty("bairro")]
+            public string Bairro { get; set; }
+
+            [JsonProperty("localidade")]
+            public string Localidade { get; set; }
+
+            [JsonProperty("uf")]
+            public string Uf { get; set; }
+
+            [JsonProperty("ibge")]
+            public string Ibge { get; set; }
+
+            [JsonProperty("gia")]
+            public string Gia { get; set; }
+
+            [JsonProperty("ddd")]
+            public string Ddd { get; set; }
+
+            [JsonProperty("siafi")]
+            public string Siafi { get; set; }
+
+            [JsonProperty("erro")]
+            public string Erro { get; set; }
         }
 
         private void SetarBordaGridView()
