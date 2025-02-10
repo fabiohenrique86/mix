@@ -229,6 +229,7 @@ namespace Site
                         e.Row.Cells[11].Visible = false;
                         break;
                     case 5:
+                    case 6:
                         e.Row.Cells[5].Visible = false;
                         e.Row.Cells[6].Visible = false;
                         e.Row.Cells[8].Visible = false;
@@ -261,6 +262,7 @@ namespace Site
                         e.Row.Cells[11].Visible = false;
                         break;
                     case 5:
+                    case 6:
                         e.Row.Cells[5].Visible = false;
                         e.Row.Cells[6].Visible = false;
                         e.Row.Cells[8].Visible = false;
