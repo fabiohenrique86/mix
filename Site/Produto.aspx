@@ -163,7 +163,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style2">Arquivo de ESTOQUE (Depósito):</td>
+                            <td class="style2">Arquivo de ESTOQUE:</td>
                             <td style="text-align: left; width: 180px">
                                 <asp:FileUpload ID="fupImportarEstoque" runat="server" />
                             </td>

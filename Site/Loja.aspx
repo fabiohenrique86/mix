@@ -26,7 +26,7 @@
                             <td>
                                 <asp:TextBox ID="txtLojaID" runat="server" CssClass="desabilitado" Enabled="false"
                                     Width="40px" MaxLength="3" SkinID="TextBox"></asp:TextBox>
-                                <asp:CheckBox ID="ckbLojaID" runat="server" AutoPostBack="true" Text="Atualizar/Excluir"
+                                <asp:CheckBox ID="ckbLojaID" runat="server" AutoPostBack="true" Text="Atualizar"
                                     OnCheckedChanged="ckbLojaID_CheckedChanged" Visible="false" />
                             </td>
                         </tr>
@@ -78,6 +78,18 @@
                             </td>
                         </tr>
                         <tr>
+                            <td class="style2">
+                                <asp:Label ID="lblStatus" runat="server" Text="Status"></asp:Label>
+                            </td>
+                            <td style="text-align: left;">
+                                <asp:RadioButtonList ID="rblStatus" runat="server" RepeatDirection="Horizontal">
+                                    <asp:ListItem Selected="True" Text="Ativos" Value="true" />
+                                    <asp:ListItem Text="Inativos" Value="false" />
+                                    <asp:ListItem Text="Todos" Value="" />
+                                </asp:RadioButtonList>
+                            </td>
+                        </tr>
+                        <tr>
                             <td colspan="2">
                                 <asp:ImageButton ID="imbConsultar" runat="server" ImageUrl="~/img/consultar.png"
                                     OnClick="imbConsultar_Click" />
@@ -85,25 +97,33 @@
                                     OnClick="imbCadastrar_Click" Visible="false" />
                                 <asp:ImageButton ID="imbAtualizar" runat="server" ImageUrl="~/img/atualizar.png"
                                     Visible="false" OnClick="imbAtualizar_Click" />
-                                <asp:ImageButton ID="imbExcluir" runat="server" ImageUrl="~/img/excluir.png" OnClick="imbExcluir_Click"
+                                <%--<asp:ImageButton ID="imbExcluir" runat="server" ImageUrl="~/img/inativar.png" OnClick="imbExcluir_Click"
                                     Visible="false" />
-                                <cc1:ConfirmButtonExtender ID="imbExcluir_ConfirmButtonExtender" runat="server" ConfirmText="A exclusão de uma Loja implica em deletar TODOS os Produtos, Funcionários, Pedidos, Reservas, Notas Fiscais, Transferências e Cancelamentos relacionados a ela. Tem certeza que deseja continuar ?"
+                                <cc1:ConfirmButtonExtender ID="imbExcluir_ConfirmButtonExtender" runat="server" ConfirmText="A inativação de uma Loja implica em inativar todos os Funcionários e Usuários relacionados a ela. Tem certeza que deseja continuar?"
                                     TargetControlID="imbExcluir">
-                                </cc1:ConfirmButtonExtender>
+                                </cc1:ConfirmButtonExtender>--%>
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div id="corpo">
-                    <asp:GridView ID="gdvLoja" runat="server" OnRowDataBound="gdvLoja_RowDataBound" SkinID="GridViewFooter"
-                        OnPageIndexChanging="gdvLoja_PageIndexChanging">
+                    <asp:GridView ID="gdvLoja" runat="server" SkinID="GridViewFooter" OnPageIndexChanging="gdvLoja_PageIndexChanging" OnRowCommand="gdvLoja_RowCommand" OnRowDataBound="gdvLoja_RowDataBound">
                         <Columns>
-                            <asp:BoundField DataField="LojaID" HeaderText="LojaID" ItemStyle-Width="5%" />
+                            <asp:BoundField DataField="LojaID" HeaderText="ID" ItemStyle-Width="5%" />
                             <asp:BoundField DataField="Cnpj" HeaderText="CNPJ" ItemStyle-Width="10%" />
-                            <asp:BoundField DataField="RazaoSocial" HeaderText="Razão Social" ItemStyle-Width="25%" />
+                            <asp:BoundField DataField="RazaoSocial" HeaderText="Razão Social" ItemStyle-Width="20%" />
                             <asp:BoundField DataField="NomeFantasia" HeaderText="Nome Fantasia" ItemStyle-Width="20%" />
                             <asp:BoundField DataField="Telefone" HeaderText="Telefone" ItemStyle-Width="9%" />
-                            <asp:BoundField DataField="Cota" HeaderText="Cota" DataFormatString="{0:c}" ItemStyle-Width="15%" />
+                            <asp:BoundField DataField="Cota" HeaderText="Cota" DataFormatString="{0:c}" ItemStyle-Width="10%" />
+                            <asp:TemplateField HeaderText="Ações" ItemStyle-Width="10%">
+                                <ItemTemplate>
+                                    <asp:Button ID="btnAtivarInativar" runat="server"
+                                        Text='<%# Eval("Ativo") != null && (bool)Eval("Ativo") ? "Inativar" : "Ativar" %>'
+                                        CommandName="AtivarInativar"
+                                        CommandArgument='<%# Eval("LojaID") %>'
+                                        OnClientClick='<%# Eval("Ativo") != null && (bool)Eval("Ativo") ? "return confirm(\"A inativação de uma Loja implica em inativar todos os Funcionários e Usuários relacionados a ela. Tem certeza que deseja continuar?\");" : "return confirm(\"Tem certeza que deseja ativar essa loja?\");" %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
                 </div>

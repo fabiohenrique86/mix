@@ -229,6 +229,7 @@ namespace Site
                         e.Row.Cells[11].Visible = false;
                         break;
                     case 5:
+                    case 6:
                         e.Row.Cells[5].Visible = false;
                         e.Row.Cells[6].Visible = false;
                         e.Row.Cells[8].Visible = false;
@@ -261,6 +262,7 @@ namespace Site
                         e.Row.Cells[11].Visible = false;
                         break;
                     case 5:
+                    case 6:
                         e.Row.Cells[5].Visible = false;
                         e.Row.Cells[6].Visible = false;
                         e.Row.Cells[8].Visible = false;
@@ -914,20 +916,26 @@ namespace Site
                 var produtosDao = new List<ProdutoDAO>();
                 ProdutoDAO produtoDao = null;
                 var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+                var produtoDAL = new ProdutoDAL();
 
-                var lojaDao = ((DataSet)Session["dsLoja"]).
-                       Tables[0].
-                       AsEnumerable().
-                       Select(dataRow => new LojaDAO
-                       {
-                           LojaID = dataRow.Field<int>("LojaID"),
-                           CNPJ = dataRow.Field<string>("Cnpj"),
-                           RazaoSocial = dataRow.Field<string>("RazaoSocial"),
-                           NomeFantasia = dataRow.Field<string>("NomeFantasia"),
-                           Telefone = dataRow.Field<string>("Telefone"),
-                           Cota = dataRow.Field<double>("Cota"),
-                           SistemaID = usuarioSessao.SistemaID
-                       }).FirstOrDefault(x => x.NomeFantasia.ToUpper() == "DEPÓSITO");
+                var lojas = new List<int>();
+                foreach (GridViewRow gdrLoja in gdvLoja.Rows)
+                {
+                    if (((CheckBox)gdrLoja.FindControl("ckbLoja")).Checked)
+                    {
+                        lojas.Add(Convert.ToInt32(((Label)gdrLoja.FindControl("lblLojaID")).Text));
+                    }
+                }
+
+                if (lojas == null || lojas.Count() <= 0)
+                {
+                    throw new ApplicationException("Selecione uma loja");
+                }
+
+                if (lojas.Count() > 1)
+                {
+                    throw new ApplicationException("Selecione somente uma loja");
+                }
 
                 foreach (var cellUsed in workbook.Worksheets.FirstOrDefault().Cells().Where(x => x.Address.ColumnLetter.ToUpper() == "A" || x.Address.ColumnLetter.ToUpper() == "C"))
                 {
@@ -951,7 +959,7 @@ namespace Site
                         if (produtoDao != null && produtoDao.ProdutoID > 0)
                         {
                             produtoDao.Quantidade = quantidade;
-                            produtoDao.LojaID = lojaDao.LojaID;
+                            produtoDao.LojaID = lojas.FirstOrDefault();
                             produtoDao.SistemaID = usuarioSessao.SistemaID;
 
                             produtosDao.Add(produtoDao);
@@ -959,7 +967,7 @@ namespace Site
                     }
                 }
 
-                var listaRetorno = new ProdutoDAL().Atualizar(produtosDao);
+                var listaRetorno = produtoDAL.Atualizar(produtosDao);
 
                 CarregarRepeaterLoja();
 

@@ -3,6 +3,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAO;
 using BLL;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json;
+using System.Linq;
 
 namespace Site
 {
@@ -808,6 +812,160 @@ namespace Site
                 UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message, ex);
             }
         }
+
+        protected void btnConsultar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cep = new string(txtCEP.Text.Trim().Where(char.IsDigit).ToArray());
+
+                if (string.IsNullOrEmpty(cep) || cep.Length != 8)
+                {
+                    throw new ApplicationException("Por favor, insira um CEP válido (8 números).");
+                }
+
+                //string url = $"https://viacep.com.br/ws/{cep}/json/";
+                string url = $"https://brasilapi.com.br/api/cep/v2/{cep}";
+
+                string json = ConsultarCEP(url);
+
+                if (!string.IsNullOrEmpty(json))
+                {
+                    //var dadosCep = JsonConvert.DeserializeObject<Endereco>(json);
+                    var dadosCep = JsonConvert.DeserializeObject<CepResponse>(json);
+
+                    if (dadosCep != null)
+                    {
+                        txtEndereco.Text = dadosCep.Street;
+                        txtBairro.Text = dadosCep.Neighborhood;
+                        txtCidade.Text = dadosCep.City;
+                        txtEstado.Text = dadosCep.State;
+                        //txtPontoReferencia.Text = dadosCep.Service;
+                    }
+                    else
+                    {
+                        throw new ApplicationException("CEP não encontrado");
+                    }
+
+                    /*
+                    if (dadosCep != null && string.IsNullOrEmpty(dadosCep.Erro))
+                    {
+                        txtEndereco.Text = dadosCep.Logradouro;
+                        txtBairro.Text = dadosCep.Bairro;
+                        txtCidade.Text = dadosCep.Localidade;
+                        txtEstado.Text = dadosCep.Uf;
+                        txtPontoReferencia.Text = dadosCep.Complemento;
+                    }
+                    else
+                    {
+                        throw new ApplicationException("CEP não encontrado");
+                    }*/
+                }
+                else
+                {
+                    throw new ApplicationException("Erro ao consultar o CEP.");
+                }
+            }
+            catch (ApplicationException ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(Page, ex.Message, ex);
+            }
+        }
+
+        private string ConsultarCEP(string url)
+        {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+            /*
+            using (WebClient client = new WebClient())
+            {
+                try
+                {
+                    return client.DownloadString(url);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Erro na consulta de CEP: {ex.Message}");
+                }
+            }*/
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.ContentType = "application/json";
+            request.Timeout = 30000;  // Timeout de 30 segundos
+            request.ReadWriteTimeout = 30000;
+            request.Method = "GET";
+            request.ProtocolVersion = HttpVersion.Version11; // Definir versão HTTP
+            request.ServicePoint.Expect100Continue = false;
+            request.AllowAutoRedirect = true;
+            //request.SecurityProtocol = SecurityProtocolType.Tls12;  // Forçar TLS 1.2
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        return reader.ReadToEnd();
+                    }
+                }
+                else
+                {
+                    throw new Exception($"Erro na consulta. Código HTTP: {response.StatusCode}");
+                }
+            }
+        }
+
+        public class CepResponse
+        {
+            public string Cep { get; set; }
+            public string State { get; set; }
+            public string City { get; set; }
+            public string Neighborhood { get; set; }
+            public string Street { get; set; }
+            public string Service { get; set; }
+        }
+
+        /*
+        public class Endereco
+        {
+            [JsonProperty("cep")]
+            public string Cep { get; set; }
+
+            [JsonProperty("logradouro")]
+            public string Logradouro { get; set; }
+
+            [JsonProperty("complemento")]
+            public string Complemento { get; set; }
+
+            [JsonProperty("bairro")]
+            public string Bairro { get; set; }
+
+            [JsonProperty("localidade")]
+            public string Localidade { get; set; }
+
+            [JsonProperty("uf")]
+            public string Uf { get; set; }
+
+            [JsonProperty("ibge")]
+            public string Ibge { get; set; }
+
+            [JsonProperty("gia")]
+            public string Gia { get; set; }
+
+            [JsonProperty("ddd")]
+            public string Ddd { get; set; }
+
+            [JsonProperty("siafi")]
+            public string Siafi { get; set; }
+
+            [JsonProperty("erro")]
+            public string Erro { get; set; }
+        }
+        */
 
         private void SetarBordaGridView()
         {

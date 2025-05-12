@@ -173,7 +173,7 @@ namespace DAL
             return funcionario;
         }
 
-        public static DataSet Listar(string nome, string lojaId, string telefone, string email)
+        public static DataSet Listar(string nome, string lojaId, string telefone, string email, bool? ativo)
         {
             Database db;
             DataSet ds;
@@ -199,6 +199,10 @@ namespace DAL
                     db.AddInParameter(cmd, "@LojaID", DbType.Int32, lojaId);
                     db.AddInParameter(cmd, "@Telefone", DbType.String, telefone);
                     db.AddInParameter(cmd, "@Email", DbType.String, email);
+
+                    if (ativo.HasValue)
+                        db.AddInParameter(cmd, "@Ativo", DbType.Boolean, ativo);
+
                     ds = db.ExecuteDataSet(cmd);
                 }
             }

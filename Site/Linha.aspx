@@ -67,7 +67,7 @@
                     <asp:GridView ID="gdvLinha" runat="server" OnRowDataBound="gdvLinha_RowDataBound"
                         SkinID="GridView">
                         <Columns>
-                            <asp:BoundField DataField="LinhaID" HeaderText="LinhaID" ItemStyle-Width="5%" />
+                            <asp:BoundField DataField="LinhaID" HeaderText="ID" ItemStyle-Width="5%" />
                             <asp:BoundField DataField="Descricao" HeaderText="Linha" ItemStyle-Width="85%" />
                             <asp:BoundField DataField="Desconto" HeaderText="Desconto (%)" ItemStyle-Width="10%" />
                         </Columns>

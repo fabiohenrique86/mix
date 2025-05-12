@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Site {
-    
-    
-    public partial class Loja {
-        
+namespace Site
+{
+
+
+    public partial class Loja
+    {
+
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// lblTopo control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTopo;
-        
+
         /// <summary>
         /// lblLojaID control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLojaID;
-        
+
         /// <summary>
         /// txtLojaID control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLojaID;
-        
+
         /// <summary>
         /// ckbLojaID control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox ckbLojaID;
-        
+
         /// <summary>
         /// lblCnpj control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCnpj;
-        
+
         /// <summary>
         /// txtCnpj control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCnpj;
-        
+
         /// <summary>
         /// txtCnpj_MaskedEditExtender control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender txtCnpj_MaskedEditExtender;
-        
+
         /// <summary>
         /// lblRazaoSocial control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRazaoSocial;
-        
+
         /// <summary>
         /// txtRazaoSocial control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRazaoSocial;
-        
+
         /// <summary>
         /// lblNomeFantasia control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNomeFantasia;
-        
+
         /// <summary>
         /// txtNomeFantasia control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNomeFantasia;
-        
+
         /// <summary>
         /// lblTelefone control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTelefone;
-        
+
         /// <summary>
         /// txtTelefone control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTelefone;
-        
+
         /// <summary>
         /// txtTelefone_MaskedEditExtender control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender txtTelefone_MaskedEditExtender;
-        
+
         /// <summary>
         /// lblCota control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCota;
-        
+
         /// <summary>
         /// txtCota control.
         /// </summary>
@@ -164,7 +166,25 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCota;
-        
+
+        /// <summary>
+        /// lblStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStatus;
+
+        /// <summary>
+        /// rblStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblStatus;
+
         /// <summary>
         /// imbConsultar control.
         /// </summary>
@@ -173,7 +193,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbConsultar;
-        
+
         /// <summary>
         /// imbCadastrar control.
         /// </summary>
@@ -182,7 +202,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbCadastrar;
-        
+
         /// <summary>
         /// imbAtualizar control.
         /// </summary>
@@ -191,25 +211,7 @@ namespace Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbAtualizar;
-        
-        /// <summary>
-        /// imbExcluir control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imbExcluir;
-        
-        /// <summary>
-        /// imbExcluir_ConfirmButtonExtender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ConfirmButtonExtender imbExcluir_ConfirmButtonExtender;
-        
+
         /// <summary>
         /// gdvLoja control.
         /// </summary>

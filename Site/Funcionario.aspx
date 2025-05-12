@@ -4,8 +4,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-        .style1
-        {
+        .style1 {
             width: 100px;
         }
     </style>
@@ -29,7 +28,7 @@
                                 <cc1:FilteredTextBoxExtender ID="txtFuncionarioID_FilteredTextBoxExtender" runat="server"
                                     FilterType="Numbers" TargetControlID="txtFuncionarioID">
                                 </cc1:FilteredTextBoxExtender>
-                                <asp:CheckBox ID="ckbFuncionarioID" AutoPostBack="true" Text="Atualizar/Excluir/Cadastrar"
+                                <asp:CheckBox ID="ckbFuncionarioID" AutoPostBack="true" Text="Atualizar/Cadastrar"
                                     runat="server" OnCheckedChanged="ckbFuncionarioID_CheckedChanged" Visible="false" />
                             </td>
                         </tr>
@@ -74,6 +73,18 @@
                             </td>
                         </tr>
                         <tr>
+                            <td class="style1">
+                                <asp:Label ID="lblStatus" runat="server" Text="Status"></asp:Label>
+                            </td>
+                            <td style="text-align: left;">
+                                <asp:RadioButtonList ID="rblStatus" runat="server" RepeatDirection="Horizontal">
+                                    <asp:ListItem Selected="True" Text="Ativos" Value="true" />
+                                    <asp:ListItem Text="Inativos" Value="false" />
+                                    <asp:ListItem Text="Todos" Value="" />
+                                </asp:RadioButtonList>
+                            </td>
+                        </tr>
+                        <tr>
                             <td colspan="2">
                                 <asp:ImageButton ID="imbConsultar" runat="server" ImageUrl="~/img/consultar.png"
                                     OnClick="imbConsultar_Click" />
@@ -81,8 +92,6 @@
                                     OnClick="imbCadastrar_Click" Visible="false" ValidationGroup="formulario" />
                                 <asp:ImageButton ID="imbAtualizar" runat="server" ImageUrl="~/img/atualizar.png"
                                     Visible="false" OnClick="imbAtualizar_Click" ValidationGroup="formulario" />
-                                <asp:ImageButton ID="imbExcluir" runat="server" ImageUrl="~/img/excluir.png" Visible="false"
-                                    OnClick="imbExcluir_Click" />
                             </td>
                         </tr>
                     </table>
@@ -95,12 +104,21 @@
                                 <asp:Label ID="lblLoja" runat="server" Text='<%# Bind("NomeFantasia") %>'></asp:Label>
                             </div>
                             <div>
-                                <asp:GridView ID="gdvFuncionario" runat="server" SkinID="GridView" OnRowDataBound="gdvFuncionario_RowDataBound">
+                                <asp:GridView ID="gdvFuncionario" runat="server" SkinID="GridView" OnRowCommand="gdvFuncionario_RowCommand" OnRowDataBound="gdvFuncionario_RowDataBound">
                                     <Columns>
-                                        <asp:BoundField DataField="FuncionarioID" HeaderText="FuncionarioID" ItemStyle-Width="10%" />
-                                        <asp:BoundField DataField="Nome" HeaderText="Nome" ItemStyle-Width="60%" />
+                                        <asp:BoundField DataField="FuncionarioID" HeaderText="ID" ItemStyle-Width="5%" />
+                                        <asp:BoundField DataField="Nome" HeaderText="Nome" ItemStyle-Width="45%" />
                                         <asp:BoundField DataField="Telefone" HeaderText="Telefone" ItemStyle-Width="15%" />
-                                        <asp:BoundField DataField="Email" HeaderText="E-mail" ItemStyle-Width="15%" />
+                                        <asp:BoundField DataField="Email" HeaderText="E-mail" ItemStyle-Width="25%" />
+                                        <asp:TemplateField HeaderText="Ações" ItemStyle-Width="10%">
+                                            <ItemTemplate>
+                                                <asp:Button ID="btnAtivarInativar" runat="server"
+                                                    Text='<%# Eval("Ativo") != null && (bool)Eval("Ativo") ? "Inativar" : "Ativar" %>'
+                                                    CommandName="AtivarInativar"
+                                                    CommandArgument='<%# Eval("FuncionarioID") %>'
+                                                    OnClientClick='<%# Eval("Ativo") != null && (bool)Eval("Ativo") ? "return confirm(\"Tem certeza que deseja inativar este funcionário?\");" : "return confirm(\"Tem certeza que deseja ativar este funcionário?\");" %>' />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
                             </div>

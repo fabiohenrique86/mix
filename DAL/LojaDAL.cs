@@ -57,7 +57,7 @@ namespace DAL
             }
         }
 
-        public void Excluir(string lojaId, int sistemaId)
+        public void Excluir(int lojaId, int sistemaId)
         {
             Database db;
             try
@@ -66,7 +66,7 @@ namespace DAL
                 using (DbCommand cmd = db.GetStoredProcCommand("dbo.spExcluirLoja"))
                 {
                     cmd.CommandTimeout = 300;
-                    db.AddInParameter(cmd, "@LojaID", DbType.String, lojaId);
+                    db.AddInParameter(cmd, "@LojaID", DbType.Int32, lojaId);
                     db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
                     db.ExecuteNonQuery(cmd);
                 }
@@ -163,7 +163,7 @@ namespace DAL
             return loja;
         }
 
-        public DataSet Listar(string cnpj, string razaoSocial, string nomeFantasia, string telefone, string cota, int sistemaId)
+        public DataSet ListarFiltro(string cnpj, string razaoSocial, string nomeFantasia, string telefone, string cota, int sistemaId, bool? ativo)
         {
             Database db;
             DataSet ds;
@@ -173,32 +173,42 @@ namespace DAL
                 using (DbCommand cmd = db.GetStoredProcCommand("dbo.spListarLojaFiltro"))
                 {
                     cmd.CommandTimeout = 300;
+
                     if (string.IsNullOrEmpty(cnpj))
                     {
                         cnpj = null;
                     }
+
                     if (string.IsNullOrEmpty(razaoSocial))
                     {
                         razaoSocial = null;
                     }
+
                     if (string.IsNullOrEmpty(nomeFantasia))
                     {
                         nomeFantasia = null;
                     }
+
                     if (string.IsNullOrEmpty(telefone))
                     {
                         telefone = null;
                     }
+
                     if (string.IsNullOrEmpty(cota))
                     {
                         cota = null;
                     }
+
                     db.AddInParameter(cmd, "@CNPJ", DbType.String, cnpj);
                     db.AddInParameter(cmd, "@RazaoSocial", DbType.String, razaoSocial);
                     db.AddInParameter(cmd, "@NomeFantasia", DbType.String, nomeFantasia);
                     db.AddInParameter(cmd, "@Telefone", DbType.String, telefone);
                     db.AddInParameter(cmd, "@Cota", DbType.Decimal, cota);
                     db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
+
+                    if (ativo.HasValue)
+                        db.AddInParameter(cmd, "@Ativo", DbType.Boolean, ativo);
+
                     ds = db.ExecuteDataSet(cmd);
                 }
             }

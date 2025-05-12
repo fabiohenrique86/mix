@@ -57,7 +57,7 @@ namespace DAL
             }
         }
 
-        public void Excluir(string UsuarioId)
+        public void Excluir(int usuarioId)
         {
             Database db;
             try
@@ -66,7 +66,7 @@ namespace DAL
                 using (DbCommand cmd = db.GetStoredProcCommand("dbo.spExcluirUsuario"))
                 {
                     cmd.CommandTimeout = 300;
-                    db.AddInParameter(cmd, "@UsuarioID", DbType.Int32, Convert.ToInt32(UsuarioId));
+                    db.AddInParameter(cmd, "@UsuarioID", DbType.Int32, Convert.ToInt32(usuarioId));
                     db.ExecuteNonQuery(cmd);
                 }
             }
@@ -107,7 +107,7 @@ namespace DAL
             }
         }
 
-        public DataSet Listar(int sistemaId)
+        public DataSet Listar(UsuarioDAO usuarioDAO)
         {
             Database db;
             DataSet ds;
@@ -117,7 +117,27 @@ namespace DAL
                 using (DbCommand cmd = db.GetStoredProcCommand("dbo.spListarUsuario"))
                 {
                     cmd.CommandTimeout = 300;
-                    db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
+
+                    if (usuarioDAO != null)
+                    {
+                        if (usuarioDAO.UsuarioID > 0)
+                            db.AddInParameter(cmd, "@UsuarioID", DbType.Int32, usuarioDAO.UsuarioID);
+
+                        if (usuarioDAO.LojaID > 0)
+                            db.AddInParameter(cmd, "@LojaID", DbType.Int32, usuarioDAO.LojaID);
+
+                        if (usuarioDAO.TipoUsuarioID > 0)
+                            db.AddInParameter(cmd, "@TipoUsuarioID", DbType.Int32, usuarioDAO.TipoUsuarioID);
+
+                        if (!string.IsNullOrEmpty(usuarioDAO.Login))
+                            db.AddInParameter(cmd, "@Login", DbType.String, usuarioDAO.Login);
+
+                        db.AddInParameter(cmd, "@SistemaID", DbType.Int32, usuarioDAO.SistemaID);
+
+                        if (usuarioDAO.Ativo.HasValue)
+                            db.AddInParameter(cmd, "@Ativo", DbType.Boolean, usuarioDAO.Ativo);
+                    }
+
                     ds = db.ExecuteDataSet(cmd);
                 }
             }
