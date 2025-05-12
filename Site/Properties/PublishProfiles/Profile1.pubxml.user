@@ -6,8 +6,8 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile>2025-01-07T12:17:31.3282510-03:00</TimeStampOfAssociatedLegacyPublishXmlFile>
-    <_PublishTargetUrl>C:\Publish\MiX\Debug</_PublishTargetUrl>
-    <History>True|2025-01-10T14:17:38.4862523Z;True|2025-01-09T16:33:34.8955566-03:00;True|2025-01-09T16:07:35.9750822-03:00;True|2025-01-09T14:11:20.3602588-03:00;False|2025-01-07T14:57:12.0958930-03:00;True|2025-01-07T10:01:20.2044597-03:00;True|2024-09-24T10:26:43.9813930-03:00;True|2024-09-23T21:11:15.8574526-03:00;True|2024-06-10T18:11:32.8918053-03:00;True|2024-06-10T10:30:40.5605835-03:00;True|2024-06-05T14:53:04.7427824-03:00;True|2024-06-04T16:18:01.6232110-03:00;True|2024-05-24T10:29:29.2283304-03:00;</History>
+    <_PublishTargetUrl>C:\Publish\MiX\Release</_PublishTargetUrl>
+    <History>True|2025-05-12T00:05:58.7147646Z;True|2025-02-10T17:14:52.6869345-03:00;True|2025-01-10T11:17:38.4862523-03:00;True|2025-01-09T16:33:34.8955566-03:00;True|2025-01-09T16:07:35.9750822-03:00;True|2025-01-09T14:11:20.3602588-03:00;False|2025-01-07T14:57:12.0958930-03:00;True|2025-01-07T10:01:20.2044597-03:00;True|2024-09-24T10:26:43.9813930-03:00;True|2024-09-23T21:11:15.8574526-03:00;True|2024-06-10T18:11:32.8918053-03:00;True|2024-06-10T10:30:40.5605835-03:00;True|2024-06-05T14:53:04.7427824-03:00;True|2024-06-04T16:18:01.6232110-03:00;True|2024-05-24T10:29:29.2283304-03:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -48,10 +48,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/BLL.dll">
-      <publishTime>01/10/2025 11:17:36</publishTime>
+      <publishTime>05/11/2025 21:05:29</publishTime>
     </File>
     <File Include="bin/BLL.pdb">
-      <publishTime>01/10/2025 11:17:36</publishTime>
+      <publishTime>05/11/2025 21:05:29</publishTime>
     </File>
     <File Include="bin/chromedriver.exe">
       <publishTime>10/05/2017 15:51:40</publishTime>
@@ -63,16 +63,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>01/10/2025 11:17:35</publishTime>
+      <publishTime>05/11/2025 21:05:28</publishTime>
     </File>
     <File Include="bin/DAL.pdb">
-      <publishTime>01/10/2025 11:17:35</publishTime>
+      <publishTime>05/11/2025 21:05:28</publishTime>
     </File>
     <File Include="bin/DAO.dll">
-      <publishTime>01/10/2025 11:17:35</publishTime>
+      <publishTime>05/11/2025 21:05:28</publishTime>
     </File>
     <File Include="bin/DAO.pdb">
-      <publishTime>01/10/2025 11:17:35</publishTime>
+      <publishTime>05/11/2025 21:05:28</publishTime>
     </File>
     <File Include="bin/DocumentFormat.OpenXml.dll">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -156,10 +156,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/08/2023 04:09:56</publishTime>
     </File>
     <File Include="bin/Site.dll">
-      <publishTime>01/10/2025 11:17:37</publishTime>
+      <publishTime>05/11/2025 21:05:57</publishTime>
     </File>
     <File Include="bin/Site.pdb">
-      <publishTime>01/10/2025 11:17:37</publishTime>
+      <publishTime>05/11/2025 21:05:57</publishTime>
     </File>
     <File Include="bin/stdole.dll">
       <publishTime>03/13/2023 20:58:43</publishTime>
@@ -657,7 +657,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 14:52:03</publishTime>
     </File>
     <File Include="Produto.aspx">
-      <publishTime>01/07/2025 12:17:31</publishTime>
+      <publishTime>05/11/2025 20:52:22</publishTime>
     </File>
     <File Include="QuadroClassificacao.rdlc">
       <publishTime>01/07/2025 12:17:31</publishTime>
