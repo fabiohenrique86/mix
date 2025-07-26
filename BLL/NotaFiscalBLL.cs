@@ -400,6 +400,12 @@ namespace BLL
 
         private void ValidarImportarArquivoCarga(List<NotaFiscalDAO> notasFiscaisDao)
         {
+            if (notasFiscaisDao == null || !notasFiscaisDao.Any())
+                throw new ApplicationException("Nota Fiscal é obrigatório");
+
+            if (notasFiscaisDao.Any(x => x.DataNotaFiscal == DateTime.MinValue))
+                throw new ApplicationException("Data da Nota Fiscal não encontrada no arquivo de carga.");
+
             if (notasFiscaisDao.Any(x => x.DataNotaFiscal == DateTime.MinValue))
                 throw new ApplicationException("Data da Nota Fiscal não encontrada no arquivo de carga.");
 
