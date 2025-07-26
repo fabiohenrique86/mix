@@ -242,7 +242,7 @@ namespace Site
             else if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 e.Row.Cells[1].ToolTip = "Reserva: " + e.Row.Cells[8].Text + " | A Programar: " + e.Row.Cells[11].Text;
-                
+
                 switch (usuarioSessao.TipoUsuarioID)
                 {
                     case 2:
@@ -625,7 +625,7 @@ namespace Site
                     if ((gdvProduto.Rows.Count <= 0) && (ViewState["filtro"] != null))
                     {
                         var labelNomeFantasia = ((Label)e.AccordionItem.FindControl("lblNomeFantasia"));
-                        
+
                         if (labelNomeFantasia != null)
                             labelNomeFantasia.Visible = false;
 
@@ -1159,9 +1159,12 @@ namespace Site
                     string numeroNotaFiscal;
                     row.Cell("J").TryGetValue(out numeroNotaFiscal);
 
-                    if (numeroNotaFiscal.Contains(",")) // múltiplas nfs
+                    var multiplasNfesComVirgula = numeroNotaFiscal.Contains(",");
+                    var multiplasNfesComPonto = numeroNotaFiscal.Contains(".");
+
+                    if (multiplasNfesComVirgula || multiplasNfesComPonto) // múltiplas nfs
                     {
-                        var nfs = numeroNotaFiscal.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                        var nfs = numeroNotaFiscal.Split(multiplasNfesComVirgula ? ",".ToCharArray() : ".".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 
                         foreach (var nf in nfs)
                         {

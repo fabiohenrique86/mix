@@ -2,6 +2,7 @@
 using DAO;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Transactions;
 
 namespace BLL
@@ -23,16 +24,16 @@ namespace BLL
 
             var listaRetorno = new List<string>();
 
-            //using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions() { Timeout = TimeSpan.FromMinutes(5) }))
-            //{
+            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions() { Timeout = TimeSpan.FromMinutes(5) }))
+            {
                 var cargaId = _cargaDAL.Inserir(cargaDAO);
 
                 cargaDAO.NotaFiscalDao.ForEach(x => x.CargaID = cargaId);
 
                 listaRetorno = _notaFiscalBLL.ImportarArquivoCarga(cargaDAO.NotaFiscalDao);
 
-            //    scope.Complete();
-            //}
+                scope.Complete();
+            }
 
             return listaRetorno;
         }
