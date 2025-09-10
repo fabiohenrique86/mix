@@ -12,11 +12,13 @@ namespace BLL
     {
         private NotaFiscalDAL notaFiscalDAL;
         private ProdutoBLL produtoBLL;
+        private ProdutoDAL produtoDAL;
 
         public NotaFiscalBLL()
         {
             notaFiscalDAL = new NotaFiscalDAL();
             produtoBLL = new ProdutoBLL();
+            produtoDAL = new ProdutoDAL();
         }
 
         /// <summary>
@@ -416,7 +418,16 @@ namespace BLL
                 throw new ApplicationException("Quantidade Recebida do Produto não pode ser negativa no arquivo de carga.");
 
             if (notasFiscaisDao.Any(x => x.NotaFiscalID <= 0))
-                throw new ApplicationException("Nota Fiscal não encontrada no arquivo de carga.");            
+                throw new ApplicationException("Nota Fiscal não encontrada no arquivo de carga.");
+
+            // verifica se algum produto da lista não está cadastrado
+            foreach (var item in notasFiscaisDao)
+            {
+                var produtoExiste = produtoDAL.ExisteNaLoja(item.Produto.ProdutoID, string.Empty, item.SistemaID);
+                
+                if (!produtoExiste)
+                    throw new ApplicationException($"Produto '{item.Produto.ProdutoID}' não está cadastrado");
+            }
         }
     }
 }
