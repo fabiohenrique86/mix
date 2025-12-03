@@ -4,8 +4,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-        .style1
-        {
+        .style1 {
             width: 100px;
         }
     </style>
@@ -50,6 +49,17 @@
                             </td>
                         </tr>
                         <tr>
+                            <td class="style1">
+                                <asp:Label ID="lblLimiteReserva" runat="server" Text="Limite Reserva" SkinID="Label"></asp:Label>
+                            </td>
+                            <td style="text-align: left;">
+                                <asp:TextBox ID="txtLimiteReserva" runat="server" Width="55px" MaxLength="3" SkinID="TextBox"></asp:TextBox>
+                                <cc1:FilteredTextBoxExtender ID="ftetxtLimite" runat="server" TargetControlID="txtLimiteReserva"
+                                    FilterType="Numbers">
+                                </cc1:FilteredTextBoxExtender>
+                            </td>
+                        </tr>
+                        <tr>
                             <td colspan="2">
                                 <asp:ImageButton ID="imbConsultar" runat="server" ImageUrl="~/img/consultar.png"
                                     OnClick="imbConsultar_Click" />
@@ -68,8 +78,9 @@
                         SkinID="GridView">
                         <Columns>
                             <asp:BoundField DataField="LinhaID" HeaderText="ID" ItemStyle-Width="5%" />
-                            <asp:BoundField DataField="Descricao" HeaderText="Linha" ItemStyle-Width="85%" />
+                            <asp:BoundField DataField="Descricao" HeaderText="Linha" ItemStyle-Width="75%" />
                             <asp:BoundField DataField="Desconto" HeaderText="Desconto (%)" ItemStyle-Width="10%" />
+                            <asp:BoundField DataField="LimiteReserva" HeaderText="LimiteReserva" ItemStyle-Width="10%" />
                         </Columns>
                     </asp:GridView>
                 </div>

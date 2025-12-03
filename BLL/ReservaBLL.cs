@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DAL;
 using DAO;
 
 namespace BLL
@@ -7,37 +8,42 @@ namespace BLL
     public class ReservaBLL
     {
         private DAL.ReservaDAL _reservaDAL;
+        private ClienteBLL _clienteBLL;
+        private PedidoBLL _pedidoBLL;
+        private CancelamentoBLL _cancelamentoBLL;
 
         public ReservaBLL()
         {
             _reservaDAL = new DAL.ReservaDAL();
+            _clienteBLL = new ClienteBLL();
+            _pedidoBLL = new PedidoBLL();
+            _cancelamentoBLL = new CancelamentoBLL();
         }
 
-        public void Inserir(ReservaDAO reservaDao)
+        public string Inserir(ReservaDAO reservaDao)
         {
-            var ClienteBLL = new ClienteBLL();
-            var PedidoBLL = new PedidoBLL();
-            var CancelamentoBLL = new CancelamentoBLL();
-
             SeDataEntregaMaiorDoQueDataReserva(reservaDao.DataReserva, reservaDao.DataEntrega);
-            SeLimiteDeEntregaNaoFoiAtingido(reservaDao);
+
+            SeLimiteDeEntregaGeralOuLimitePorLinhaNaoFoiAtingido(reservaDao);
 
             if (reservaDao.Cpf != null)
             {
-                reservaDao.ClienteID = new int?(ClienteBLL.SeExisteClienteComCpfInformado(reservaDao.Cpf, reservaDao.SistemaID));
+                reservaDao.ClienteID = new int?(_clienteBLL.SeExisteClienteComCpfInformado(reservaDao.Cpf, reservaDao.SistemaID));
             }
             else if (reservaDao.Cnpj != null)
             {
-                reservaDao.ClienteID = new int?(ClienteBLL.SeExisteClienteComCnpjInformado(reservaDao.Cnpj, reservaDao.SistemaID));
+                reservaDao.ClienteID = new int?(_clienteBLL.SeExisteClienteComCnpjInformado(reservaDao.Cnpj, reservaDao.SistemaID));
             }
 
-            PedidoBLL.SeNaoExistePedidoComIdInformado(reservaDao.ReservaID, reservaDao.SistemaID);
+            _pedidoBLL.SeNaoExistePedidoComIdInformado(reservaDao.ReservaID, reservaDao.SistemaID);
 
             SeNaoExisteReservaComIdInformado(reservaDao.ReservaID, reservaDao.SistemaID);
 
-            CancelamentoBLL.SeNaoExisteCancelamentoComIdInformado(reservaDao.ReservaID, reservaDao.SistemaID);
+            _cancelamentoBLL.SeNaoExisteCancelamentoComIdInformado(reservaDao.ReservaID, reservaDao.SistemaID);
 
             _reservaDAL.Inserir(reservaDao);
+
+            return reservaDao.ReservaID;
         }
 
         public void SeDataEntregaMaiorDoQueDataReserva(DateTime? dataReserva, DateTime? dataEntrega)
@@ -54,17 +60,28 @@ namespace BLL
             }
         }
         
-        public void SeLimiteDeEntregaNaoFoiAtingido(ReservaDAO reservaDao)
+        public void SeLimiteDeEntregaGeralOuLimitePorLinhaNaoFoiAtingido(ReservaDAO reservaDao)
         {
-            int limiteReserva = Convert.ToInt32(DAL.SistemaDAL.ListarLimiteReserva(reservaDao.SistemaID).Tables[0].Rows[0]["LimiteReserva"]);
+            int limiteReservaGeral = Convert.ToInt32(SistemaDAL.ListarLimiteReserva(reservaDao.SistemaID).Tables[0].Rows[0]["LimiteReserva"]);
 
             foreach (var produto in reservaDao.ListaProduto)
             {
                 if (produto.NomeFantasia.Trim().ToLower().Equals("depósito"))
                 {
-                    if (_reservaDAL.QuantidadeReserva(reservaDao.DataEntrega, reservaDao.SistemaID, produto.LojaID.GetValueOrDefault()) >= limiteReserva)
+                    var quantidadeDeReservas = _reservaDAL.ObterQuantidadeDeReservas(reservaDao.DataEntrega, reservaDao.SistemaID, produto.LojaID.GetValueOrDefault());
+
+                    if (limiteReservaGeral > 0 && quantidadeDeReservas > limiteReservaGeral)
                     {
-                        throw new ApplicationException("O limite de reservas para a data de entrega informada foi atingido.\r\n\r\nInforme outra data de entrega para inserir pedido.");
+                        throw new ApplicationException("O limite geral de reservas para a data de entrega informada foi atingido.\r\n\r\nInforme outra data de entrega para inserir pedido.");
+                    }
+
+                    var quantidadeReservadaDoProdutoNaData = _reservaDAL.ObterQuantidadeReservadaDoProduto(reservaDao.DataEntrega, reservaDao.SistemaID, produto.LojaID.GetValueOrDefault(), produto.ProdutoID);
+
+                    var limiteReservaLinha = LinhaDAL.ObterLimiteReservaLinha(produto.ProdutoID, produto.SistemaID);
+
+                    if (limiteReservaLinha > 0 && quantidadeReservadaDoProdutoNaData > limiteReservaLinha)
+                    {
+                        throw new ApplicationException("O limite de reservas por linha para a data de entrega informada foi atingido.\r\n\r\nInforme outra data de entrega para inserir pedido ou diminua a quantidade.");
                     }
                 }
             }

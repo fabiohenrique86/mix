@@ -63,7 +63,7 @@ namespace BLL
                         if (produtoDAO.LinhaID == null || produtoDAO.LinhaID <= 0)
                         {
                             // insert linha
-                            var linhaId = LinhaDAL.Inserir(produtoDAO.Linha, string.Empty, produtoDAO.SistemaID);
+                            var linhaId = LinhaDAL.Inserir(produtoDAO.Linha, string.Empty, produtoDAO.SistemaID, 0);
                             produtoDAO.LinhaID = linhaId;
                         }
 

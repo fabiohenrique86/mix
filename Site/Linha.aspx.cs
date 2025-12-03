@@ -1,30 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using BLL;
+using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BLL;
-using DAO;
-using DAL;
 
 namespace Site
 {
-    public partial class Linha : System.Web.UI.Page
+    public partial class Linha : Page
     {
-        private void CarregarDados()
+        protected void Page_Load(object sender, EventArgs e)
         {
-            BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-            this.gdvLinha.DataSource = DAL.LinhaDAL.Listar(usuarioSessao.SistemaID);
-            this.gdvLinha.DataBind();
-        }
-
-        private bool CarregarDados(string descricao, string desconto)
-        {
-            BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-            this.gdvLinha.DataSource = DAL.LinhaDAL.Listar(descricao, desconto, usuarioSessao.SistemaID);
-            this.gdvLinha.DataBind();
-            return (this.gdvLinha.Rows.Count > 0);
+            try
+            {
+                if (!base.IsPostBack)
+                {
+                    if (!UtilitarioBLL.PermissaoUsuario(Session["Usuario"]))
+                    {
+                        UtilitarioBLL.Sair();
+                        if (base.Request.Url.Segments.Length == 3)
+                        {
+                            base.Response.Redirect("../Default.aspx", false);
+                        }
+                        else
+                        {
+                            base.Response.Redirect("Default.aspx", false);
+                        }
+                    }
+                    else
+                    {
+                        this.VisualizarFormulario();
+                        this.CarregarDados();
+                        this.SetarBordaGridView();
+                    }
+                }
+            }
+            catch (ApplicationException ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
+            }
         }
 
         protected void ckbLinhaID_CheckedChanged(object sender, EventArgs e)
@@ -49,7 +65,8 @@ namespace Site
                 this.imbExcluir.Visible = false;
                 this.ckbLinhaID.Text = "Atualizar/Excluir";
             }
-            this.LimparFormulario(this.txtLinhaID, this.txtDescricao, this.txtDesconto);
+
+            this.LimparFormulario(this.txtLinhaID, this.txtDescricao, this.txtDesconto, this.txtLimiteReserva);
         }
 
         protected void gdvLinha_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -98,22 +115,34 @@ namespace Site
                 }
                 else
                 {
-                    BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-                    if (string.IsNullOrEmpty(this.txtLinhaID.Text))
-                    {
+                    var descricao = this.txtDescricao.Text.Trim().ToUpper();
+                    var desconto = this.txtDesconto.Text.Trim().ToUpper();
+
+                    var linhaId = 0;
+                    int.TryParse(txtLinhaID.Text.Trim(), out linhaId);
+
+                    int? limiteReserva;
+                    if (string.IsNullOrEmpty(txtLimiteReserva.Text.Trim()))
+                        limiteReserva = null;
+                    else
+                        limiteReserva = int.Parse(txtLimiteReserva.Text.Trim());
+
+                    if (linhaId <= 0)
                         throw new ApplicationException("A atualização de uma Linha só pode ser feita pelo LinhaID.\r\n\r\nDigite-o no campo LinhaID e clique novamente no botão Atualizar.");
-                    }
-                    if (string.IsNullOrEmpty(this.txtDescricao.Text.Trim().ToUpper()) && string.IsNullOrEmpty(this.txtDesconto.Text.Trim().ToUpper()))
-                    {
+
+                    if (string.IsNullOrEmpty(descricao) && string.IsNullOrEmpty(desconto) && limiteReserva == null)
                         throw new ApplicationException("É necessário informar um ou mais campos para atualizar.");
-                    }
-                    if (!DAL.LinhaDAL.Listar(this.txtLinhaID.Text, usuarioSessao.SistemaID))
-                    {
+
+                    var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+
+                    if (!DAL.LinhaDAL.Listar(linhaId, usuarioSessao.SistemaID))
                         throw new ApplicationException("Linha inexistente.");
-                    }
-                    DAL.LinhaDAL.Atualizar(this.txtLinhaID.Text, this.txtDescricao.Text.Trim().ToUpper(), this.txtDesconto.Text.Trim().ToUpper());
+
+                    DAL.LinhaDAL.Atualizar(linhaId, descricao, desconto, limiteReserva);
+                    
                     this.Session["bdLinha"] = true;
-                    this.LimparFormulario(this.txtLinhaID, this.txtDescricao, this.txtDesconto);
+                    this.LimparFormulario(this.txtLinhaID, this.txtDescricao, this.txtDesconto, this.txtLimiteReserva);
+
                     this.CarregarDados();
                 }
             }
@@ -146,18 +175,28 @@ namespace Site
                 }
                 else
                 {
-                    BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-                    if (string.IsNullOrEmpty(this.txtDescricao.Text.Trim().ToUpper()) || string.IsNullOrEmpty(this.txtDesconto.Text.Trim().ToUpper()))
-                    {
+                    var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+
+                    var descricao = this.txtDescricao.Text.Trim().ToUpper();
+                    var desconto = this.txtDesconto.Text.Trim().ToUpper();
+
+                    int? limiteReserva;
+                    if (string.IsNullOrEmpty(txtLimiteReserva.Text.Trim()))
+                        limiteReserva = null;
+                    else
+                        limiteReserva = int.Parse(txtLimiteReserva.Text.Trim());
+
+                    if (string.IsNullOrEmpty(descricao) || string.IsNullOrEmpty(desconto) || limiteReserva == null)
                         throw new ApplicationException("É necessário informar todos os campos obrigatórios para cadastrar.");
-                    }
-                    if (DAL.LinhaDAL.ListarDescricao(this.txtDescricao.Text.Trim().ToUpper(), usuarioSessao.SistemaID))
-                    {
+
+                    if (DAL.LinhaDAL.ListarDescricao(descricao, usuarioSessao.SistemaID))
                         throw new ApplicationException("Linha cadastrada.");
-                    }
-                    DAL.LinhaDAL.Inserir(this.txtDescricao.Text.Trim().ToUpper(), this.txtDesconto.Text.Trim().ToUpper(), usuarioSessao.SistemaID);
+                    
+                    DAL.LinhaDAL.Inserir(descricao, desconto, usuarioSessao.SistemaID, limiteReserva.GetValueOrDefault());
+                    
                     this.Session["bdLinha"] = true;
-                    this.LimparFormulario(this.txtLinhaID, this.txtDescricao, this.txtDesconto);
+                    this.LimparFormulario(this.txtLinhaID, this.txtDescricao, this.txtDesconto, txtLimiteReserva);
+
                     this.CarregarDados();
                 }
             }
@@ -191,13 +230,12 @@ namespace Site
                 else
                 {
                     if (string.IsNullOrEmpty(this.txtDescricao.Text) && string.IsNullOrEmpty(this.txtDesconto.Text))
-                    {
                         throw new ApplicationException("É necessário informar um ou mais campos para consultar.");
-                    }
-                    if (!this.CarregarDados(this.txtDescricao.Text, this.txtDesconto.Text))
-                    {
+
+                    var linhaExiste = this.CarregarDados(this.txtDescricao.Text.Trim().ToUpper(), this.txtDesconto.Text.Trim().ToUpper());
+
+                    if (!linhaExiste)
                         throw new ApplicationException("Linha inexistente.");
-                    }
                 }
             }
             catch (ApplicationException ex)
@@ -230,17 +268,21 @@ namespace Site
                 else
                 {
                     BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
-                    if (string.IsNullOrEmpty(this.txtLinhaID.Text))
-                    {
+
+                    var linhaId = 0;
+                    int.TryParse(txtLinhaID.Text.Trim(), out linhaId);
+
+                    if (linhaId <= 0)
                         throw new ApplicationException("A exclusão de uma Linha só pode ser feita pelo LinhaID.\r\n\r\nDigite-o no campo LinhaID e clique novamente no botão Excluir.");
-                    }
-                    if (!DAL.LinhaDAL.Listar(this.txtLinhaID.Text, usuarioSessao.SistemaID))
-                    {
+
+                    if (!DAL.LinhaDAL.Listar(linhaId, usuarioSessao.SistemaID))
                         throw new ApplicationException("Linha inexistente.");
-                    }
+
                     DAL.LinhaDAL.Excluir(this.txtLinhaID.Text);
+
                     this.Session["bdLinha"] = true;
-                    this.LimparFormulario(this.txtLinhaID, this.txtDescricao, this.txtDesconto);
+                    this.LimparFormulario(this.txtLinhaID, this.txtDescricao, this.txtDesconto, this.txtLimiteReserva);
+
                     this.CarregarDados();
                 }
             }
@@ -253,50 +295,28 @@ namespace Site
                 UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
             }
         }
+        private void CarregarDados()
+        {
+            BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+            this.gdvLinha.DataSource = DAL.LinhaDAL.Listar(usuarioSessao.SistemaID);
+            this.gdvLinha.DataBind();
+        }
 
-        private void LimparFormulario(TextBox txtLinhaID, TextBox txtDescricao, TextBox txtDesconto)
+        private bool CarregarDados(string descricao, string desconto)
+        {
+            BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+            this.gdvLinha.DataSource = DAL.LinhaDAL.Listar(descricao, desconto, usuarioSessao.SistemaID);
+            this.gdvLinha.DataBind();
+            return (this.gdvLinha.Rows.Count > 0);
+        }
+
+        private void LimparFormulario(TextBox txtLinhaID, TextBox txtDescricao, TextBox txtDesconto, TextBox txtLimiteReserva)
         {
             txtLinhaID.Text = string.Empty;
             txtDescricao.Text = string.Empty;
             txtDesconto.Text = string.Empty;
+            txtLimiteReserva.Text = string.Empty;
         }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!base.IsPostBack)
-                {
-                    if (!UtilitarioBLL.PermissaoUsuario(Session["Usuario"]))
-                    {
-                        UtilitarioBLL.Sair();
-                        if (base.Request.Url.Segments.Length == 3)
-                        {
-                            base.Response.Redirect("../Default.aspx", false);
-                        }
-                        else
-                        {
-                            base.Response.Redirect("Default.aspx", false);
-                        }
-                    }
-                    else
-                    {
-                        this.VisualizarFormulario();
-                        this.CarregarDados();
-                        this.SetarBordaGridView();
-                    }
-                }
-            }
-            catch (ApplicationException ex)
-            {
-                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message);
-            }
-            catch (Exception ex)
-            {
-                UtilitarioBLL.ExibirMensagemAjax(this.Page, ex.Message, ex);
-            }
-        }
-
         private void SetarBordaGridView()
         {
             this.gdvLinha.Attributes.Add(UtilitarioBLL.ATRIBUTO_BORDER_COLOR, UtilitarioBLL.BORDER_COLOR);
