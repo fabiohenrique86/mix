@@ -1044,7 +1044,7 @@ namespace DAL
             return ds;
         }
 
-        public int QuantidadeReserva(DateTime? dataEntrega, int sistemaId, int lojaId)
+        public int ObterQuantidadeDeReservas(DateTime? dataEntrega, int sistemaId, int lojaId)
         {
             Database db;
             int retorno;
@@ -1058,6 +1058,36 @@ namespace DAL
                     db.AddInParameter(cmd, "@DataEntrega", DbType.Date, dataEntrega);
                     db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
                     db.AddInParameter(cmd, "@LojaID", DbType.Int32, lojaId);
+
+                    retorno = Convert.ToInt32(db.ExecuteScalar(cmd));
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ApplicationException("Erro ao listar registro", ex);
+            }
+            finally
+            {
+                db = null;
+            }
+            return retorno;
+        }
+
+        public int ObterQuantidadeReservadaDoProduto(DateTime? dataEntrega, int sistemaId, int lojaId, long produtoId)
+        {
+            Database db;
+            int retorno;
+            try
+            {
+                db = DatabaseFactory.CreateDatabase("Mix");
+                using (DbCommand cmd = db.GetStoredProcCommand("dbo.spListarQuantidadeReservada"))
+                {
+                    cmd.CommandTimeout = 300;
+
+                    db.AddInParameter(cmd, "@DataEntrega", DbType.Date, dataEntrega);
+                    db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
+                    db.AddInParameter(cmd, "@LojaID", DbType.Int32, lojaId);
+                    db.AddInParameter(cmd, "@ProdutoID", DbType.Int64, produtoId);
 
                     retorno = Convert.ToInt32(db.ExecuteScalar(cmd));
                 }

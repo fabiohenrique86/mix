@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile>2025-01-07T12:17:31.3282510-03:00</TimeStampOfAssociatedLegacyPublishXmlFile>
     <_PublishTargetUrl>C:\Publish\MiX\Release</_PublishTargetUrl>
-    <History>True|2025-05-12T00:05:58.7147646Z;True|2025-02-10T17:14:52.6869345-03:00;True|2025-01-10T11:17:38.4862523-03:00;True|2025-01-09T16:33:34.8955566-03:00;True|2025-01-09T16:07:35.9750822-03:00;True|2025-01-09T14:11:20.3602588-03:00;False|2025-01-07T14:57:12.0958930-03:00;True|2025-01-07T10:01:20.2044597-03:00;True|2024-09-24T10:26:43.9813930-03:00;True|2024-09-23T21:11:15.8574526-03:00;True|2024-06-10T18:11:32.8918053-03:00;True|2024-06-10T10:30:40.5605835-03:00;True|2024-06-05T14:53:04.7427824-03:00;True|2024-06-04T16:18:01.6232110-03:00;True|2024-05-24T10:29:29.2283304-03:00;</History>
+    <History>True|2025-12-03T17:48:13.8060114Z||;True|2025-05-11T21:05:58.7147646-03:00||;True|2025-02-10T17:14:52.6869345-03:00||;True|2025-01-10T11:17:38.4862523-03:00||;True|2025-01-09T16:33:34.8955566-03:00||;True|2025-01-09T16:07:35.9750822-03:00||;True|2025-01-09T14:11:20.3602588-03:00||;False|2025-01-07T14:57:12.0958930-03:00||;True|2025-01-07T10:01:20.2044597-03:00||;True|2024-09-24T10:26:43.9813930-03:00||;True|2024-09-23T21:11:15.8574526-03:00||;True|2024-06-10T18:11:32.8918053-03:00||;True|2024-06-10T10:30:40.5605835-03:00||;True|2024-06-05T14:53:04.7427824-03:00||;True|2024-06-04T16:18:01.6232110-03:00||;True|2024-05-24T10:29:29.2283304-03:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -30,7 +30,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="App_Themes/MiX/GridView.skin">
-      <publishTime>01/07/2025 12:17:31</publishTime>
+      <publishTime>07/26/2025 14:45:04</publishTime>
     </File>
     <File Include="App_Themes/MiX/Label.skin">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -39,7 +39,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Base.Master">
-      <publishTime>01/07/2025 12:17:31</publishTime>
+      <publishTime>07/26/2025 14:45:04</publishTime>
     </File>
     <File Include="bin/AjaxControlToolkit.dll">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -48,10 +48,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/BLL.dll">
-      <publishTime>05/11/2025 21:05:29</publishTime>
+      <publishTime>12/03/2025 14:48:11</publishTime>
     </File>
     <File Include="bin/BLL.pdb">
-      <publishTime>05/11/2025 21:05:29</publishTime>
+      <publishTime>12/03/2025 14:48:11</publishTime>
     </File>
     <File Include="bin/chromedriver.exe">
       <publishTime>10/05/2017 15:51:40</publishTime>
@@ -63,16 +63,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>05/11/2025 21:05:28</publishTime>
+      <publishTime>12/03/2025 14:48:11</publishTime>
     </File>
     <File Include="bin/DAL.pdb">
-      <publishTime>05/11/2025 21:05:28</publishTime>
+      <publishTime>12/03/2025 14:48:11</publishTime>
     </File>
     <File Include="bin/DAO.dll">
-      <publishTime>05/11/2025 21:05:28</publishTime>
+      <publishTime>12/03/2025 14:48:10</publishTime>
     </File>
     <File Include="bin/DAO.pdb">
-      <publishTime>05/11/2025 21:05:28</publishTime>
+      <publishTime>12/03/2025 14:48:10</publishTime>
     </File>
     <File Include="bin/DocumentFormat.OpenXml.dll">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -84,7 +84,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/22/2009 19:51:18</publishTime>
     </File>
     <File Include="bin/EnvDTE80.dll">
-      <publishTime>03/13/2023 20:58:43</publishTime>
+      <publishTime>10/06/2022 15:15:26</publishTime>
     </File>
     <File Include="bin/Microsoft.MSXML.dll">
       <publishTime>09/20/2015 17:20:24</publishTime>
@@ -156,10 +156,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/08/2023 04:09:56</publishTime>
     </File>
     <File Include="bin/Site.dll">
-      <publishTime>05/11/2025 21:05:57</publishTime>
+      <publishTime>12/03/2025 14:48:12</publishTime>
     </File>
     <File Include="bin/Site.pdb">
-      <publishTime>05/11/2025 21:05:57</publishTime>
+      <publishTime>12/03/2025 14:48:12</publishTime>
     </File>
     <File Include="bin/stdole.dll">
       <publishTime>03/13/2023 20:58:43</publishTime>
@@ -213,7 +213,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Cliente.aspx">
-      <publishTime>01/09/2025 16:16:21</publishTime>
+      <publishTime>05/11/2025 21:28:55</publishTime>
     </File>
     <File Include="ClosedXML/ClosedXML.dll">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -249,13 +249,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="connectionStrings.config">
-      <publishTime>01/07/2025 12:17:31</publishTime>
+      <publishTime>07/26/2025 14:33:45</publishTime>
     </File>
     <File Include="Contato.aspx">
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="css/estilo.css">
-      <publishTime>01/07/2025 12:17:31</publishTime>
+      <publishTime>05/16/2025 15:39:32</publishTime>
     </File>
     <File Include="css/images/ui-bg_flat_0_aaaaaa_40x100.png">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -396,7 +396,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Funcionario.aspx">
-      <publishTime>01/09/2025 15:59:13</publishTime>
+      <publishTime>05/11/2025 21:28:55</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -483,7 +483,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="img/inativar.png">
-      <publishTime>01/07/2025 14:20:30</publishTime>
+      <publishTime>05/11/2025 21:28:55</publishTime>
     </File>
     <File Include="img/inserir_pedido.png">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -582,19 +582,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Linha.aspx">
-      <publishTime>01/09/2025 14:06:46</publishTime>
+      <publishTime>12/03/2025 13:22:09</publishTime>
     </File>
     <File Include="Loja.aspx">
-      <publishTime>01/09/2025 15:41:13</publishTime>
+      <publishTime>05/11/2025 21:28:55</publishTime>
     </File>
     <File Include="Medida.aspx">
-      <publishTime>01/09/2025 14:07:09</publishTime>
+      <publishTime>05/11/2025 21:28:55</publishTime>
     </File>
     <File Include="MesAno.ascx">
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="NotaFiscal.aspx">
-      <publishTime>01/07/2025 12:17:31</publishTime>
+      <publishTime>07/26/2025 14:45:04</publishTime>
     </File>
     <File Include="NotaFiscal.rdlc">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -654,10 +654,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="PrazoDeEntrega.aspx">
-      <publishTime>01/07/2025 14:52:03</publishTime>
+      <publishTime>05/11/2025 21:28:55</publishTime>
     </File>
     <File Include="Produto.aspx">
-      <publishTime>05/11/2025 20:52:22</publishTime>
+      <publishTime>05/11/2025 21:28:55</publishTime>
     </File>
     <File Include="QuadroClassificacao.rdlc">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -681,7 +681,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="TipoPagamento.aspx">
-      <publishTime>01/09/2025 14:06:23</publishTime>
+      <publishTime>05/11/2025 21:28:55</publishTime>
     </File>
     <File Include="Transferencia.aspx">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -690,7 +690,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Usuario.aspx">
-      <publishTime>01/09/2025 15:12:27</publishTime>
+      <publishTime>05/11/2025 21:28:55</publishTime>
     </File>
     <File Include="VendaProduto.rdlc">
       <publishTime>01/07/2025 12:17:31</publishTime>
@@ -705,7 +705,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2025 12:17:31</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/10/2025 10:53:01</publishTime>
+      <publishTime>07/26/2025 14:45:04</publishTime>
     </File>
   </ItemGroup>
 </Project>

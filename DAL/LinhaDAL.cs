@@ -9,7 +9,7 @@ namespace DAL
     public static class LinhaDAL
     {
         // Methods
-        public static void Atualizar(string linhaId, string descricao, string desconto)
+        public static void Atualizar(int linhaId, string descricao, string desconto, int? limiteReserva)
         {
             Database db;
             try
@@ -18,17 +18,22 @@ namespace DAL
                 using (DbCommand cmd = db.GetStoredProcCommand("dbo.spAtualizarLinha"))
                 {
                     cmd.CommandTimeout = 300;
+
                     if (string.IsNullOrEmpty(descricao))
-                    {
                         descricao = null;
-                    }
+
                     if (string.IsNullOrEmpty(desconto))
-                    {
                         desconto = null;
-                    }
-                    db.AddInParameter(cmd, "@LinhaID", DbType.Int32, Convert.ToInt32(linhaId));
+
+                    db.AddInParameter(cmd, "@LinhaID", DbType.Int32, linhaId);
                     db.AddInParameter(cmd, "@Descricao", DbType.String, descricao);
                     db.AddInParameter(cmd, "@Desconto", DbType.Decimal, desconto);
+
+                    if (limiteReserva == null)
+                        db.AddInParameter(cmd, "@LimiteReserva", DbType.Int32, DBNull.Value);
+                    else
+                        db.AddInParameter(cmd, "@LimiteReserva", DbType.Int32, limiteReserva);
+
                     db.ExecuteNonQuery(cmd);
                 }
             }
@@ -65,7 +70,7 @@ namespace DAL
             }
         }
 
-        public static int Inserir(string descricao, string desconto, int sistemaId)
+        public static int Inserir(string descricao, string desconto, int sistemaId, int limiteReserva)
         {
             Database db;
             var linhaId = 0;
@@ -83,6 +88,7 @@ namespace DAL
                     db.AddInParameter(cmd, "@Descricao", DbType.String, descricao);
                     db.AddInParameter(cmd, "@Desconto", DbType.Decimal, desconto);
                     db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
+                    db.AddInParameter(cmd, "@LimiteReserva", DbType.Int32, limiteReserva);
 
                     linhaId = Convert.ToInt32(db.ExecuteScalar(cmd));
                 }
@@ -124,7 +130,7 @@ namespace DAL
             return ds;
         }
 
-        public static bool Listar(string linhaId, int sistemaId)
+        public static bool Listar(int linhaId, int sistemaId)
         {
             Database db;
             bool linha = false;
@@ -134,7 +140,7 @@ namespace DAL
                 using (DbCommand cmd = db.GetStoredProcCommand("dbo.spListarLinhaById"))
                 {
                     cmd.CommandTimeout = 300;
-                    db.AddInParameter(cmd, "@LinhaID", DbType.Int32, Convert.ToInt32(linhaId));
+                    db.AddInParameter(cmd, "@LinhaID", DbType.Int32, linhaId);
                     db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
                     if (Convert.ToInt32(db.ExecuteScalar(cmd)) > 0)
                     {
@@ -240,6 +246,40 @@ namespace DAL
                 db = null;
             }
             return ds;
+        }
+
+        public static int ObterLimiteReservaLinha(long produtoId, int sistemaId)
+        {
+            Database db;
+            DataSet ds;
+            try
+            {
+                db = DatabaseFactory.CreateDatabase("Mix");
+                using (DbCommand cmd = db.GetStoredProcCommand("dbo.spObterLimiteReservaLinha"))
+                {
+                    cmd.CommandTimeout = 300;
+
+                    db.AddInParameter(cmd, "@ProdutoID", DbType.Int64, produtoId);
+                    db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
+
+                    ds = db.ExecuteDataSet(cmd);
+                }
+
+                if (ds.Tables[0].Rows.Count > 0)
+                    return Convert.ToInt32(ds.Tables[0].Rows[0]["LimiteReserva"]);
+
+                return 0;
+
+                return 0;
+            }
+            catch (SqlException ex)
+            {
+                throw new ApplicationException("Erro ao listar registro", ex);
+            }
+            finally
+            {
+                db = null;
+            }
         }
     }
 }

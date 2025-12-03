@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Practices.EnterpriseLibrary.Data;
+﻿using Microsoft.Practices.EnterpriseLibrary.Data;
+using System;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Data;
-using DAO;
-using System.Transactions;
 
 namespace DAL
 {
@@ -23,8 +18,10 @@ namespace DAL
                 using (DbCommand cmd = db.GetStoredProcCommand("dbo.spAtualizarLimiteReservaById"))
                 {
                     cmd.CommandTimeout = 300;
+
                     db.AddInParameter(cmd, "@LimiteReserva", DbType.Int32, limiteReserva);
                     db.AddInParameter(cmd, "@SistemaID", DbType.Int32, sistemaId);
+
                     db.ExecuteNonQuery(cmd);
                 }
             }
