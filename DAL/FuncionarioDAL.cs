@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Practices.EnterpriseLibrary.Data;
+﻿using Microsoft.Practices.EnterpriseLibrary.Data;
+using System;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Data;
-using DAO;
 
 namespace DAL
 {

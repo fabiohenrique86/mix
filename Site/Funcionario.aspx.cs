@@ -261,10 +261,16 @@ namespace Site
         {
             if (e.CommandName == "AtivarInativar")
             {
-                BLL.Modelo.Usuario usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
                 int funcionarioId = Convert.ToInt32(e.CommandArgument);
-                
-                DAL.FuncionarioDAL.Excluir(new FuncionarioDAO(funcionarioId, usuarioSessao.SistemaID));
+
+                var ativar = ((Button)e.CommandSource).Text == "Ativar" ? true : false;
+                var usuarioSessao = new BLL.Modelo.Usuario(Session["Usuario"]);
+
+                if (ativar)
+                    DAL.FuncionarioDAL.Atualizar(new FuncionarioDAO(funcionarioId, usuarioSessao.SistemaID)); // ativa o funcionário
+                else
+                    DAL.FuncionarioDAL.Excluir(new FuncionarioDAO(funcionarioId, usuarioSessao.SistemaID)); // inativa o funcionário
+
                 this.Session["bdFuncionario"] = true;
 
                 this.CarregarRepeaterLoja();
@@ -323,13 +329,13 @@ namespace Site
                 if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
                 {
                     string lojaId = ((Label)e.Item.FindControl("lblLojaID")).Text;
-                    
+
                     ((Label)e.Item.FindControl("lblLoja")).Text = ((Label)e.Item.FindControl("lblLoja")).Text.ToUpper();
-                    
+
                     GridView gdvFuncionarioAux = (GridView)e.Item.FindControl("gdvFuncionario");
-                    
+
                     gdvFuncionarioAux.Attributes.Add(UtilitarioBLL.ATRIBUTO_BORDER_COLOR, UtilitarioBLL.BORDER_COLOR);
-                    
+
                     if (Convert.ToBoolean(this.ViewState["filtro"]))
                     {
                         string telefone = this.txtTelefone.Text.Replace("(", "").Replace(")", "").Replace("_", "").Replace("-", "");
